@@ -1,0 +1,775 @@
+[
+  {
+    "match_id": "mtgo:12856591:0:1",
+    "side": "a",
+    "original": "Other Tron",
+    "raw": "Tron",
+    "classified": "Monster Tron",
+    "anchors": [
+      "Urza's Tower",
+      "Bramble Wurm",
+      "Expedition Map"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-1712856591"
+  },
+  {
+    "match_id": "mtgo:12856591:0:1",
+    "side": "b",
+    "original": "Other Tron",
+    "raw": "Tron",
+    "classified": "Monster Tron",
+    "anchors": [
+      "Urza's Tower",
+      "Bramble Wurm",
+      "Expedition Map"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-1712856591"
+  },
+  {
+    "match_id": "mtgo:12856591:1:1",
+    "side": "b",
+    "original": "Other Tron",
+    "raw": "Tron",
+    "classified": "Monster Tron",
+    "anchors": [
+      "Urza's Tower",
+      "Bramble Wurm",
+      "Expedition Map"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-1712856591"
+  },
+  {
+    "match_id": "mtgo:12856583:0:3",
+    "side": "b",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-1612856583"
+  },
+  {
+    "match_id": "mtgo:12856578:0:0",
+    "side": "b",
+    "original": "Other",
+    "raw": "Golgari Garden",
+    "classified": "Gardens",
+    "anchors": [
+      "Khalni Garden",
+      "Tithing Blade",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-1512856578"
+  },
+  {
+    "match_id": "mtgo:12856578:0:1",
+    "side": "b",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-1512856578"
+  },
+  {
+    "match_id": "mtgo:12856578:0:2",
+    "side": "a",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-1512856578"
+  },
+  {
+    "match_id": "mtgo:12856578:1:1",
+    "side": "a",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-1512856578"
+  },
+  {
+    "match_id": "mtgo:12856578:2:0",
+    "side": "b",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-1512856578"
+  },
+  {
+    "match_id": "mtgo:12856164:0:0",
+    "side": "b",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0812856164"
+  },
+  {
+    "match_id": "mtgo:12856148:0:1",
+    "side": "b",
+    "original": "Other",
+    "raw": "Golgari Garden",
+    "classified": "Gardens",
+    "anchors": [
+      "Khalni Garden",
+      "Tithing Blade",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0812856148"
+  },
+  {
+    "match_id": "mtgo:12856148:0:2",
+    "side": "b",
+    "original": "Other",
+    "raw": "Jund Midrange",
+    "classified": "Jund Wildfire",
+    "anchors": [
+      "Cleansing Wildfire",
+      "Writhing Chrysalis",
+      "Refurbished Familiar"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0812856148"
+  },
+  {
+    "match_id": "mtgo:12856148:0:3",
+    "side": "a",
+    "original": "Other Affinity",
+    "raw": "Dimir Affinity",
+    "classified": "Dimir Affinity",
+    "anchors": [
+      "Thoughtcast",
+      "Myr Enforcer"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0812856148"
+  },
+  {
+    "match_id": "mtgo:12856148:1:0",
+    "side": "a",
+    "original": "Other Affinity",
+    "raw": "Dimir Affinity",
+    "classified": "Dimir Affinity",
+    "anchors": [
+      "Thoughtcast",
+      "Myr Enforcer"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0812856148"
+  },
+  {
+    "match_id": "mtgo:12856148:2:0",
+    "side": "a",
+    "original": "Other Affinity",
+    "raw": "Dimir Affinity",
+    "classified": "Dimir Affinity",
+    "anchors": [
+      "Thoughtcast",
+      "Myr Enforcer"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0812856148"
+  },
+  {
+    "match_id": "mtgo:12855517:0:0",
+    "side": "b",
+    "original": "Other Affinity",
+    "raw": "Dimir Affinity",
+    "classified": "Dimir Affinity",
+    "anchors": [
+      "Thoughtcast",
+      "Myr Enforcer"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0712855517"
+  },
+  {
+    "match_id": "mtgo:12855517:1:0",
+    "side": "b",
+    "original": "Other",
+    "raw": "Golgari Garden",
+    "classified": "Gardens",
+    "anchors": [
+      "Khalni Garden",
+      "Tithing Blade",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0712855517"
+  },
+  {
+    "match_id": "mtgo:12855509:0:0",
+    "side": "b",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0612855509"
+  },
+  {
+    "match_id": "mtgo:12855509:0:2",
+    "side": "b",
+    "original": "Other Affinity",
+    "raw": "Dimir Affinity",
+    "classified": "Dimir Affinity",
+    "anchors": [
+      "Thoughtcast",
+      "Myr Enforcer"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0612855509"
+  },
+  {
+    "match_id": "mtgo:12855502:0:2",
+    "side": "a",
+    "original": "Other",
+    "raw": "Jund Midrange",
+    "classified": "Jund Wildfire",
+    "anchors": [
+      "Cleansing Wildfire",
+      "Writhing Chrysalis",
+      "Refurbished Familiar"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0512855502"
+  },
+  {
+    "match_id": "mtgo:12855502:0:2",
+    "side": "b",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0512855502"
+  },
+  {
+    "match_id": "mtgo:12855502:1:0",
+    "side": "b",
+    "original": "Other",
+    "raw": "Jund Midrange",
+    "classified": "Jund Wildfire",
+    "anchors": [
+      "Cleansing Wildfire",
+      "Writhing Chrysalis",
+      "Refurbished Familiar"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0512855502"
+  },
+  {
+    "match_id": "mtgo:12855493:0:0",
+    "side": "a",
+    "original": "Other",
+    "raw": "Golgari Garden",
+    "classified": "Gardens",
+    "anchors": [
+      "Khalni Garden",
+      "Tithing Blade",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0412855493"
+  },
+  {
+    "match_id": "mtgo:12855493:0:1",
+    "side": "b",
+    "original": "Other",
+    "raw": "Golgari Garden",
+    "classified": "Gardens",
+    "anchors": [
+      "Khalni Garden",
+      "Tithing Blade",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0412855493"
+  },
+  {
+    "match_id": "mtgo:12855493:0:2",
+    "side": "a",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0412855493"
+  },
+  {
+    "match_id": "mtgo:12855493:1:0",
+    "side": "a",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0412855493"
+  },
+  {
+    "match_id": "mtgo:12855493:1:0",
+    "side": "b",
+    "original": "Other",
+    "raw": "Golgari Garden",
+    "classified": "Gardens",
+    "anchors": [
+      "Khalni Garden",
+      "Tithing Blade",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0412855493"
+  },
+  {
+    "match_id": "mtgo:12855493:2:0",
+    "side": "b",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0412855493"
+  },
+  {
+    "match_id": "mtgo:12855476:0:3",
+    "side": "a",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0312855476"
+  },
+  {
+    "match_id": "mtgo:12855476:1:1",
+    "side": "a",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0312855476"
+  },
+  {
+    "match_id": "mtgo:12855476:2:0",
+    "side": "b",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0312855476"
+  },
+  {
+    "match_id": "mtgo:12855468:0:0",
+    "side": "a",
+    "original": "Other",
+    "raw": "Esper Midrange",
+    "classified": "Esper Affinity",
+    "anchors": [
+      "Thoughtcast",
+      "Dispatch",
+      "Refurbished Familiar"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0212855468"
+  },
+  {
+    "match_id": "mtgo:12855468:0:0",
+    "side": "b",
+    "original": "Other",
+    "raw": "Jund Midrange",
+    "classified": "Jund Wildfire",
+    "anchors": [
+      "Cleansing Wildfire",
+      "Writhing Chrysalis",
+      "Refurbished Familiar"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0212855468"
+  },
+  {
+    "match_id": "mtgo:12855468:0:3",
+    "side": "a",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0212855468"
+  },
+  {
+    "match_id": "mtgo:12855468:1:1",
+    "side": "a",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0212855468"
+  },
+  {
+    "match_id": "mtgo:12855468:1:1",
+    "side": "b",
+    "original": "Other",
+    "raw": "Esper Midrange",
+    "classified": "Esper Affinity",
+    "anchors": [
+      "Thoughtcast",
+      "Dispatch",
+      "Refurbished Familiar"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0212855468"
+  },
+  {
+    "match_id": "mtgo:12855468:2:0",
+    "side": "b",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0212855468"
+  },
+  {
+    "match_id": "mtgo:12855463:0:1",
+    "side": "a",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0112855463"
+  },
+  {
+    "match_id": "mtgo:12855463:1:1",
+    "side": "b",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0112855463"
+  },
+  {
+    "match_id": "mtgo:12855452:0:0",
+    "side": "b",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-3012855452"
+  },
+  {
+    "match_id": "mtgo:12854951:0:0",
+    "side": "a",
+    "original": "Other",
+    "raw": "Esper Midrange",
+    "classified": "Esper Affinity",
+    "anchors": [
+      "Thoughtcast",
+      "Dispatch",
+      "Refurbished Familiar"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2912854951"
+  },
+  {
+    "match_id": "mtgo:12854951:0:0",
+    "side": "b",
+    "original": "Other",
+    "raw": "Golgari Midrange",
+    "classified": "Gardens",
+    "anchors": [
+      "Khalni Garden",
+      "Tithing Blade",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2912854951"
+  },
+  {
+    "match_id": "mtgo:12854951:0:2",
+    "side": "a",
+    "original": "Other Tron",
+    "raw": "Tron",
+    "classified": "Monster Tron",
+    "anchors": [
+      "Urza's Tower",
+      "Bramble Wurm",
+      "Expedition Map"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2912854951"
+  },
+  {
+    "match_id": "mtgo:12854951:0:3",
+    "side": "a",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2912854951"
+  },
+  {
+    "match_id": "mtgo:12854951:1:0",
+    "side": "a",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2912854951"
+  },
+  {
+    "match_id": "mtgo:12854951:1:1",
+    "side": "a",
+    "original": "Other",
+    "raw": "Esper Midrange",
+    "classified": "Esper Affinity",
+    "anchors": [
+      "Thoughtcast",
+      "Dispatch",
+      "Refurbished Familiar"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2912854951"
+  },
+  {
+    "match_id": "mtgo:12854951:1:1",
+    "side": "b",
+    "original": "Other Tron",
+    "raw": "Tron",
+    "classified": "Monster Tron",
+    "anchors": [
+      "Urza's Tower",
+      "Bramble Wurm",
+      "Expedition Map"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2912854951"
+  },
+  {
+    "match_id": "mtgo:12854951:2:0",
+    "side": "a",
+    "original": "Other",
+    "raw": "Esper Midrange",
+    "classified": "Esper Affinity",
+    "anchors": [
+      "Thoughtcast",
+      "Dispatch",
+      "Refurbished Familiar"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2912854951"
+  },
+  {
+    "match_id": "mtgo:12854951:2:0",
+    "side": "b",
+    "original": "Other",
+    "raw": "Grixis Control",
+    "classified": "Dimir Control",
+    "anchors": [
+      "Baleful Strix",
+      "Counterspell",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2912854951"
+  },
+  {
+    "match_id": "mtgo:12854944:0:1",
+    "side": "b",
+    "original": "Other Tron",
+    "raw": "Tron",
+    "classified": "Monster Tron",
+    "anchors": [
+      "Urza's Tower",
+      "Bramble Wurm",
+      "Expedition Map"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2812854944"
+  },
+  {
+    "match_id": "mtgo:12854935:0:0",
+    "side": "a",
+    "original": "Other",
+    "raw": "Esper Midrange",
+    "classified": "Esper Affinity",
+    "anchors": [
+      "Thoughtcast",
+      "Dispatch",
+      "Refurbished Familiar"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2712854935"
+  },
+  {
+    "match_id": "mtgo:12854935:0:1",
+    "side": "b",
+    "original": "Other Tron",
+    "raw": "Tron",
+    "classified": "Monster Tron",
+    "anchors": [
+      "Urza's Tower",
+      "Bramble Wurm",
+      "Expedition Map"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2712854935"
+  },
+  {
+    "match_id": "mtgo:12854935:0:2",
+    "side": "b",
+    "original": "Other",
+    "raw": "Golgari Garden",
+    "classified": "Gardens",
+    "anchors": [
+      "Khalni Garden",
+      "Tithing Blade",
+      "Cast Down"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2712854935"
+  },
+  {
+    "match_id": "mtgo:12854935:1:0",
+    "side": "b",
+    "original": "Other",
+    "raw": "Esper Midrange",
+    "classified": "Esper Affinity",
+    "anchors": [
+      "Thoughtcast",
+      "Dispatch",
+      "Refurbished Familiar"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2712854935"
+  },
+  {
+    "match_id": "mtgo:12854918:0:0",
+    "side": "a",
+    "original": "Other Tron",
+    "raw": "Tron",
+    "classified": "Monster Tron",
+    "anchors": [
+      "Urza's Tower",
+      "Bramble Wurm",
+      "Expedition Map"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2612854918"
+  },
+  {
+    "match_id": "mtgo:12854918:1:1",
+    "side": "b",
+    "original": "Other Tron",
+    "raw": "Tron",
+    "classified": "Monster Tron",
+    "anchors": [
+      "Urza's Tower",
+      "Bramble Wurm",
+      "Expedition Map"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2612854918"
+  },
+  {
+    "match_id": "mtgo:12854910:0:1",
+    "side": "b",
+    "original": "Other Burn",
+    "raw": "Burn",
+    "classified": "Burn",
+    "anchors": [
+      "Lava Spike",
+      "Skewer the Critics"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2512854910"
+  },
+  {
+    "match_id": "mtgo:12854910:0:3",
+    "side": "b",
+    "original": "Other Burn",
+    "raw": "Mono Red Burn",
+    "classified": "Red Equipment Aggro",
+    "anchors": [
+      "Goblin Tomb Raider",
+      "Inventor's Axe"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2512854910"
+  },
+  {
+    "match_id": "mtgo:12854905:0:2",
+    "side": "b",
+    "original": "Other Affinity",
+    "raw": "Wubr Affinity",
+    "classified": "Four Color Affinity",
+    "anchors": [
+      "Thoughtcast",
+      "Dispatch",
+      "Galvanic Blast"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2412854905"
+  },
+  {
+    "match_id": "mtgo:12854527:0:0",
+    "side": "b",
+    "original": "Other Tron",
+    "raw": "Tron",
+    "classified": "Monster Tron",
+    "anchors": [
+      "Urza's Tower",
+      "Bramble Wurm",
+      "Expedition Map"
+    ],
+    "source": "https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2112854527"
+  }
+]

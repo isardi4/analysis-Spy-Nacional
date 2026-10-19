@@ -1,0 +1,21 @@
+{
+  "paper_start": "2026-09-20",
+  "end": "2026-10-19",
+  "paper_events": 13,
+  "paper_entries": 650,
+  "paper_matches": 1643,
+  "online_events": 21,
+  "online_discovered_events": 26,
+  "online_matches": 145,
+  "online_scope": "published_top8_playoffs_only",
+  "online_weight": 1,
+  "prior_decisive_matches": 10,
+  "draw_prior_mean": 0.05,
+  "source_note": "Online playoff sample is selected; larger N does not guarantee less bias. No online deck frequency enters presence.",
+  "paper_entries_total": 671,
+  "recovered_entries": 103,
+  "excluded_entries": 21,
+  "coverage": 0.9687034277198212,
+  "online_matches_before_filter": 145,
+  "classification": "card signatures per deck GUID; unclassified entries and their matches excluded; known paper presence renormalized to 100%"
+}

@@ -4,12 +4,44 @@ const names=DATA.names,K=names.length,states=DATA.manifest.states,active=names.m
 const groups={all:[0,1,2,3,4],miss:[0],top8:[1,2,3,4],top4:[2,3,4],top2:[3,4],champ:[4]},groupLabels={all:'todos los jugadores',miss:'quedaron fuera del top 8',top8:'hicieron top 8',top4:'hicieron top 4',top2:'llegaron a la final',champ:'ganaron el torneo'};
 function sortIndices(values){return values.map((_,i)=>i).sort((a,b)=>values[b]-values[a]);}
 function table(id,headers,rows){$(id).innerHTML='<div class="tablewrap"><table><thead><tr>'+headers.map(h=>'<th>'+esc(h)+'</th>').join('')+'</tr></thead><tbody>'+rows.map(row=>'<tr>'+row.map(x=>'<td>'+x+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';}
-function plot(id,traces,title,extra={}){Plotly.react(id,traces,{title:{text:title,font:{size:16}},paper_bgcolor:'#fffdf8',plot_bgcolor:'#fffdf8',font:{family:'Arial',color:'#203744'},margin:{l:55,r:25,t:70,b:105},height:450,legend:{orientation:'h',y:1.13},...extra},cfg);}
+const chartSpecs=new Map();
+function plot(id,traces,title,extra={}){chartSpecs.set(id,{traces,layout:{title:{text:title,font:{size:16}},paper_bgcolor:'#fffdf8',plot_bgcolor:'#fffdf8',font:{family:'Arial',color:'#203744'},margin:{l:55,r:25,t:70,b:105},height:450,legend:{orientation:'h',y:1.13},...extra}});}
+
 function card(title,value,note){return '<div class="card">'+esc(title)+'<strong>'+esc(value)+'</strong><small>'+esc(note)+'</small></div>';}
 function rec(w,l,d){return d?`${w}–${l}–${d}`:`${w}–${l}`;}
 function rate(n,d){return d?n/d:NaN;}
 function stateId(r,w,d){return states.findIndex(s=>s[0]===r&&s[1]===w&&s[3]===d);}
 let current=null;
+let currentView='resumen';
+let activeChartFrame=0;
+const VIEW_LABELS={resumen:'Resumen',recorridos:'Rivales por ronda',ronda:'Detalle de una ronda',secuencias:'Secuencias W/L/D',ejemplos:'Recorridos completos',eliminatorias:'Eliminatorias',record:'Mesas por récord',presencia:'Presencia de mazos',winrates:'Matriz de win rates',fuentes:'Fuentes y método'};
+function syncViewLinks(){
+ document.querySelectorAll('[data-view-target]').forEach(link=>{const q=new URLSearchParams(location.search);q.set('view',link.dataset.viewTarget);link.setAttribute('href','?'+q.toString());});
+}
+function resizeActiveCharts(){
+ document.title=VIEW_LABELS[currentView]+' · '+names[+$('deck').value]+' · Pauper';
+ if(activeChartFrame)cancelAnimationFrame(activeChartFrame);
+ activeChartFrame=requestAnimationFrame(()=>{
+  activeChartFrame=0;
+  $('panel-'+currentView).querySelectorAll('.chart').forEach(el=>{
+   const spec=chartSpecs.get(el.id);if(!spec)return;
+   Plotly.react(el,spec.traces,spec.layout,cfg).then(()=>{if(!el.closest('[data-panel]').hidden)return Plotly.Plots.resize(el);});
+  });
+ });
+}
+
+function activateView(view,{push=true,scroll=true}={}){
+ currentView=Object.hasOwn(VIEW_LABELS,view)?view:'resumen';
+ document.querySelectorAll('[data-panel]').forEach(panel=>{panel.hidden=panel.dataset.panel!==currentView;});
+ document.querySelectorAll('.analysis-nav [role=tab]').forEach(link=>{const selected=link.dataset.viewTarget===currentView;link.setAttribute('aria-selected',String(selected));link.tabIndex=selected?0:-1;});
+ $('journeyFilters').hidden=!['recorridos','ronda','secuencias','ejemplos'].includes(currentView);
+ $('outcomeFilter').hidden=!['recorridos','ronda'].includes(currentView);
+ document.querySelector('.analysis-nav').setAttribute('aria-orientation',matchMedia('(max-width:760px)').matches?'horizontal':'vertical');
+ updateURL(push);resizeActiveCharts();
+ if(scroll)window.scrollTo({top:0,behavior:'auto'});
+ if(matchMedia('(max-width:760px)').matches)document.querySelector('.analysis-nav [aria-selected=true]').scrollIntoView({block:'nearest',inline:'nearest'});
+}
+
 function journeyData(deck,finishSet,results){return Array.from({length:7},(_,r)=>Array.from({length:K},(_,j)=>sum(results.map(o=>sum(finishSet.map(g=>DATA.journey[deck][r][j][o][g]))))));}
 function renderJourneyMatrix(jd,top,rden,group){
  const shown=new Set(top),remaining=active.filter(j=>!shown.has(j));
@@ -35,7 +67,7 @@ function renderJourney(){
  current={...(current||{}),deck,group,gs,os,gp};
  $('headline').textContent=`${names[deck]} · ${group==='all'?'recorridos de todos los jugadores':'recorridos de los que '+groupLabels[group]}`;
  $('odds').innerHTML=card('Top 8',pct(t[1]/t[0]),num(t[1])+' clasificaciones')+card('Top 4',pct(t[4]/t[0]),num(t[4])+' semifinalistas')+card('Top 2',pct(t[5]/t[0]),num(t[5])+' finalistas')+card('Campeón',pct(t[6]/t[0]),num(t[6])+' títulos');
- $('groupInfo').innerHTML=`<b>${num(gp)} participaciones de ${esc(names[deck])}</b> en el grupo elegido, sobre ${num(t[0])} participaciones de este arquetipo en los mismos ${num(DATA.completion.tournaments)} torneos. Cada participación aporta un recorrido de siete rondas. `+(DATA.counts[deck]<10?'<b>Hay menos de diez plazas reales de este arquetipo en la muestra presencial: el modelo tiene una base limitada.</b> ':'')+(names[deck]==='Other'||names[deck]==='Unknown'?'<b>Es una categoría agregada; no representa un único mazo.</b>':'');
+ $('groupInfo').innerHTML=`<b>${num(gp)} participaciones de ${esc(names[deck])}</b> en el grupo elegido, sobre ${num(t[0])} participaciones de este arquetipo en los mismos ${num(DATA.completion.tournaments)} torneos. Cada participación aporta un recorrido de siete rondas. `+(DATA.counts[deck]<10?'<b>Hay menos de diez plazas reales de este arquetipo en la muestra presencial: el modelo tiene una base limitada.</b> ':'');
  const jd=journeyData(deck,gs,os),all=journeyData(deck,[0,1,2,3,4],os),rest=all.map((row,r)=>row.map((x,j)=>x-jd[r][j]));
  current.jd=jd;
  const frequencies=names.map((_,j)=>sum(jd.map(a=>a[j]))),top=sortIndices(frequencies).filter(j=>frequencies[j]>0).slice(0,16),rden=jd.map(sum);
@@ -53,7 +85,7 @@ function renderJourney(){
  examples.sort((a,b)=>a.id[0]-b.id[0]||a.id[1]-b.id[1]);
  const labels=['Fuera del top 8','Top 8','Top 4','Subcampeón','Campeón'];
  table('examplePaths',['Torneo / jugador','Finalizó',...Array.from({length:7},(_,r)=>'R'+(r+1)),'Cuartos','Semifinal','Final'],examples.slice(0,10).map(e=>['#'+(e.id[0]+1)+' / '+(e.id[1]+1),labels[e.g],...DATA.examples.opponents[deck][e.g][e.k].map((j,r)=>j<0?'—':esc(names[j])+' · <b>'+['L','D','W'][DATA.examples.results[deck][e.g][e.k][r]]+'</b>')]));
- renderPlayoffs();renderState();renderSources();updateURL();
+ renderPlayoffs();renderState();renderSources();updateURL();resizeActiveCharts();
 }
 function renderHistory(){
  const {deck,gs,os,jd}=current,r=+$('historyRound').value,den=sum(jd[r]),ordered=sortIndices(jd[r]);
@@ -88,23 +120,47 @@ function renderState(){
  plot('heat',[{type:'heatmap',x:ss.map(a=>rec(a.s[1],a.s[2],0)),y:common.map(j=>names[j]),z:common.map(j=>ss.map(a=>{const row=DATA.exposure[d][a.i].map(sum),n=sum(row);return n?100*row[j]/n:null;})),colorscale:[[0,'#eef4f2'],[0.5,'#83b5bc'],[1,'#176b80']],hovertemplate:'%{y} · récord %{x}: %{z:.2f}%<extra></extra>'}],`Ronda ${r+1} · cómo cambia el rival con el récord`,{margin:{l:145,r:25,t:70,b:60},height:480,yaxis:{autorange:'reversed'}});
  const opp=DATA.opp_records[d][s],rp=sortIndices(opp).filter(k=>opp[k]>0);
  table('oppRecords',['Récord previo del oponente','Encuentros','Probabilidad'],rp.map(k=>{const ow=Math.floor(k/7),od=k%7,ol=r-ow-od;return [rec(ow,ol,od),num(opp[k]),pct(rate(opp[k],den))];}));
- updateURL();
+ updateURL();resizeActiveCharts();
 }
 function renderSources(){
  const d=current.deck,s=DATA.sources,den=sum(DATA.counts),order=sortIndices(DATA.counts).filter(j=>DATA.counts[j]>0),w=DATA.W,dd=DATA.D;
  table('meta',['Arquetipo','Plazas presenciales','Presencia','Esperados en 110'],order.map(j=>[esc(names[j]),num(DATA.counts[j]),pct(DATA.counts[j]/den),(110*DATA.counts[j]/den).toFixed(2)]));
- $('matrixInfo').innerHTML=`<p>Presencia: <b>${s.paper_entries} plazas de ${s.paper_events} eventos presenciales</b>. Matriz: ${num(s.paper_matches)} matches presenciales + ${s.online_matches} matches de eliminatorias publicadas de ${s.online_events} eventos MTGO. Ventana inclusiva: 20/09–19/10/2026. El online tiene peso 1 por match y nunca entra al porcentaje de presencia.</p><p>La muestra online está seleccionada por top 8; aumentar el número de matches no garantiza eliminar sesgos. Cada celda se regulariza con 10 matches decisivos equivalentes al 50%: (W+5)/(W+L+10). Los empates se modelan por separado. Un cruce sin observaciones es un supuesto, no evidencia de 50%.</p>`;
+ $('matrixInfo').innerHTML=`<p>Presencia: <b>${s.paper_entries} de ${s.paper_entries_total} plazas de ${s.paper_events} eventos presenciales</b> (${(s.coverage*100).toFixed(1)}% de cobertura). Se recuperaron ${s.recovered_entries} participaciones mediante las cartas de sus listas. Se excluyeron ${s.excluded_entries} plazas sin clasificación suficiente y sus encuentros. La presencia se renormaliza al 100% sobre las plazas identificadas. Matriz: ${num(s.paper_matches)} matches presenciales + ${s.online_matches} matches de eliminatorias publicadas de ${s.online_events} eventos MTGO. Ventana inclusiva: 20/09–19/10/2026. El online tiene peso 1 por match y nunca entra al porcentaje de presencia.</p><p>La muestra online está seleccionada por top 8; aumentar el número de matches no garantiza eliminar sesgos. Cada celda se regulariza con 10 matches decisivos equivalentes al 50%: (W+5)/(W+L+10). Los empates se modelan por separado. Un cruce sin observaciones es un supuesto, no evidencia de 50%.</p>`;
  const focus=order.slice(0,16);if(!focus.includes(d))focus[focus.length-1]=d;
  plot('wrMatrix',[{type:'heatmap',x:focus.map(j=>names[j]),y:focus.map(j=>names[j]),z:focus.map(i=>focus.map(j=>100*DATA.win[i][j])),customdata:focus.map(i=>focus.map(j=>sum([0,1].map(q=>w[q][i][j]+w[q][j][i]+dd[q][i][j])))),zmid:50,zmin:20,zmax:80,colorscale:'RdBu',hovertemplate:'%{y} vs %{x}: %{z:.1f}%<br>Registros: %{customdata}<extra></extra>'}],'WR decisivo modelado · filas contra columnas',{height:550,margin:{l:150,r:25,t:70,b:140}});
  table('matchups',['Rival','Papel W–L–D','Online W–L–D','WR decisivo modelado','P(empate)','P(ganar match)'],order.map(j=>[esc(names[j]),...[0,1].map(q=>j===d?'Espejo: '+num(w[q][d][d])+' matches decisivos':`${w[q][d][j]}–${w[q][j][d]}–${dd[q][d][j]}`),pct(DATA.win[d][j]),pct(DATA.draw[d][j]),pct((1-DATA.draw[d][j])*DATA.win[d][j])]));
- $('method').innerHTML=`<p><b>Una única corrida final:</b> ${num(DATA.completion.tournaments)} torneos, ${num(DATA.completion.player_paths)} participaciones, ${num(DATA.completion.swiss_matches)} matches suizos y ${num(DATA.completion.playoff_matches)} matches de eliminatorias. No se reserva una plaza para ningún arquetipo: se sortean las 110 por multinomial usando presencia presencial.</p><p>Todos los jugadores se registran antes de cada ronda por W/L/D exacto, rival, resultado y resultado final del torneo. Se distinguen cinco desenlaces: fuera del top8, eliminado en cuartos, eliminado en semifinales, subcampeón y campeón. Top8/top4/top2 agrupan los desenlaces correspondientes. No son corridas independientes por mazo ni por filtro.</p><p>Suizo aproximado: orden por puntos y azar dentro del grupo, flotantes y prevención de revancha. No hay drops, ID, byes ni diferencias de habilidad. Corte por puntos, OMW%, GW%, OGW% y azar residual. Se suponen marcadores 50% 2-0 / 50% 2-1 y empate 1-1 para desempates. Top8 a eliminación directa por seeds y WR decisivo; no se ajusta la elección de play/draw. Los empates suizos usan el modelo de cada cruce.</p><p>Se verificaron sedes físicas, fecha primaria, tablas completas de primera ronda y rondas suizas en Melee. Los IDs/0-0, byes, concesiones marcadas y victorias por tiempo sin dos juegos ganados se excluyen del ajuste. Algunos empates pactados después de jugar no son distinguibles. Para MTGO solo se usan resultados individuales de brackets públicos y etiquetas del índice MetaMage, nunca récords globales para inferir parejas. Se excluyeron cinco páginas sin payload primario de partidas.</p><p>Incertidumbre: los porcentajes son condicionales al field y a la matriz modelados, no predicciones regionales calibradas. El IC de próximos rivales usa 100 lotes independientes de 50.000 torneos y contempla agrupación dentro de un torneo; no incluye error de datos ni sesgos de selección. Las etiquetas pueden reunir variantes; Other/Unknown no son mazos concretos. Las asociaciones entre rivales y clasificación no establecen causalidad.</p><p>Fuentes normalizadas: <code>data/processed/v2/</code>. Manifiesto, hashes, conteos finales y agregados: <code>results/tournament/</code>. Reproducir: <code>python src/build_model_v2.py</code>, <code>python src/run_tournament.py</code>, <code>python src/report_tournament.py</code>. Tiempo de corrida: ${(DATA.completion.wall_seconds/60).toFixed(1)} minutos.</p>`;
+ $('method').innerHTML=`<p><b>Una única corrida final:</b> ${num(DATA.completion.tournaments)} torneos, ${num(DATA.completion.player_paths)} participaciones, ${num(DATA.completion.swiss_matches)} matches suizos y ${num(DATA.completion.playoff_matches)} matches de eliminatorias. No se reserva una plaza para ningún arquetipo: se sortean las 110 por multinomial usando presencia presencial.</p><p>Todos los jugadores se registran antes de cada ronda por W/L/D exacto, rival, resultado y resultado final del torneo. Se distinguen cinco desenlaces: fuera del top8, eliminado en cuartos, eliminado en semifinales, subcampeón y campeón. Top8/top4/top2 agrupan los desenlaces correspondientes. No son corridas independientes por mazo ni por filtro.</p><p>Suizo aproximado: orden por puntos y azar dentro del grupo, flotantes y prevención de revancha. No hay drops, ID, byes ni diferencias de habilidad. Corte por puntos, OMW%, GW%, OGW% y azar residual. Se suponen marcadores 50% 2-0 / 50% 2-1 y empate 1-1 para desempates. Top8 a eliminación directa por seeds y WR decisivo; no se ajusta la elección de play/draw. Los empates suizos usan el modelo de cada cruce.</p><p>Se verificaron sedes físicas, fecha primaria, tablas completas de primera ronda y rondas suizas en Melee. Los IDs/0-0, byes, concesiones marcadas y victorias por tiempo sin dos juegos ganados se excluyen del ajuste. Algunos empates pactados después de jugar no son distinguibles. Para MTGO solo se usan resultados individuales de brackets públicos y etiquetas del índice MetaMage, nunca récords globales para inferir parejas. Se excluyeron cinco páginas sin payload primario de partidas.</p><p>Incertidumbre: los porcentajes son condicionales al field y a la matriz modelados, no predicciones regionales calibradas. El IC de próximos rivales usa 100 lotes independientes de 50.000 torneos y contempla agrupación dentro de un torneo; no incluye error de datos ni sesgos de selección. Las etiquetas pueden reunir variantes. Se excluyen las participaciones sin arquetipo identificable y sus matches; el field simulado se limita a las plazas identificadas, renormalizadas al 100%. Las asociaciones entre rivales y clasificación no establecen causalidad.</p><p>Fuentes normalizadas: <code>data/processed/classified/</code>. Manifiesto, hashes, conteos finales y agregados: <code>results/classified/</code>. Reproducir: <code>python src/classify_decks.py --fetch</code>, <code>python src/classify_online.py</code>, <code>python src/build_model_classified.py</code>, <code>python src/run_classified.py</code>, <code>python src/replay_classified.py</code>, <code>python src/report_tournament.py</code>. Tiempo de corrida: ${(DATA.completion.wall_seconds/60).toFixed(1)} minutos.</p>`;
 }
 function downloadCSV(all){
  const d=current.deck,ss=all?states.map((_,i)=>i):[current.state],rows=[['arquetipo','proxima_ronda','victorias','derrotas','empates','rival','probabilidad','encuentros','casos_del_record','torneos_con_record','meta_presencial','gano_sim','empato_sim','perdio_sim','luego_top8']];
  for(const s of ss){const [r,w,l,dr]=states[s],den=sum(DATA.exposure[d][s].map(sum));for(const j of active){const n=sum(DATA.exposure[d][s][j]),o=DATA.outcomes[d][s][j];rows.push([names[d],r+1,w,l,dr,names[j],den?n/den:'',n,den,DATA.state_tournaments[d][s],DATA.counts[j]/sum(DATA.counts),o[2],o[1],o[0],DATA.exposure[d][s][j][1]]);}}
  const csv=rows.map(row=>row.map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(',')).join('\n'),url=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'}));const a=document.createElement('a');a.href=url;a.download='recorridos_'+names[d].replace(/ /g,'_')+(all?'_todos':'_consulta')+'.csv';a.click();URL.revokeObjectURL(url);
 }
-function updateURL(){if(!current)return;const s=states[+$('record').value];if(!s)return;const q=new URLSearchParams({deck:names[current.deck],group:$('group').value,outcome:$('outcome').value,r:String(s[0]+1),w:String(s[1]),d:String(s[3])});try{history.replaceState(null,'','?'+q.toString());}catch{}}
+function updateURL(push=false){if(!current)return;const s=states[+$('record').value];if(!s)return;const q=new URLSearchParams({view:currentView,deck:names[current.deck],group:$('group').value,outcome:$('outcome').value,hr:String(+$('historyRound').value+1),r:String(s[0]+1),w:String(s[1]),d:String(s[3])});const next='?'+q.toString();try{if(push&&next!==location.search)history.pushState(null,'',next);else history.replaceState(null,'',next);}catch{}syncViewLinks();}
+
 $('round').innerHTML=[1,2,3,4,5,6,7].map(r=>`<option value="${r}">Ronda ${r}</option>`).join('');$('historyRound').innerHTML=[0,1,2,3,4,5,6].map(r=>`<option value="${r}">Ronda ${r+1}</option>`).join('');
-const q=new URLSearchParams(location.search),di=names.indexOf(q.get('deck')||'Spy Combo');$('deck').value=String(active.includes(di)?di:names.indexOf('Spy Combo'));if(groups[q.get('group')])$('group').value=q.get('group');if(['all','0','1','2'].includes(q.get('outcome')))$('outcome').value=q.get('outcome');const qr=Number(q.get('r')||1);$('round').value=String(qr>=1&&qr<=7?qr:1);fillRecords(stateId(+$('round').value-1,Number(q.get('w')||0),Number(q.get('d')||0)));
-$('deck').addEventListener('change',renderJourney);$('group').addEventListener('change',renderJourney);$('outcome').addEventListener('change',renderJourney);$('historyRound').addEventListener('change',renderHistory);$('round').addEventListener('change',()=>{fillRecords(-1);renderState();});$('record').addEventListener('change',renderState);$('download').addEventListener('click',()=>downloadCSV(false));$('downloadAll').addEventListener('click',()=>downloadCSV(true));$('share').addEventListener('click',async()=>{updateURL();try{await navigator.clipboard.writeText(location.href);$('shareStatus').textContent='Link copiado';}catch{$('shareStatus').textContent=location.href;}});document.querySelectorAll('details').forEach(el=>el.addEventListener('toggle',()=>{if(el.open)window.dispatchEvent(new Event('resize'));}));renderJourney();
+function restoreControlsFromURL(){
+ const q=new URLSearchParams(location.search),di=names.indexOf(q.get('deck')||'Spy Combo');
+ $('deck').value=String(active.includes(di)?di:names.indexOf('Spy Combo'));
+ $('group').value=Object.hasOwn(groups,q.get('group'))?q.get('group'):'top8';
+ $('outcome').value=['all','0','1','2'].includes(q.get('outcome'))?q.get('outcome'):'all';
+ const hr=Number(q.get('hr')||1);$('historyRound').value=String(hr>=1&&hr<=7?hr-1:0);
+ const qr=Number(q.get('r')||1);$('round').value=String(qr>=1&&qr<=7?qr:1);
+ fillRecords(stateId(+$('round').value-1,Number(q.get('w')||0),Number(q.get('d')||0)));
+ currentView=Object.hasOwn(VIEW_LABELS,q.get('view'))?q.get('view'):'resumen';
+}
+restoreControlsFromURL();
+
+$('deck').addEventListener('change',renderJourney);$('group').addEventListener('change',renderJourney);$('outcome').addEventListener('change',renderJourney);$('historyRound').addEventListener('change',()=>{renderHistory();updateURL();});$('round').addEventListener('change',()=>{fillRecords(-1);renderState();});$('record').addEventListener('change',renderState);$('download').addEventListener('click',()=>downloadCSV(false));$('downloadAll').addEventListener('click',()=>downloadCSV(true));$('share').addEventListener('click',async()=>{updateURL();try{await navigator.clipboard.writeText(location.href);$('shareStatus').textContent='Link copiado';}catch{$('shareStatus').textContent=location.href;}});document.querySelectorAll('details').forEach(el=>el.addEventListener('toggle',()=>{if(el.open)window.dispatchEvent(new Event('resize'));}));renderJourney();activateView(currentView,{push:false,scroll:false});
+
+document.querySelectorAll('[data-view-target]').forEach(link=>link.addEventListener('click',event=>{
+ if(event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+ event.preventDefault();activateView(link.dataset.viewTarget);
+}));
+document.querySelector('.analysis-nav').addEventListener('keydown',event=>{
+ const tabs=[...document.querySelectorAll('.analysis-nav [role=tab]')],i=tabs.indexOf(document.activeElement);if(i<0)return;
+ let next;if(['ArrowDown','ArrowRight'].includes(event.key))next=(i+1)%tabs.length;else if(['ArrowUp','ArrowLeft'].includes(event.key))next=(i+tabs.length-1)%tabs.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=tabs.length-1;else return;
+ event.preventDefault();activateView(tabs[next].dataset.viewTarget,{scroll:false});tabs[next].focus();
+});
+window.addEventListener('popstate',()=>{restoreControlsFromURL();renderJourney();activateView(currentView,{push:false,scroll:false});});
+window.addEventListener('resize',()=>{document.querySelector('.analysis-nav').setAttribute('aria-orientation',matchMedia('(max-width:760px)').matches?'horizontal':'vertical');});

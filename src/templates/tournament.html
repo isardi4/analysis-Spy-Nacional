@@ -1,0 +1,89 @@
+<header class="site-header">
+  <div><div class="eyebrow">PAUPER · TORNEO SIMULADO</div><h1>Explorador del torneo</h1><p class="site-subtitle">5 millones de torneos · 110 jugadores · suizo y top 8</p><p class="subtle">COVERAGE</p></div>
+  <label class="deck-picker">Arquetipo que quiero analizar<select id="deck">OPTIONS</select></label>
+</header>
+<div class="analysis-layout">
+  <nav class="analysis-nav" role="tablist" aria-label="Análisis del torneo" aria-orientation="vertical">
+    <span class="nav-heading">Resultados</span>
+    <a id="tab-resumen" role="tab" href="?view=resumen" data-view-target="resumen" aria-controls="panel-resumen" aria-selected="true">Resumen</a>
+    <a id="tab-recorridos" role="tab" href="?view=recorridos" data-view-target="recorridos" aria-controls="panel-recorridos" aria-selected="false" tabindex="-1">Rivales por ronda</a>
+    <a id="tab-ronda" role="tab" href="?view=ronda" data-view-target="ronda" aria-controls="panel-ronda" aria-selected="false" tabindex="-1">Detalle de una ronda</a>
+    <a id="tab-secuencias" role="tab" href="?view=secuencias" data-view-target="secuencias" aria-controls="panel-secuencias" aria-selected="false" tabindex="-1">Secuencias W/L/D</a>
+    <a id="tab-ejemplos" role="tab" href="?view=ejemplos" data-view-target="ejemplos" aria-controls="panel-ejemplos" aria-selected="false" tabindex="-1">Recorridos completos</a>
+    <a id="tab-eliminatorias" role="tab" href="?view=eliminatorias" data-view-target="eliminatorias" aria-controls="panel-eliminatorias" aria-selected="false" tabindex="-1">Eliminatorias</a>
+    <a id="tab-record" role="tab" href="?view=record" data-view-target="record" aria-controls="panel-record" aria-selected="false" tabindex="-1">Mesas por récord</a>
+    <span class="nav-heading">Datos del modelo</span>
+    <a id="tab-presencia" role="tab" href="?view=presencia" data-view-target="presencia" aria-controls="panel-presencia" aria-selected="false" tabindex="-1">Presencia de mazos</a>
+    <a id="tab-winrates" role="tab" href="?view=winrates" data-view-target="winrates" aria-controls="panel-winrates" aria-selected="false" tabindex="-1">Matriz de win rates</a>
+    <a id="tab-fuentes" role="tab" href="?view=fuentes" data-view-target="fuentes" aria-controls="panel-fuentes" aria-selected="false" tabindex="-1">Fuentes y método</a>
+  </nav>
+  <div class="analysis-content">
+    <p class="nav-mobile-hint">Deslizá las pestañas para ver todos los análisis.</p>
+    <div id="journeyFilters" class="analysis-filters" hidden>
+      <div class="filter-row"><label>Qué jugadores quiero seguir<select id="group"><option value="top8">Llegaron al top 8</option><option value="miss">Quedaron fuera del top 8</option><option value="all">Todos los jugadores</option><option value="top4">Llegaron al top 4</option><option value="top2">Llegaron a la final</option><option value="champ">Ganaron el torneo</option></select></label><label id="outcomeFilter">Qué encuentros del suizo<select id="outcome"><option value="all">Todos</option><option value="2">Ganados</option><option value="0">Perdidos</option><option value="1">Empatados</option></select></label></div>
+      <p id="headline" class="filter-context" aria-live="polite"></p><div id="groupInfo" class="notice"></div>
+    </div>
+
+    <section id="panel-resumen" data-panel="resumen" role="tabpanel" aria-labelledby="tab-resumen">
+      <h2>Probabilidades del mazo</h2><p>¿Con qué frecuencia clasifica y hasta dónde llega?</p><div id="odds" class="cards"></div>
+      <p class="subtle">Probabilidades por participación del arquetipo sobre todos sus jugadores en la misma corrida. Los filtros de las otras vistas no cambian estos porcentajes.</p>
+      <div class="analysis-links">
+        <a href="?view=recorridos" data-view-target="recorridos"><strong>Seguir sus rivales</strong><span>Ver qué enfrentaron los clasificados y los eliminados en cada ronda.</span></a>
+        <a href="?view=record" data-view-target="record"><strong>Explorar una mesa</strong><span>Consultar los posibles rivales según ronda y récord exacto.</span></a>
+        <a href="?view=eliminatorias" data-view-target="eliminatorias"><strong>Del top 8 al título</strong><span>Examinar cuartos, semifinales y finales.</span></a>
+      </div>
+      <p class="notice">Estimaciones de un modelo de suizo con supuestos explícitos, sin ID ni drops. Presencia de papel y win rates presenciales + online. Consultá las muestras y limitaciones en <a href="?view=fuentes" data-view-target="fuentes">Fuentes y método</a>.</p>
+    </section>
+
+    <section id="panel-recorridos" data-panel="recorridos" role="tabpanel" aria-labelledby="tab-recorridos" hidden>
+      <h2>Rivales por ronda</h2><p>¿Qué arquetipos encontraron durante el suizo los jugadores del grupo elegido?</p>
+      <section id="journeyHeat" class="journey-matrix" aria-label="Rivales por ronda"></section>
+      <div class="grid"><div id="journeyResults" class="chart"></div><div id="journeyComparison" class="chart"></div></div>
+      <p class="subtle">La matriz y la comparación respetan el filtro de encuentros. El gráfico de resultados muestra todas las victorias, derrotas y empates del grupo. Estos recorridos se agrupan por cómo terminó cada jugador; no equivalen a una mesa con un récord específico.</p>
+    </section>
+
+    <section id="panel-ronda" data-panel="ronda" role="tabpanel" aria-labelledby="tab-ronda" hidden>
+      <h2>Detalle de una ronda</h2><p>¿Contra quién jugaron y qué ganaron, perdieron o empataron en una ronda del suizo?</p>
+      <label>Ronda del recorrido<select id="historyRound"></select></label><div id="roundNarrative" class="notice"></div><div id="historyTable"></div>
+    </section>
+
+    <section id="panel-secuencias" data-panel="secuencias" role="tabpanel" aria-labelledby="tab-secuencias" hidden>
+      <h2>Secuencias de resultados</h2><p>¿Qué combinaciones de victorias, derrotas y empates fueron más frecuentes en el grupo elegido?</p><div id="journeyPaths"></div>
+      <p class="subtle">W = victoria, L = derrota, D = empate. Cada secuencia corresponde al suizo completo de un jugador del grupo, sin las eliminatorias.</p>
+    </section>
+
+    <section id="panel-ejemplos" data-panel="ejemplos" role="tabpanel" aria-labelledby="tab-ejemplos" hidden>
+      <h2>Recorridos completos</h2><p>Seguí a un jugador de la simulación desde su primer rival hasta su eliminación o título.</p><div id="examplePaths"></div>
+      <p class="subtle">Son ejemplos reales del comienzo de la misma corrida, reconstruidos sin cambiar sus números aleatorios. Son ilustrativos y no representan los caminos más frecuentes. Cada celda muestra rival y resultado del jugador: W, L o D.</p>
+    </section>
+
+    <section id="panel-eliminatorias" data-panel="eliminatorias" role="tabpanel" aria-labelledby="tab-eliminatorias" hidden>
+      <h2>Del top 8 al campeonato</h2><p>¿A quién enfrentaron los clasificados y qué probabilidad tuvieron de ganar cada eliminatoria?</p>
+      <div class="grid"><div id="playoffRivals" class="chart"></div><div id="playoffConversion" class="chart"></div></div><div id="playoffTable"></div>
+      <p class="subtle">Incluye a todos los clasificados del arquetipo. Bracket por seeds: 1–8 / 4–5 / 2–7 / 3–6; ganadores adyacentes avanzan. No hay empates y se usa el WR decisivo, sin ajustar play/draw por seed.</p>
+    </section>
+
+    <section id="panel-record" data-panel="record" role="tabpanel" aria-labelledby="tab-record" hidden>
+      <h2>Mesas por récord exacto</h2><p>¿Con quién puedo jugar si llego a esta ronda con este récord?</p>
+      <div class="filter-row"><label>Próxima ronda<select id="round"></select></label><label>Récord antes de jugar<select id="record"></select></label></div>
+      <p id="query" class="answer"></p><div id="stateCards" class="cards"></div><div class="grid"><div id="rivals" class="chart"></div><div id="enrichment" class="chart"></div></div><div id="ranking"></div>
+      <div class="exports"><button id="download">Descargar consulta CSV</button><button id="downloadAll">Descargar todos los récords CSV</button><button id="share">Copiar link a esta consulta</button><span id="shareStatus" aria-live="polite"></span></div>
+      <div id="heat" class="chart"></div><div id="oppRecords"></div>
+      <p class="subtle">Usa a todos los jugadores que llegaron al W/L/D exacto, independientemente de si después clasificaron. No se fusionan estados que sumen los mismos puntos. Un torneo puede aportar varios jugadores del mismo mazo. El IC Monte Carlo agrupa por lotes y no incluye incertidumbre de la matriz.</p>
+    </section>
+
+    <section id="panel-presencia" data-panel="presencia" role="tabpanel" aria-labelledby="tab-presencia" hidden>
+      <h2>Presencia de mazos</h2><p>¿Qué composición inicial se usó para sortear los 110 participantes de cada torneo?</p><div id="meta"></div>
+      <p class="subtle">COVERAGE Muestra de 13 eventos presenciales del 20/09 al 19/10/2026. Los datos online no intervienen en estos porcentajes. Las participaciones no son personas únicas.</p>
+    </section>
+
+    <section id="panel-winrates" data-panel="winrates" role="tabpanel" aria-labelledby="tab-winrates" hidden>
+      <h2>Matriz de win rates</h2><div id="matrixInfo"></div><div id="wrMatrix" class="chart"></div><div id="matchups"></div>
+    </section>
+
+    <section id="panel-fuentes" data-panel="fuentes" role="tabpanel" aria-labelledby="tab-fuentes" hidden>
+      <h2>Fuentes y método</h2><p>Datos utilizados, reglas del torneo, supuestos y límites de las estimaciones.</p><div id="method"></div>SOURCES
+    </section>
+  </div>
+</div>
+<footer>Corrida compartida de 5 millones de torneos · corte 19/10/2026. La selección del mazo y los filtros se conservan al cambiar de análisis. Cada pestaña tiene un enlace directo.</footer>

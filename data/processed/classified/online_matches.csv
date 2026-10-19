@@ -1,0 +1,146 @@
+match_id,date,a,b,raw_a,raw_b,wa,wb,gd,source,scope
+mtgo:12856591:0:0,2026-10-17,Dimir Faeries,Red Madness,Dimir Faeries,Red Madness,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-1712856591,published_top8_playoffs
+mtgo:12856591:0:1,2026-10-17,Monster Tron,Monster Tron,Tron,Tron,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-1712856591,published_top8_playoffs
+mtgo:12856591:0:2,2026-10-17,Ponza,Red Madness,Gruul Ponza,Red Madness,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-1712856591,published_top8_playoffs
+mtgo:12856591:0:3,2026-10-17,Red Madness,Spy Combo,Red Madness,Spy Combo,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-1712856591,published_top8_playoffs
+mtgo:12856591:1:0,2026-10-17,Dimir Faeries,Ponza,Dimir Faeries,Gruul Ponza,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-1712856591,published_top8_playoffs
+mtgo:12856591:1:1,2026-10-17,Red Madness,Monster Tron,Red Madness,Tron,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-1712856591,published_top8_playoffs
+mtgo:12856591:2:0,2026-10-17,Dimir Faeries,Red Madness,Dimir Faeries,Red Madness,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-1712856591,published_top8_playoffs
+mtgo:12856583:0:0,2026-10-16,Dimir Faeries,White Aggro,Dimir Faeries,White Aggro,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-1612856583,published_top8_playoffs
+mtgo:12856583:0:1,2026-10-16,Grixis Affinity,Ruby Storm,Grixis Affinity,Ruby Storm,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-1612856583,published_top8_playoffs
+mtgo:12856583:0:2,2026-10-16,Red Madness,Dimir Faeries,Red Madness,Dimir Faeries,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-1612856583,published_top8_playoffs
+mtgo:12856583:0:3,2026-10-16,Mono Blue Terror,Dimir Control,Mono Blue Terror,Grixis Control,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-1612856583,published_top8_playoffs
+mtgo:12856583:1:0,2026-10-16,Dimir Faeries,Mono Blue Terror,Dimir Faeries,Mono Blue Terror,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-1612856583,published_top8_playoffs
+mtgo:12856583:1:1,2026-10-16,Grixis Affinity,Red Madness,Grixis Affinity,Red Madness,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-1612856583,published_top8_playoffs
+mtgo:12856583:2:0,2026-10-16,Grixis Affinity,Dimir Faeries,Grixis Affinity,Dimir Faeries,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-1612856583,published_top8_playoffs
+mtgo:12856578:0:0,2026-10-15,Dimir Faeries,Gardens,Dimir Faeries,Golgari Garden,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-1512856578,published_top8_playoffs
+mtgo:12856578:0:1,2026-10-15,Mono Blue Terror,Dimir Control,Mono Blue Terror,Grixis Control,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-1512856578,published_top8_playoffs
+mtgo:12856578:0:2,2026-10-15,Dimir Control,Mono Blue Terror,Grixis Control,Mono Blue Terror,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-1512856578,published_top8_playoffs
+mtgo:12856578:0:3,2026-10-15,Mono Blue Terror,White Aggro,Mono Blue Terror,White Aggro,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-1512856578,published_top8_playoffs
+mtgo:12856578:1:0,2026-10-15,Dimir Faeries,Mono Blue Terror,Dimir Faeries,Mono Blue Terror,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-1512856578,published_top8_playoffs
+mtgo:12856578:1:1,2026-10-15,Dimir Control,Mono Blue Terror,Grixis Control,Mono Blue Terror,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-1512856578,published_top8_playoffs
+mtgo:12856578:2:0,2026-10-15,Dimir Faeries,Dimir Control,Dimir Faeries,Grixis Control,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-1512856578,published_top8_playoffs
+mtgo:12856164:0:0,2026-10-10,Synthesizer,Dimir Control,Mardu Synthesizer,Grixis Control,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0812856164,published_top8_playoffs
+mtgo:12856164:0:1,2026-10-10,Mono Blue Terror,Ruby Storm,Mono Blue Terror,Ruby Storm,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0812856164,published_top8_playoffs
+mtgo:12856164:0:2,2026-10-10,Grixis Affinity,Red Madness,Grixis Affinity,Red Madness,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0812856164,published_top8_playoffs
+mtgo:12856164:0:3,2026-10-10,Dimir Faeries,Grixis Affinity,Dimir Faeries,Grixis Affinity,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0812856164,published_top8_playoffs
+mtgo:12856164:1:0,2026-10-10,Dimir Faeries,Grixis Affinity,Dimir Faeries,Grixis Affinity,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0812856164,published_top8_playoffs
+mtgo:12856164:1:1,2026-10-10,Mono Blue Terror,Synthesizer,Mono Blue Terror,Mardu Synthesizer,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0812856164,published_top8_playoffs
+mtgo:12856164:2:0,2026-10-10,Dimir Faeries,Mono Blue Terror,Dimir Faeries,Mono Blue Terror,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0812856164,published_top8_playoffs
+mtgo:12856148:0:0,2026-10-08,Mono Blue Terror,Red Madness,Mono Blue Terror,Red Madness,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0812856148,published_top8_playoffs
+mtgo:12856148:0:1,2026-10-08,Dimir Faeries,Gardens,Dimir Faeries,Golgari Garden,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0812856148,published_top8_playoffs
+mtgo:12856148:0:2,2026-10-08,Mono Blue Terror,Jund Wildfire,Mono Blue Terror,Jund Midrange,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0812856148,published_top8_playoffs
+mtgo:12856148:0:3,2026-10-08,Dimir Affinity,Red Rally,Dimir Affinity,Red Rally,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0812856148,published_top8_playoffs
+mtgo:12856148:1:0,2026-10-08,Dimir Affinity,Dimir Faeries,Dimir Affinity,Dimir Faeries,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0812856148,published_top8_playoffs
+mtgo:12856148:1:1,2026-10-08,Mono Blue Terror,Mono Blue Terror,Mono Blue Terror,Mono Blue Terror,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0812856148,published_top8_playoffs
+mtgo:12856148:2:0,2026-10-08,Dimir Affinity,Mono Blue Terror,Dimir Affinity,Mono Blue Terror,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0812856148,published_top8_playoffs
+mtgo:12855517:0:0,2026-10-07,Dimir Faeries,Dimir Affinity,Dimir Faeries,Dimir Affinity,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0712855517,published_top8_playoffs
+mtgo:12855517:0:2,2026-10-07,Red Madness,Red Rally,Red Madness,Red Rally,1,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0712855517,published_top8_playoffs
+mtgo:12855517:0:3,2026-10-07,White Aggro,Elves,White Aggro,Elves,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0712855517,published_top8_playoffs
+mtgo:12855517:1:0,2026-10-07,White Aggro,Gardens,White Aggro,Golgari Garden,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0712855517,published_top8_playoffs
+mtgo:12855517:1:1,2026-10-07,Red Madness,Dimir Faeries,Red Madness,Dimir Faeries,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0712855517,published_top8_playoffs
+mtgo:12855517:2:0,2026-10-07,Red Madness,White Aggro,Red Madness,White Aggro,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0712855517,published_top8_playoffs
+mtgo:12855509:0:0,2026-10-06,Turbo Fog,Dimir Control,Turbo Fog,Grixis Control,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0612855509,published_top8_playoffs
+mtgo:12855509:0:1,2026-10-06,White Aggro,Red Madness,White Aggro,Red Madness,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0612855509,published_top8_playoffs
+mtgo:12855509:0:2,2026-10-06,Ruby Storm,Dimir Affinity,Ruby Storm,Dimir Affinity,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0612855509,published_top8_playoffs
+mtgo:12855509:0:3,2026-10-06,Mono Blue Terror,Red Madness,Mono Blue Terror,Red Madness,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0612855509,published_top8_playoffs
+mtgo:12855509:1:0,2026-10-06,Turbo Fog,Ruby Storm,Turbo Fog,Ruby Storm,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0612855509,published_top8_playoffs
+mtgo:12855509:1:1,2026-10-06,Mono Blue Terror,White Aggro,Mono Blue Terror,White Aggro,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0612855509,published_top8_playoffs
+mtgo:12855509:2:0,2026-10-06,Turbo Fog,Mono Blue Terror,Turbo Fog,Mono Blue Terror,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0612855509,published_top8_playoffs
+mtgo:12855502:0:0,2026-10-05,White Aggro,Esper Affinity,White Aggro,Esper Affinity,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0512855502,published_top8_playoffs
+mtgo:12855502:0:1,2026-10-05,Mono Blue Terror,Turbo Fog,Mono Blue Terror,Turbo Fog,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0512855502,published_top8_playoffs
+mtgo:12855502:0:2,2026-10-05,Jund Wildfire,Dimir Control,Jund Midrange,Grixis Control,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0512855502,published_top8_playoffs
+mtgo:12855502:0:3,2026-10-05,Aura Bogles,Red Madness,Aura Bogles,Red Madness,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0512855502,published_top8_playoffs
+mtgo:12855502:1:0,2026-10-05,Mono Blue Terror,Jund Wildfire,Mono Blue Terror,Jund Midrange,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0512855502,published_top8_playoffs
+mtgo:12855502:1:1,2026-10-05,Aura Bogles,White Aggro,Aura Bogles,White Aggro,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0512855502,published_top8_playoffs
+mtgo:12855502:2:0,2026-10-05,Mono Blue Terror,Aura Bogles,Mono Blue Terror,Aura Bogles,1,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0512855502,published_top8_playoffs
+mtgo:12855493:0:0,2026-10-04,Gardens,Red Madness,Golgari Garden,Red Madness,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0412855493,published_top8_playoffs
+mtgo:12855493:0:1,2026-10-04,Grixis Affinity,Gardens,Grixis Affinity,Golgari Garden,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0412855493,published_top8_playoffs
+mtgo:12855493:0:2,2026-10-04,Dimir Control,Dimir Faeries,Grixis Control,Dimir Faeries,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0412855493,published_top8_playoffs
+mtgo:12855493:0:3,2026-10-04,Mono Blue Terror,Red Madness,Mono Blue Terror,Red Madness,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0412855493,published_top8_playoffs
+mtgo:12855493:1:0,2026-10-04,Dimir Control,Gardens,Grixis Control,Golgari Garden,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0412855493,published_top8_playoffs
+mtgo:12855493:1:1,2026-10-04,Mono Blue Terror,Grixis Affinity,Mono Blue Terror,Grixis Affinity,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0412855493,published_top8_playoffs
+mtgo:12855493:2:0,2026-10-04,Mono Blue Terror,Dimir Control,Mono Blue Terror,Grixis Control,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0412855493,published_top8_playoffs
+mtgo:12855476:0:0,2026-10-03,Aura Bogles,Ephemerate,Aura Bogles,Jeskai Ephemerate,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0312855476,published_top8_playoffs
+mtgo:12855476:0:1,2026-10-03,Mono Blue Terror,Mono Blue Terror,Mono Blue Terror,Izzet Terror,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0312855476,published_top8_playoffs
+mtgo:12855476:0:2,2026-10-03,Red Madness,Esper Affinity,Red Madness,Esper Affinity,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0312855476,published_top8_playoffs
+mtgo:12855476:0:3,2026-10-03,Dimir Control,Dimir Faeries,Grixis Control,Dimir Faeries,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0312855476,published_top8_playoffs
+mtgo:12855476:1:0,2026-10-03,Mono Blue Terror,Red Madness,Mono Blue Terror,Red Madness,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0312855476,published_top8_playoffs
+mtgo:12855476:1:1,2026-10-03,Dimir Control,Aura Bogles,Grixis Control,Aura Bogles,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0312855476,published_top8_playoffs
+mtgo:12855476:2:0,2026-10-03,Mono Blue Terror,Dimir Control,Mono Blue Terror,Grixis Control,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-10-0312855476,published_top8_playoffs
+mtgo:12855468:0:0,2026-10-02,Esper Affinity,Jund Wildfire,Esper Midrange,Jund Midrange,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0212855468,published_top8_playoffs
+mtgo:12855468:0:1,2026-10-02,Mono Blue Terror,Grixis Affinity,Mono Blue Terror,Grixis Affinity,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0212855468,published_top8_playoffs
+mtgo:12855468:0:2,2026-10-02,White Aggro,Dimir Faeries,White Aggro,Dimir Faeries,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0212855468,published_top8_playoffs
+mtgo:12855468:0:3,2026-10-02,Dimir Control,Dimir Faeries,Grixis Control,Dimir Faeries,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0212855468,published_top8_playoffs
+mtgo:12855468:1:0,2026-10-02,Mono Blue Terror,White Aggro,Mono Blue Terror,White Aggro,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0212855468,published_top8_playoffs
+mtgo:12855468:1:1,2026-10-02,Dimir Control,Esper Affinity,Grixis Control,Esper Midrange,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0212855468,published_top8_playoffs
+mtgo:12855468:2:0,2026-10-02,Mono Blue Terror,Dimir Control,Mono Blue Terror,Grixis Control,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0212855468,published_top8_playoffs
+mtgo:12855463:0:0,2026-10-01,Dimir Faeries,Grixis Affinity,Dimir Faeries,Grixis Affinity,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0112855463,published_top8_playoffs
+mtgo:12855463:0:1,2026-10-01,Dimir Control,Dimir Faeries,Grixis Control,Dimir Faeries,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0112855463,published_top8_playoffs
+mtgo:12855463:0:2,2026-10-01,Red Madness,Spy Combo,Red Madness,Spy Combo,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0112855463,published_top8_playoffs
+mtgo:12855463:0:3,2026-10-01,Mono Blue Terror,Dimir Control,Mono Blue Terror,Dimir Control,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0112855463,published_top8_playoffs
+mtgo:12855463:1:0,2026-10-01,Red Madness,Mono Blue Terror,Red Madness,Mono Blue Terror,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0112855463,published_top8_playoffs
+mtgo:12855463:1:1,2026-10-01,Dimir Faeries,Dimir Control,Dimir Faeries,Grixis Control,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0112855463,published_top8_playoffs
+mtgo:12855463:2:0,2026-10-01,Dimir Faeries,Red Madness,Dimir Faeries,Red Madness,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-10-0112855463,published_top8_playoffs
+mtgo:12855452:0:0,2026-09-30,Red Madness,Dimir Control,Red Madness,Grixis Control,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-3012855452,published_top8_playoffs
+mtgo:12855452:0:1,2026-09-30,Elves,Esper Affinity,Elves,Esper Affinity,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-3012855452,published_top8_playoffs
+mtgo:12855452:0:2,2026-09-30,Elves,Spy Combo,Elves,Spy Combo,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-3012855452,published_top8_playoffs
+mtgo:12855452:0:3,2026-09-30,Red Madness,Aura Bogles,Red Madness,Aura Bogles,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-3012855452,published_top8_playoffs
+mtgo:12855452:1:0,2026-09-30,Red Madness,Elves,Red Madness,Elves,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-3012855452,published_top8_playoffs
+mtgo:12855452:1:1,2026-09-30,Red Madness,Elves,Red Madness,Elves,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-3012855452,published_top8_playoffs
+mtgo:12855452:2:0,2026-09-30,Red Madness,Red Madness,Red Madness,Red Madness,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-3012855452,published_top8_playoffs
+mtgo:12854951:0:0,2026-09-29,Esper Affinity,Gardens,Esper Midrange,Golgari Midrange,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2912854951,published_top8_playoffs
+mtgo:12854951:0:2,2026-09-29,Monster Tron,Red Madness,Tron,Red Madness,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2912854951,published_top8_playoffs
+mtgo:12854951:0:3,2026-09-29,Dimir Control,Dimir Faeries,Grixis Control,Dimir Faeries,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2912854951,published_top8_playoffs
+mtgo:12854951:1:0,2026-09-29,Dimir Control,Red Madness,Grixis Control,Red Madness,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2912854951,published_top8_playoffs
+mtgo:12854951:1:1,2026-09-29,Esper Affinity,Monster Tron,Esper Midrange,Tron,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2912854951,published_top8_playoffs
+mtgo:12854951:2:0,2026-09-29,Esper Affinity,Dimir Control,Esper Midrange,Grixis Control,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2912854951,published_top8_playoffs
+mtgo:12854944:0:0,2026-09-28,Dimir Faeries,Aura Bogles,Dimir Faeries,Aura Bogles,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2812854944,published_top8_playoffs
+mtgo:12854944:0:1,2026-09-28,Elves,Monster Tron,Elves,Tron,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2812854944,published_top8_playoffs
+mtgo:12854944:0:2,2026-09-28,Aura Bogles,Esper Affinity,Aura Bogles,Esper Affinity,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2812854944,published_top8_playoffs
+mtgo:12854944:0:3,2026-09-28,Grixis Affinity,Ephemerate,Grixis Affinity,Jeskai Ephemerate,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2812854944,published_top8_playoffs
+mtgo:12854944:1:0,2026-09-28,Grixis Affinity,Dimir Faeries,Grixis Affinity,Dimir Faeries,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2812854944,published_top8_playoffs
+mtgo:12854944:1:1,2026-09-28,Elves,Aura Bogles,Elves,Aura Bogles,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2812854944,published_top8_playoffs
+mtgo:12854944:2:0,2026-09-28,Grixis Affinity,Elves,Grixis Affinity,Elves,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2812854944,published_top8_playoffs
+mtgo:12854935:0:0,2026-09-27,Esper Affinity,Red Madness,Esper Midrange,Red Madness,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2712854935,published_top8_playoffs
+mtgo:12854935:0:1,2026-09-27,Synthesizer,Monster Tron,Wubr Synthesizer,Tron,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2712854935,published_top8_playoffs
+mtgo:12854935:0:2,2026-09-27,Mono Blue Terror,Gardens,Mono Blue Terror,Golgari Garden,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2712854935,published_top8_playoffs
+mtgo:12854935:0:3,2026-09-27,Red Madness,Spy Combo,Red Madness,Spy Combo,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2712854935,published_top8_playoffs
+mtgo:12854935:1:0,2026-09-27,Synthesizer,Esper Affinity,Wubr Synthesizer,Esper Midrange,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2712854935,published_top8_playoffs
+mtgo:12854935:1:1,2026-09-27,Mono Blue Terror,Red Madness,Mono Blue Terror,Red Madness,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2712854935,published_top8_playoffs
+mtgo:12854935:2:0,2026-09-27,Mono Blue Terror,Synthesizer,Mono Blue Terror,Wubr Synthesizer,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2712854935,published_top8_playoffs
+mtgo:12854918:0:0,2026-09-26,Monster Tron,Ephemerate,Tron,Jeskai Ephemerate,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2612854918,published_top8_playoffs
+mtgo:12854918:0:1,2026-09-26,Aura Bogles,Ruby Storm,Aura Bogles,Ruby Storm,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2612854918,published_top8_playoffs
+mtgo:12854918:0:2,2026-09-26,White Aggro,Aura Bogles,White Aggro,Aura Bogles,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2612854918,published_top8_playoffs
+mtgo:12854918:0:3,2026-09-26,Elves,Mono Blue Terror,Elves,Mono Blue Terror,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2612854918,published_top8_playoffs
+mtgo:12854918:1:0,2026-09-26,Elves,Aura Bogles,Elves,Aura Bogles,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2612854918,published_top8_playoffs
+mtgo:12854918:1:1,2026-09-26,White Aggro,Monster Tron,White Aggro,Tron,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2612854918,published_top8_playoffs
+mtgo:12854918:2:0,2026-09-26,White Aggro,Elves,White Aggro,Elves,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2612854918,published_top8_playoffs
+mtgo:12854910:0:0,2026-09-25,Dimir Faeries,Pestilence,Dimir Faeries,Esper Pestilence,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2512854910,published_top8_playoffs
+mtgo:12854910:0:1,2026-09-25,Esper Affinity,Burn,Esper Affinity,Burn,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2512854910,published_top8_playoffs
+mtgo:12854910:0:2,2026-09-25,Elves,Aura Bogles,Elves,Aura Bogles,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2512854910,published_top8_playoffs
+mtgo:12854910:0:3,2026-09-25,Red Madness,Red Equipment Aggro,Red Madness,Mono Red Burn,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2512854910,published_top8_playoffs
+mtgo:12854910:1:0,2026-09-25,Esper Affinity,Red Madness,Esper Affinity,Red Madness,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2512854910,published_top8_playoffs
+mtgo:12854910:1:1,2026-09-25,Dimir Faeries,Elves,Dimir Faeries,Elves,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2512854910,published_top8_playoffs
+mtgo:12854910:2:0,2026-09-25,Esper Affinity,Dimir Faeries,Esper Affinity,Dimir Faeries,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2512854910,published_top8_playoffs
+mtgo:12854905:0:0,2026-09-24,Esper Affinity,Red Rally,Esper Affinity,Red Rally,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2412854905,published_top8_playoffs
+mtgo:12854905:0:1,2026-09-24,Elves,Elves,Elves,Elves,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2412854905,published_top8_playoffs
+mtgo:12854905:0:2,2026-09-24,Elves,Four Color Affinity,Elves,Wubr Affinity,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2412854905,published_top8_playoffs
+mtgo:12854905:0:3,2026-09-24,Red Madness,Grixis Affinity,Red Madness,Grixis Affinity,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2412854905,published_top8_playoffs
+mtgo:12854905:1:0,2026-09-24,Red Madness,Elves,Red Madness,Elves,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2412854905,published_top8_playoffs
+mtgo:12854905:1:1,2026-09-24,Elves,Esper Affinity,Elves,Esper Affinity,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2412854905,published_top8_playoffs
+mtgo:12854905:2:0,2026-09-24,Red Madness,Elves,Red Madness,Elves,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2412854905,published_top8_playoffs
+mtgo:12854534:0:0,2026-09-22,Esper Affinity,White Aggro,Esper Affinity,White Aggro,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2212854534,published_top8_playoffs
+mtgo:12854534:0:1,2026-09-22,Synthesizer,Red Madness,Mardu Synthesizer,Red Madness,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2212854534,published_top8_playoffs
+mtgo:12854534:0:2,2026-09-22,Gruul Ramp,Elves,Gruul Ramp,Elves,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2212854534,published_top8_playoffs
+mtgo:12854534:0:3,2026-09-22,Red Madness,Elves,Red Madness,Elves,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2212854534,published_top8_playoffs
+mtgo:12854534:1:0,2026-09-22,Synthesizer,Red Madness,Mardu Synthesizer,Red Madness,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2212854534,published_top8_playoffs
+mtgo:12854534:1:1,2026-09-22,Esper Affinity,Gruul Ramp,Esper Affinity,Gruul Ramp,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2212854534,published_top8_playoffs
+mtgo:12854534:2:0,2026-09-22,Synthesizer,Esper Affinity,Mardu Synthesizer,Esper Affinity,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-16-2026-09-2212854534,published_top8_playoffs
+mtgo:12854527:0:0,2026-09-21,Grixis Affinity,Monster Tron,Grixis Affinity,Tron,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2112854527,published_top8_playoffs
+mtgo:12854527:0:1,2026-09-21,Dimir Faeries,Hot Dogs,Dimir Faeries,Mono Red Kiln Fiend,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2112854527,published_top8_playoffs
+mtgo:12854527:0:2,2026-09-21,Esper Affinity,Ponza,Esper Affinity,Gruul Ponza,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2112854527,published_top8_playoffs
+mtgo:12854527:0:3,2026-09-21,Aura Bogles,Mono Blue Terror,Aura Bogles,Mono Blue Terror,2,1,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2112854527,published_top8_playoffs
+mtgo:12854527:1:0,2026-09-21,Aura Bogles,Esper Affinity,Aura Bogles,Esper Affinity,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2112854527,published_top8_playoffs
+mtgo:12854527:1:1,2026-09-21,Grixis Affinity,Dimir Faeries,Grixis Affinity,Dimir Faeries,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2112854527,published_top8_playoffs
+mtgo:12854527:2:0,2026-09-21,Aura Bogles,Grixis Affinity,Aura Bogles,Grixis Affinity,2,0,0,https://www.mtgo.com/decklist/pauper-challenge-32-2026-09-2112854527,published_top8_playoffs

@@ -15,13 +15,13 @@ El filtro de recorrido condiciona al resultado futuro para estudiar historias. L
 
 Corte fijo: 19/10/2026. Ventana de 30 días inclusivos: 20/09–19/10/2026.
 
-- Presencia: **671 plazas de 13 eventos presenciales**. Se usan las tablas completas de primera ronda de Melee y sedes verificadas. Un piloto puede aportar participaciones en distintos eventos; no son personas únicas.
-- Matriz: **1.703 matches de suizo presencial + 145 matches de eliminatorias publicadas de 21 eventos MTGO**. Se descubrieron 26 eventos online; cinco páginas no publicaron el payload primario requerido. Algunos cruces tampoco pudieron etiquetarse. El listado conserva inclusiones y exclusiones.
+- Presencia: **650 de 671 plazas de 13 eventos presenciales** (96,9% de cobertura). Se recuperaron 103 participaciones de las categorías agregadas mediante firmas de cartas en las listas públicas; se omiten 19 Unknown y 2 listas ambiguas. Se renormaliza sobre las 650 plazas identificadas: el torneo simulado representa ese subconjunto del meta. Se usan las tablas completas de primera ronda de Melee y sedes verificadas. Un piloto puede aportar participaciones en distintos eventos; no son personas únicas.
+- Matriz: **1.643 matches de suizo presencial + 145 matches de eliminatorias publicadas de 21 eventos MTGO**. Se descubrieron 26 eventos online; cinco páginas no publicaron el payload primario requerido. Se conservan los 145 cruces ya auditados; se recuperan sus etiquetas ambiguas desde las cartas de las listas primarias. Los 60 matches presenciales que involucran plazas excluidas no alimentan la matriz. El listado conserva inclusiones y exclusiones.
 - Los resultados online **no entran en la presencia**. Se usan parejas con resultado individual, no el récord global para inventar cruces. La muestra online está seleccionada por top8: aporta observaciones, pero no garantiza menor sesgo ni representa todo el suizo online.
 - Peso 1 por match observado de cualquiera de las dos fuentes. WR decisivo `(W + 5)/(W + L + 10)`. Empates por separado con prior de media 5%. Los cruces de poca muestra dependen del prior.
 - Se conservan las etiquetas auditadas y se separan errores inequívocos de colores, por ejemplo Mardu Metalcraft de White Aggro. Las etiquetas no sustituyen una revisión de todas las listas de cartas.
 
-Datos actuales en `data/processed/v2/`, fuentes online en `data/raw/online_v2/`. Los CSV de papel previamente auditados y las tablas primarias de rondas permiten reconstruir la nueva matriz.
+Datos actuales y auditorías de clasificación en `data/processed/classified/`, fuentes online en `data/raw/online_v2/`. Los CSV de papel previamente auditados y las tablas primarias de rondas permiten reconstruir la nueva matriz.
 
 ## Torneo
 
@@ -45,24 +45,29 @@ Para mostrar recorridos completos con identidad de cada rival, se reprodujeron l
 
 ## Resultado de Spy en esta corrida
 
-Spy tuvo **24.589.114 participaciones**:
+Spy tuvo **26,221,309 participaciones** en la corrida compartida.
 
 | Logro | Cantidad | Probabilidad por participación |
 |---|---:|---:|
-| Top8 | 2.378.237 | 9,67% |
-| Top4 | 1.256.702 | 5,11% |
-| Top2 | 662.755 | 2,70% |
-| Campeón | 349.644 | 1,42% |
+| Top8 | 2,464,780 | 9.40% |
+| Top4 | 1,297,713 | 4.95% |
+| Top2 | 682,062 | 2.60% |
+| Campeón | 358,945 | 1.37% |
 
-Estos valores corresponden al nuevo field natural y matriz mixta. No deben mezclarse con las corridas anteriores con una plaza forzada y solo datos de papel.
+
+Las probabilidades corresponden al field identificado, con presencia renormalizada.
+El agregado anterior con categorías sin identificar se conserva en
+`results/tournament/` para trazabilidad y no alimenta la página actual.
 
 ## Reproducir
 
 ```sh
 .venv/bin/python src/collect_online_v2.py
-.venv/bin/python src/build_model_v2.py
-.venv/bin/python src/run_tournament.py --workers 4
-.venv/bin/python src/replay_examples.py
+.venv/bin/python src/classify_decks.py --fetch
+.venv/bin/python src/classify_online.py
+.venv/bin/python src/build_model_classified.py
+.venv/bin/python src/run_classified.py --workers 4
+.venv/bin/python src/replay_classified.py
 .venv/bin/python src/report_tournament.py
 .venv/bin/python -m unittest discover -s tests -v
 ```

@@ -1,0 +1,8 @@
+{
+  "batch": 0,
+  "seed": 20261019,
+  "replayed_prefix_tournaments": 5000,
+  "max_examples_per_archetype_finish": 4,
+  "verified": "All 11 aggregate arrays exactly match the main engine on this prefix; no additional RNG draws.",
+  "engine_sha256": "103c706a049b209a50ede1cabb74e8848e6821e1fde726d5b80abe5a796b8d2a"
+}

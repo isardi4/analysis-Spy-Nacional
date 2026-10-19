@@ -10,3 +10,5 @@ results/v2/batches/
 results/tournament/batches/
 # Superseded record-only prototype, before playoff scope was added.
 results/v2/
+
+results/classified/batches/
