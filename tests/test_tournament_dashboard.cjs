@@ -5,6 +5,29 @@ const {chromium}=require('/private/tmp/spy-browser/node_modules/playwright-core'
  const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];let remote=0;
  page.on('pageerror',e=>errors.push(String(e)));await page.route('http://**/*',r=>{remote++;return r.abort()});await page.route('https://**/*',r=>{remote++;return r.abort()});
  await page.goto('file://'+path.resolve('reports/metagame_explorer.html'));await page.waitForFunction(()=>!!document.querySelector('#odds strong'));
+ if(process.argv.includes('--matrix-only')){
+  let checked=0;
+  for(const g of ['all','miss','top8','top4','top2','champ'])for(const o of ['all','0','1','2']){
+   await page.selectOption('#group',g);await page.selectOption('#outcome',o);
+   const result=await page.evaluate(()=>{
+    const rows=[...document.querySelectorAll('#journeyHeat tbody tr')];
+    return {columns:document.querySelectorAll('#journeyHeat thead th').length,rows:rows.length,
+     complete:rows.every(row=>row.querySelectorAll('td').length===7),
+     conserved:Array.from({length:7},(_,r)=>rows.reduce((n,row)=>n+Number(row.querySelectorAll('td')[r].dataset.count),0)===sum(current.jd[r])).every(Boolean),
+     readable:rows.every(row=>[...row.querySelectorAll('td')].every(cell=>cell.textContent.includes('%')||cell.textContent==='—'))};
+   });
+   if(result.columns!==8||!result.complete||!result.conserved||!result.readable)throw Error('Invalid matrix '+g+' '+o+' '+JSON.stringify(result));checked++;
+  }
+  await page.selectOption('#group','top8');await page.selectOption('#outcome','all');
+  await page.locator('#journeyHeat').screenshot({path:'reports/journey_matrix_desktop.png'});
+  await page.setViewportSize({width:390,height:844});await page.waitForTimeout(400);
+  const mobile=await page.evaluate(()=>{const sc=document.querySelector('.matrix-scroll');const first=sc.querySelector('tbody th');const before=first.getBoundingClientRect().left;sc.scrollLeft=280;return {pageOverflow:document.documentElement.scrollWidth>innerWidth+2,scrollable:sc.scrollWidth>sc.clientWidth,scrolled:sc.scrollLeft>0,sticky:Math.abs(first.getBoundingClientRect().left-before)<2};});
+  if(mobile.pageOverflow||!mobile.scrollable||!mobile.scrolled||!mobile.sticky)throw Error('Mobile matrix issue '+JSON.stringify(mobile));
+  await page.evaluate(()=>{document.querySelector('.matrix-scroll').scrollLeft=0});
+  await page.locator('#journeyHeat').screenshot({path:'reports/journey_matrix_mobile.png'});
+  if(errors.length||remote)throw Error(errors.join('\n')+' requests '+remote);
+  console.log(JSON.stringify({matrixFiltersChecked:checked,mobile,errors,remote},null,2));return;
+ }
  const options=await page.locator('#deck option').evaluateAll(os=>os.map(o=>o.value));let checked=0;
  for(const v of options){
   await page.selectOption('#deck',v);

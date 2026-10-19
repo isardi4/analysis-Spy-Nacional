@@ -11,6 +11,24 @@ function rate(n,d){return d?n/d:NaN;}
 function stateId(r,w,d){return states.findIndex(s=>s[0]===r&&s[1]===w&&s[3]===d);}
 let current=null;
 function journeyData(deck,finishSet,results){return Array.from({length:7},(_,r)=>Array.from({length:K},(_,j)=>sum(results.map(o=>sum(finishSet.map(g=>DATA.journey[deck][r][j][o][g]))))));}
+function renderJourneyMatrix(jd,top,rden,group){
+ const shown=new Set(top),remaining=active.filter(j=>!shown.has(j));
+ const peak=Math.max(0,...top.flatMap(j=>jd.map((row,r)=>rden[r]?row[j]/rden[r]:0)));
+ const headers='<thead><tr><th scope="col">Arquetipo rival</th>'+rden.map((n,r)=>`<th scope="col">Ronda ${r+1}<small>${num(n)}<br>encuentros</small></th>`).join('')+'</tr></thead>';
+ function cells(counts,label,rest=false){return counts.map((n,r)=>{
+  const p=rate(n,rden[r]),intensity=peak&&Number.isFinite(p)?Math.min(1,p/peak):0;
+  const background=rest?'#edf0ea':!rden[r]?'#f3f3ee':`rgba(23,107,128,${(.05+.85*intensity).toFixed(3)})`;
+  const alpha=.05+.85*intensity;
+  const luminance=[255+(23-255)*alpha,253+(107-253)*alpha,248+(128-248)*alpha].map(c=>{const v=c/255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4;}).reduce((n,v,i)=>n+v*[.2126,.7152,.0722][i],0);
+  const color=!rest&&rden[r]&&1.05/(luminance+.05)>=4.5?'#ffffff':'#000000';
+  const detail=`${label}, ronda ${r+1}: ${pct(p)}; ${num(n)} de ${num(rden[r])} encuentros`;
+  return `<td data-round="${r+1}" data-count="${n}" data-denominator="${rden[r]}" tabindex="0" title="${esc(detail)}" aria-label="${esc(detail)}" style="background:${background};color:${color}">${pct(p)}</td>`;
+ }).join('');}
+ let body=top.map(j=>`<tr><th scope="row">${esc(names[j])}</th>${cells(jd.map(row=>row[j]),names[j])}</tr>`).join('');
+ if(remaining.length){const counts=jd.map(row=>sum(remaining.map(j=>row[j])));body+=`<tr class="matrix-rest"><th scope="row">Resto de rivales<small>${remaining.length} arquetipos agrupados</small></th>${cells(counts,'Resto de rivales',true)}</tr>`;}
+ const total='<tfoot><tr><th scope="row">Total de la ronda</th>'+rden.map(n=>`<td>${n?'100%':'—'}</td>`).join('')+'</tr></tfoot>';
+ $('journeyHeat').innerHTML=`<div class="matrix-heading"><h3>Rivales por ronda · ${esc(groupLabels[group])}</h3><p>Leé una columna para ver a quiénes enfrentaron en esa ronda. Leé una fila para seguir cómo cambia un rival durante el torneo.</p></div><div class="matrix-legend"><span>Menor frecuencia</span><span class="matrix-gradient" aria-hidden="true"></span><span>Mayor frecuencia</span><span class="matrix-percent">Cada celda muestra el % de encuentros de su columna.</span></div><p class="matrix-mobile-hint">Deslizá la matriz hacia los costados para ver las siete rondas.</p><div class="matrix-scroll" tabindex="0" role="region" aria-label="Matriz de arquetipos rivales por ronda"><table aria-label="Porcentaje de rivales en cada ronda"><caption>Los ${top.length} rivales más frecuentes del recorrido; los demás se agrupan al final. Cada columna suma 100%, salvo redondeo. El denominador respeta los filtros de jugadores y de resultado.</caption>${headers}<tbody>${body}</tbody>${total}</table></div>`;
+}
 function renderJourney(){
  const deck=+$('deck').value,group=$('group').value,gs=groups[group],outcome=$('outcome').value,os=outcome==='all'?[0,1,2]:[+outcome],t=DATA.totals[deck];
  const gp=group==='all'?t[0]:group==='miss'?t[0]-t[1]:t[{top8:1,top4:4,top2:5,champ:6}[group]];
@@ -21,7 +39,7 @@ function renderJourney(){
  const jd=journeyData(deck,gs,os),all=journeyData(deck,[0,1,2,3,4],os),rest=all.map((row,r)=>row.map((x,j)=>x-jd[r][j]));
  current.jd=jd;
  const frequencies=names.map((_,j)=>sum(jd.map(a=>a[j]))),top=sortIndices(frequencies).filter(j=>frequencies[j]>0).slice(0,16),rden=jd.map(sum);
- plot('journeyHeat',[{type:'heatmap',x:[1,2,3,4,5,6,7],y:top.map(j=>names[j]),z:top.map(j=>jd.map((row,r)=>rden[r]?100*row[j]/rden[r]:null)),customdata:top.map(j=>jd.map(row=>row[j])),colorscale:[[0,'#eef4f2'],[0.5,'#83b5bc'],[1,'#176b80']],colorbar:{title:{text:'%'}},hovertemplate:'Ronda %{x} · %{y}<br>%{z:.2f}% · %{customdata} encuentros<extra></extra>'}],`Rivales por ronda · ${groupLabels[group]}`,{height:520,margin:{l:160,r:30,t:70,b:50},yaxis:{autorange:'reversed'}});
+ renderJourneyMatrix(jd,top,rden,group);
  const outcomeCounts=[0,1,2].map(o=>Array.from({length:7},(_,r)=>sum(names.map((_,j)=>sum(gs.map(g=>DATA.journey[deck][r][j][o][g]))))));
  plot('journeyResults',[2,0,1].map(o=>({type:'bar',name:['Derrotas','Empates','Victorias'][o],x:[1,2,3,4,5,6,7],y:outcomeCounts[o].map(n=>gp?100*n/gp:0),customdata:outcomeCounts[o],marker:{color:['#bd705a','#d4ad61','#176b80'][o]},hovertemplate:'R%{x}: %{y:.2f}% · %{customdata}<extra>%{fullData.name}</extra>'})), 'Qué ganaron y perdieron · por ronda',{barmode:'stack',yaxis:{title:{text:'% del grupo'}},xaxis:{title:{text:'Ronda suiza'}}});
  const restFreq=names.map((_,j)=>sum(rest.map(row=>row[j]))),dn=sum(frequencies),dr=sum(restFreq),compare=top.slice(0,10);
