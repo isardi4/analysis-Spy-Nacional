@@ -60,3 +60,9 @@ y desplazamiento móvil. `--tabs-only` verifica las diez vistas y su navegación
 La pestaña única es «Win rates». Los enlaces anteriores `?view=winrates` se
 redirigen a `comparador`, conservando sus filtros. Se eliminó la matriz modelada
 duplicada; se conserva el selector de observado/ajustado en la única matriz.
+
+La diagonal de la matriz se muestra en gris suave y con «—», sin porcentaje
+ni récord. Los conteos de mirrors siguen disponibles en el comparador.
+
+La escala del fondo es rojo–blanco–verde: 50% blanco; la intensidad aumenta
+continuamente con la distancia a 50%. Los mirrors conservan el gris neutro.
