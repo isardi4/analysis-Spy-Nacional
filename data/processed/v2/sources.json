@@ -1,0 +1,15 @@
+{
+  "paper_start": "2026-09-20",
+  "end": "2026-10-19",
+  "paper_events": 13,
+  "paper_entries": 671,
+  "paper_matches": 1703,
+  "online_events": 21,
+  "online_discovered_events": 26,
+  "online_matches": 145,
+  "online_scope": "published_top8_playoffs_only",
+  "online_weight": 1,
+  "prior_decisive_matches": 10,
+  "draw_prior_mean": 0.05,
+  "source_note": "Online playoff sample is selected; larger N does not guarantee less bias. No online deck frequency enters presence."
+}

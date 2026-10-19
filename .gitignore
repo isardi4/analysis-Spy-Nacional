@@ -3,3 +3,10 @@ __pycache__/
 *.nbc
 *.nbi
 .DS_Store
+
+# Local resumable batches; aggregate and manifests are published.
+results/v2/batches/
+
+results/tournament/batches/
+# Superseded record-only prototype, before playoff scope was added.
+results/v2/

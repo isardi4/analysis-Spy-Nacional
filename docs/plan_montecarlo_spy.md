@@ -1,5 +1,7 @@
 # Plan: caminos de Spy al top 8 en un torneo presencial
 
+**Actualización final:** el objetivo se amplió a una única corrida compartida de 5M torneos para todos los arquetipos, con suizo y eliminatorias. La presencia sigue siendo presencial; la matriz incorpora cruces online verificables. El método vigente está en [torneo compartido](torneo_compartido.md). La página ahora prioriza recorridos por resultado final, victorias/derrotas por rival y probabilidades de top8/top4/top2/campeón; la consulta por récord exacto es una herramienta adicional. El resto de este documento conserva el diseño inicial para trazabilidad.
+
 Estado: implementado. Se completó el estudio original de Spy de 5M torneos y se amplió a un explorador general por arquetipo. Ver [método y resultados](metodo_y_resultados.md) y [README](../README.md).
 
 Actualización de alcance: usar exclusivamente datos presenciales de los últimos **30/45 días**, con corte 19/10/2026. La ventana principal es 20/09–19/10 y la comparación 05/09–19/10, ambas inclusivas. Las ventanas de 90/180 días de la propuesta inicial quedan descartadas. Los 5M del estudio original y las corridas adicionales del selector se reportan separados.

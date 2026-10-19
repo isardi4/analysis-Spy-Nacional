@@ -1,39 +1,36 @@
-# Metajuego presencial y caminos al top 8
+# Recorridos de Pauper: un torneo compartido
 
-**Página publicada:** https://isardi4.github.io/analysis-Spy-Nacional/
+**[Abrir la página publicada](https://isardi4.github.io/analysis-Spy-Nacional/)** · [Abrir informe local](reports/metagame_explorer.html)
 
-Informe para elegir un arquetipo de Pauper y explorar sus resultados en un torneo simulado de 110 plazas, 7 rondas suizas y corte a top 8.
+Una corrida final de **5.000.000 de torneos**, con 110 jugadores, siete rondas suizas y eliminatorias de top8 hasta un campeón. Todos los arquetipos se registran dentro de esos mismos torneos, sin forzar un asiento.
 
-- **[Abrir explorador de mazos](reports/metagame_explorer.html)**: selector de mazo, ventana 30/45 días, ronda y puntos; gráficos y tablas funcionan sin conexión.
-- **[Análisis detallado de Spy](reports/spy_montecarlo.html)**: estudio original de 5 millones de torneos, incluyendo field natural e incertidumbre de parámetros.
-- **[Plan y decisiones](docs/plan_montecarlo_spy.md)**.
-- **[Método y resultados](docs/metodo_y_resultados.md)**.
+El explorador muestra:
 
-Los datos tienen corte fijo al **19/10/2026**. Ventanas inclusivas: **20/09–19/10** y **05/09–19/10**. No se usan resultados online ni eventos anteriores a esas ventanas. Son participaciones en eventos, no personas únicas. La región y las listas de 75 no están calibradas al torneo del usuario.
+- Recorridos de los que hicieron top8, top4, final, campeones y quienes quedaron afuera.
+- Rivales por ronda y qué cruces ganaron, perdieron o empataron.
+- Probabilidades por participación de top8, top4, top2 y campeón.
+- Ejemplos completos con cada rival y resultado del jugador, incluidos playoffs.
+- Consulta de próximo rival por ronda y récord W/L/D exacto.
+- Presencia, matriz de win rate, conteos por fuente y CSV descargables.
 
-## Ejecutar con las fuentes ya descargadas
+La presencia usa **671 plazas de 13 eventos presenciales** de los últimos 30 días, con corte 19/10/2026. El win rate suma **1.703 matches de papel y 145 cruces de top8 publicados de MTGO**. El online no determina la presencia; su muestra de eliminatorias tiene sesgo de selección. El suizo es aproximado, sin ID, drops o habilidad; los desempates y playoffs tienen supuestos explícitos en el informe.
+
+## Método y reproducción
+
+Ver [método del torneo compartido](docs/torneo_compartido.md).
 
 ```sh
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
-.venv/bin/python src/build_model.py
+.venv/bin/python src/build_model_v2.py
+.venv/bin/python src/run_tournament.py --workers 4
+.venv/bin/python src/replay_examples.py
+.venv/bin/python src/report_tournament.py
 .venv/bin/python -m unittest discover -s tests -v
-.venv/bin/python src/run.py --workers 4
-.venv/bin/python src/report.py
-.venv/bin/python src/run_general.py
-.venv/bin/python src/report_general.py
 ```
 
-Abrir el HTML en un navegador. No hace falta servidor ni conexión a internet.
+Los originales ya están descargados. Para volver a consultar MTGO: `src/collect_online_v2.py`. Modelo y auditoría: `data/processed/v2/`. Corrida final: `results/tournament/`. El runner reanuda lotes locales; rechaza entradas distintas de las del manifiesto. Para cambiar el metajuego, conservar esta corrida y elegir otro directorio de resultados. El HTML funciona offline; GitHub Actions publica `reports/` en Pages al pushear a `main`.
 
-`run.py` y `run_general.py` reanudan lotes existentes. Rechazan entradas distintas de las del manifiesto: para otro metajuego o motor, usar otro directorio de resultados, conservando el anterior. El estudio original suma exactamente 5M; el selector general tiene una corrida adicional con su propio manifiesto, conteos y semillas. No se mezclan escenarios para estimar una única probabilidad.
+## Antecedentes
 
-## Datos y auditoría
-
-`data/processed/events_accepted.csv` contiene fechas primarias y sedes de los eventos usados. `entries.csv` incluye el field completo de primera ronda, con `Unknown` si falta lista. `matches.csv` contiene cruces suizos deduplicados; `archetype_aliases.csv` documenta normalización. Los archivos `model30.npz` y `model45.npz` son matrices recíprocas regularizadas, no win rates puros observados.
-
-La búsqueda comenzó en MetaMage con filtro de papel; los participantes y resultados se reconstruyen desde las tablas públicas de Melee. La colección exploratoria puede reproducirse con `collect.py`, `prepare.py`, `audit_primary.py` y `collect_rounds.py`; el acceso a esas páginas requiere internet. Las fechas de descubrimiento están fijadas en el código para esta entrega, no se actualizan silenciosamente al día de ejecución.
-
-## Límites
-
-El suizo es una aproximación, con flotantes y prevención de revancha. No simula ID, drops, byes ni habilidad. El desempate usa puntajes y resultados de juegos simulados; los marcadores BO3 se suponen. Las celdas poco observadas se acercan a 50% mediante un prior, y las categorías agregadas pueden ocultar diferencias entre listas. Un intervalo Monte Carlo estrecho no equivale a una predicción precisa del torneo real.
+[Plan inicial](docs/plan_montecarlo_spy.md), [método anterior](docs/metodo_y_resultados.md), [estudio anterior de Spy](reports/spy_montecarlo.html) y [selector anterior](reports/legacy_explorer.html). Se conservan para trazabilidad: **no alimentan la nueva página principal**. Las corridas anteriores tenían presupuestos repartidos entre escenarios y asientos forzados; la actual utiliza cinco millones de torneos compartidos y naturales, con eliminatorias.

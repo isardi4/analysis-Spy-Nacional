@@ -1,0 +1,11 @@
+{
+  "tournaments": 5000000,
+  "player_paths": 550000000,
+  "swiss_matches": 1925000000,
+  "playoff_matches": 35000000,
+  "directed_encounters": 3850000000,
+  "qualified": 40000000,
+  "champions": 5000000,
+  "wall_seconds": 212.37976717948914,
+  "batches": 100
+}
