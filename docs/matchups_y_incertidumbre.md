@@ -3,6 +3,9 @@
 La pestaña `?view=comparador` agrega una tabla de 20×20 con los 20 arquetipos
 con mayor presencia presencial, estable al cambiar el mazo del encabezado.
 Cada celda enfrenta la fila contra la columna y abre ese par en un comparador.
+Muestra el porcentaje grande y el récord W–L observado desde la perspectiva de
+la fila, con nombres horizontales. «Ampliar matriz» ocupa casi toda la pantalla;
+se puede reducir con el botón o Escape. Los encabezados permanecen fijos.
 El comparador admite todos los arquetipos identificados del modelo, incluso
 los que solo tienen observaciones online. El par y el modo de la matriz se
 conservan en los parámetros `a`, `b` y `wrmode` del enlace y al navegar.

@@ -6,11 +6,11 @@ function renderMatchupMatrix(){
  const body=matchupOrder.map(a=>'<tr><th scope="row">'+esc(names[a])+'</th>'+matchupOrder.map(b=>{
   const s=matchupStats(DATA.W,DATA.D,a,b),p=s.mirror?.5:mode==='model'?s.adjusted:s.observed;
   const label=s.mirror?'50%':p===null?'—':(100*p).toLocaleString('es-AR',{maximumFractionDigits:1,minimumFractionDigits:1})+'%';
-  const detail=`${names[a]} contra ${names[b]}. ${s.mirror?'Espejo: 50% por simetría':`WR observado: ${s.observed===null?'sin muestra':pct(s.observed)}. IC 95% Wilson: ${intervalLabel(s.ci)}. Ajustado: ${pct(s.adjusted)}`}. ${s.n} matches decisivos, ${s.d} empates. Abrir comparador.`;
+  const detail=`${names[a]} contra ${names[b]}. ${s.mirror?'Espejo: 50% por simetría':`WR observado: ${s.observed===null?'sin muestra':pct(s.observed)}. IC 95% Wilson: ${intervalLabel(s.ci)}. Ajustado: ${pct(s.adjusted)}`}. ${s.mirror?'Espejo':s.w+' victorias, '+s.l+' derrotas'}. ${s.n} matches decisivos, ${s.d} empates. Abrir comparador.`;
   const bg=s.mirror||p===.5?'#e8ece8':p===null?'#f0f0ed':p>.5?`rgba(23,107,128,${(.08+.5*Math.abs(p-.5)*2).toFixed(3)})`:`rgba(189,112,90,${(.08+.5*Math.abs(p-.5)*2).toFixed(3)})`;
-  return `<td style="background:${bg}"><button type="button" data-matchup-a="${a}" data-matchup-b="${b}" title="${esc(detail)}" aria-label="${esc(detail)}">${label}<small>n=${num(s.n)}</small></button></td>`;
+  return `<td style="background:${bg}"><button type="button" data-matchup-a="${a}" data-matchup-b="${b}" title="${esc(detail)}" aria-label="${esc(detail)}"><span class="matchup-percent">${label}</span><span class="matchup-record">${s.mirror?'Espejo':num(s.w)+'–'+num(s.l)+' W–L'}</span><small>${s.mirror?num(s.n)+' matches decisivos':'n='+num(s.n)}</small></button></td>`;
  }).join('')+'</tr>').join('');
- $('matchupMatrix').innerHTML='<div class="matchup-scroll" role="region" aria-label="Matriz 20 por 20 de win rates" tabindex="0"><table><caption>20 arquetipos con mayor presencia presencial. Cada celda es el WR del mazo de la fila contra el de la columna. n cuenta matches decisivos observados, sin empates; cada espejo cuenta una sola vez. El color representa el WR, no su confianza. Seleccioná una celda para ver sus datos.</caption>'+head+'<tbody>'+body+'</tbody></table></div>';
+ $('matchupMatrix').innerHTML='<div class="matchup-matrix-toolbar"><strong>% y W–L · fila contra columna</strong><button type="button" data-matchup-expand aria-pressed="'+$('matchupMatrix').classList.contains('matchup-wide')+'">'+($('matchupMatrix').classList.contains('matchup-wide')?'Reducir matriz':'Ampliar matriz')+'</button></div><div class="matchup-scroll" role="region" aria-label="Matriz 20 por 20 de win rates" tabindex="0"><table><caption>20 arquetipos con mayor presencia presencial. Cada celda es el WR del mazo de la fila contra el de la columna. Debajo del % aparece el récord W–L desde la perspectiva de la fila; los empates quedan en el detalle. n cuenta matches decisivos observados. Los espejos muestran el total de matches decisivos, contado una sola vez. El color representa el WR, no su confianza. Seleccioná una celda para ver sus datos.</caption>'+head+'<tbody>'+body+'</tbody></table></div>';
 }
 function renderMatchupPair(){
  const a=+$('matchupA').value,b=+$('matchupB').value,s=matchupStats(DATA.W,DATA.D,a,b);
@@ -33,5 +33,11 @@ function initMatchupExplorer(){
  $('matchupA').addEventListener('change',renderMatchupPair);$('matchupB').addEventListener('change',renderMatchupPair);
  $('matchupSwap').addEventListener('click',()=>{const a=$('matchupA').value;$('matchupA').value=$('matchupB').value;$('matchupB').value=a;renderMatchupPair();});
  $('matchupMode').addEventListener('change',()=>{renderMatchupMatrix();updateURL();});
- $('matchupMatrix').addEventListener('click',e=>{const cell=e.target.closest('[data-matchup-a]');if(!cell)return;$('matchupA').value=cell.dataset.matchupA;$('matchupB').value=cell.dataset.matchupB;renderMatchupPair();$('matchupHeading').scrollIntoView({block:'start',behavior:'auto'});});
+ $('matchupMatrix').addEventListener('click',e=>{if(e.target.closest('[data-matchup-expand]')){const open=$('matchupMatrix').classList.toggle('matchup-wide');document.body.classList.toggle('matchup-matrix-open',open);const button=$('matchupMatrix').querySelector('[data-matchup-expand]');button.textContent=open?'Reducir matriz':'Ampliar matriz';button.setAttribute('aria-pressed',String(open));return;}const cell=e.target.closest('[data-matchup-a]');if(!cell)return;closeMatchupMatrix();$('matchupA').value=cell.dataset.matchupA;$('matchupB').value=cell.dataset.matchupB;renderMatchupPair();$('matchupHeading').scrollIntoView({block:'start',behavior:'auto'});});
 }
+
+function closeMatchupMatrix(){
+ $('matchupMatrix').classList.remove('matchup-wide');document.body.classList.remove('matchup-matrix-open');
+ const button=$('matchupMatrix').querySelector('[data-matchup-expand]');if(button){button.textContent='Ampliar matriz';button.setAttribute('aria-pressed','false');}
+}
+document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMatchupMatrix();});

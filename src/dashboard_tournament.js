@@ -32,6 +32,7 @@ function resizeActiveCharts(){
 
 function activateView(view,{push=true,scroll=true}={}){
  currentView=Object.hasOwn(VIEW_LABELS,view)?view:'resumen';
+ if(currentView!=='comparador')closeMatchupMatrix();
  document.querySelectorAll('[data-panel]').forEach(panel=>{panel.hidden=panel.dataset.panel!==currentView;});
  document.querySelectorAll('.analysis-nav [role=tab]').forEach(link=>{const selected=link.dataset.viewTarget===currentView;link.setAttribute('aria-selected',String(selected));link.tabIndex=selected?0:-1;});
  $('journeyFilters').hidden=!['recorridos','ronda','secuencias','ejemplos'].includes(currentView);

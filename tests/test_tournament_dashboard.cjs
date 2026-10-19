@@ -28,11 +28,16 @@ const {chromium}=require('/private/tmp/spy-browser/node_modules/playwright-core'
     const a=+button.dataset.matchupA,b=+button.dataset.matchupB,w=DATA.W[0][a][b]+DATA.W[1][a][b],l=DATA.W[0][b][a]+DATA.W[1][b][a],n=a===b?w:w+l;
     const value=a===b?'50%':!n?'—':(100*w/n).toLocaleString('es-AR',{maximumFractionDigits:1,minimumFractionDigits:1})+'%';
     if(!n&&a!==b)empty++;
-    if(button.childNodes[0].textContent!==value||button.querySelector('small').textContent!=='n='+num(n))return {ok:false,a,b};
+    if(button.querySelector('.matchup-percent').textContent!==value||button.querySelector('.matchup-record').textContent!==(a===b?'Espejo':num(w)+'–'+num(l)+' W–L'))return {ok:false,a,b};
    }
    return {ok:true,empty};
   });
   if(!matrix.ok)throw Error('Invalid 20x20 matrix '+JSON.stringify(matrix));
+  await page.click('[data-matchup-expand]');
+  if(!await page.locator('#matchupMatrix').evaluate(el=>el.classList.contains('matchup-wide')&&el.getBoundingClientRect().width>innerWidth-80))throw Error('Matrix did not expand');
+  await page.screenshot({path:'reports/matchup_matrix_large.png',fullPage:false});
+  await page.keyboard.press('Escape');
+  if(await page.evaluate(()=>document.body.classList.contains('matchup-matrix-open')))throw Error('Matrix did not close');
   const options=await page.locator('#matchupA option').count();if(options!==await page.evaluate(()=>K))throw Error('Missing comparator archetypes');
   await page.selectOption('#matchupA',String(await page.evaluate(()=>names.indexOf('Spy Combo'))));
   await page.selectOption('#matchupB',String(await page.evaluate(()=>names.indexOf('Red Madness'))));
