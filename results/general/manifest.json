@@ -1,0 +1,1310 @@
+{
+  "scenarios": [
+    {
+      "id": "d0_w30",
+      "deck": 0,
+      "name": "Altar Tron",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d0_w45",
+      "deck": 0,
+      "name": "Altar Tron",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d1_w30",
+      "deck": 1,
+      "name": "Aura Bogles",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d1_w45",
+      "deck": 1,
+      "name": "Aura Bogles",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d1_plus_36",
+      "deck": 1,
+      "name": "Aura Bogles",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d1_plus_24",
+      "deck": 1,
+      "name": "Aura Bogles",
+      "days": 30,
+      "n": 25000,
+      "target": 24,
+      "target_name": "Mono Blue Terror",
+      "delta": 0.05
+    },
+    {
+      "id": "d1_plus_11",
+      "deck": 1,
+      "name": "Aura Bogles",
+      "days": 30,
+      "n": 25000,
+      "target": 11,
+      "target_name": "Esper Affinity",
+      "delta": 0.05
+    },
+    {
+      "id": "d2_w30",
+      "deck": 2,
+      "name": "Bully",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d2_w45",
+      "deck": 2,
+      "name": "Bully",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d3_w30",
+      "deck": 3,
+      "name": "Cawgate",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d3_w45",
+      "deck": 3,
+      "name": "Cawgate",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d4_w30",
+      "deck": 4,
+      "name": "Cycling Storm",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d4_w45",
+      "deck": 4,
+      "name": "Cycling Storm",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d5_w30",
+      "deck": 5,
+      "name": "Dimir Control",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d5_w45",
+      "deck": 5,
+      "name": "Dimir Control",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d5_plus_36",
+      "deck": 5,
+      "name": "Dimir Control",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d5_plus_9",
+      "deck": 5,
+      "name": "Dimir Control",
+      "days": 30,
+      "n": 25000,
+      "target": 9,
+      "target_name": "Elves",
+      "delta": 0.05
+    },
+    {
+      "id": "d5_plus_24",
+      "deck": 5,
+      "name": "Dimir Control",
+      "days": 30,
+      "n": 25000,
+      "target": 24,
+      "target_name": "Mono Blue Terror",
+      "delta": 0.05
+    },
+    {
+      "id": "d6_w30",
+      "deck": 6,
+      "name": "Dimir Faeries",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d6_w45",
+      "deck": 6,
+      "name": "Dimir Faeries",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d6_plus_36",
+      "deck": 6,
+      "name": "Dimir Faeries",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d6_plus_9",
+      "deck": 6,
+      "name": "Dimir Faeries",
+      "days": 30,
+      "n": 25000,
+      "target": 9,
+      "target_name": "Elves",
+      "delta": 0.05
+    },
+    {
+      "id": "d6_plus_10",
+      "deck": 6,
+      "name": "Dimir Faeries",
+      "days": 30,
+      "n": 25000,
+      "target": 10,
+      "target_name": "Ephemerate",
+      "delta": 0.05
+    },
+    {
+      "id": "d7_w30",
+      "deck": 7,
+      "name": "Dimir Terror",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d7_w45",
+      "deck": 7,
+      "name": "Dimir Terror",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d8_w30",
+      "deck": 8,
+      "name": "Dredge",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d8_w45",
+      "deck": 8,
+      "name": "Dredge",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d9_w30",
+      "deck": 9,
+      "name": "Elves",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d9_w45",
+      "deck": 9,
+      "name": "Elves",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d9_plus_36",
+      "deck": 9,
+      "name": "Elves",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d9_plus_42",
+      "deck": 9,
+      "name": "Elves",
+      "days": 30,
+      "n": 25000,
+      "target": 42,
+      "target_name": "Spy Combo",
+      "delta": 0.05
+    },
+    {
+      "id": "d9_plus_10",
+      "deck": 9,
+      "name": "Elves",
+      "days": 30,
+      "n": 25000,
+      "target": 10,
+      "target_name": "Ephemerate",
+      "delta": 0.05
+    },
+    {
+      "id": "d10_w30",
+      "deck": 10,
+      "name": "Ephemerate",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d10_w45",
+      "deck": 10,
+      "name": "Ephemerate",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d10_plus_9",
+      "deck": 10,
+      "name": "Ephemerate",
+      "days": 30,
+      "n": 25000,
+      "target": 9,
+      "target_name": "Elves",
+      "delta": 0.05
+    },
+    {
+      "id": "d10_plus_36",
+      "deck": 10,
+      "name": "Ephemerate",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d10_plus_42",
+      "deck": 10,
+      "name": "Ephemerate",
+      "days": 30,
+      "n": 25000,
+      "target": 42,
+      "target_name": "Spy Combo",
+      "delta": 0.05
+    },
+    {
+      "id": "d11_w30",
+      "deck": 11,
+      "name": "Esper Affinity",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d11_w45",
+      "deck": 11,
+      "name": "Esper Affinity",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d11_plus_9",
+      "deck": 11,
+      "name": "Esper Affinity",
+      "days": 30,
+      "n": 25000,
+      "target": 9,
+      "target_name": "Elves",
+      "delta": 0.05
+    },
+    {
+      "id": "d11_plus_36",
+      "deck": 11,
+      "name": "Esper Affinity",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d11_plus_42",
+      "deck": 11,
+      "name": "Esper Affinity",
+      "days": 30,
+      "n": 25000,
+      "target": 42,
+      "target_name": "Spy Combo",
+      "delta": 0.05
+    },
+    {
+      "id": "d12_w30",
+      "deck": 12,
+      "name": "Familiars",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d12_w45",
+      "deck": 12,
+      "name": "Familiars",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d12_plus_9",
+      "deck": 12,
+      "name": "Familiars",
+      "days": 30,
+      "n": 25000,
+      "target": 9,
+      "target_name": "Elves",
+      "delta": 0.05
+    },
+    {
+      "id": "d13_w30",
+      "deck": 13,
+      "name": "Flicker Tron",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d13_w45",
+      "deck": 13,
+      "name": "Flicker Tron",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d13_plus_17",
+      "deck": 13,
+      "name": "Flicker Tron",
+      "days": 30,
+      "n": 25000,
+      "target": 17,
+      "target_name": "Grixis Affinity",
+      "delta": 0.05
+    },
+    {
+      "id": "d14_w30",
+      "deck": 14,
+      "name": "Gardens",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d14_w45",
+      "deck": 14,
+      "name": "Gardens",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d14_plus_36",
+      "deck": 14,
+      "name": "Gardens",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d15_w30",
+      "deck": 15,
+      "name": "Gates",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d15_w45",
+      "deck": 15,
+      "name": "Gates",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d15_plus_9",
+      "deck": 15,
+      "name": "Gates",
+      "days": 30,
+      "n": 25000,
+      "target": 9,
+      "target_name": "Elves",
+      "delta": 0.05
+    },
+    {
+      "id": "d15_plus_10",
+      "deck": 15,
+      "name": "Gates",
+      "days": 30,
+      "n": 25000,
+      "target": 10,
+      "target_name": "Ephemerate",
+      "delta": 0.05
+    },
+    {
+      "id": "d15_plus_24",
+      "deck": 15,
+      "name": "Gates",
+      "days": 30,
+      "n": 25000,
+      "target": 24,
+      "target_name": "Mono Blue Terror",
+      "delta": 0.05
+    },
+    {
+      "id": "d16_w30",
+      "deck": 16,
+      "name": "Glintblade",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d16_w45",
+      "deck": 16,
+      "name": "Glintblade",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d16_plus_36",
+      "deck": 16,
+      "name": "Glintblade",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d17_w30",
+      "deck": 17,
+      "name": "Grixis Affinity",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d17_w45",
+      "deck": 17,
+      "name": "Grixis Affinity",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d17_plus_9",
+      "deck": 17,
+      "name": "Grixis Affinity",
+      "days": 30,
+      "n": 25000,
+      "target": 9,
+      "target_name": "Elves",
+      "delta": 0.05
+    },
+    {
+      "id": "d17_plus_36",
+      "deck": 17,
+      "name": "Grixis Affinity",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d17_plus_42",
+      "deck": 17,
+      "name": "Grixis Affinity",
+      "days": 30,
+      "n": 25000,
+      "target": 42,
+      "target_name": "Spy Combo",
+      "delta": 0.05
+    },
+    {
+      "id": "d18_w30",
+      "deck": 18,
+      "name": "Gruul Ramp",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d18_w45",
+      "deck": 18,
+      "name": "Gruul Ramp",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d18_plus_9",
+      "deck": 18,
+      "name": "Gruul Ramp",
+      "days": 30,
+      "n": 25000,
+      "target": 9,
+      "target_name": "Elves",
+      "delta": 0.05
+    },
+    {
+      "id": "d18_plus_10",
+      "deck": 18,
+      "name": "Gruul Ramp",
+      "days": 30,
+      "n": 25000,
+      "target": 10,
+      "target_name": "Ephemerate",
+      "delta": 0.05
+    },
+    {
+      "id": "d19_w30",
+      "deck": 19,
+      "name": "Heroic",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d19_w45",
+      "deck": 19,
+      "name": "Heroic",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d22_w30",
+      "deck": 22,
+      "name": "Jund Wildfire",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d22_w45",
+      "deck": 22,
+      "name": "Jund Wildfire",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d22_plus_36",
+      "deck": 22,
+      "name": "Jund Wildfire",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d22_plus_11",
+      "deck": 22,
+      "name": "Jund Wildfire",
+      "days": 30,
+      "n": 25000,
+      "target": 11,
+      "target_name": "Esper Affinity",
+      "delta": 0.05
+    },
+    {
+      "id": "d23_w30",
+      "deck": 23,
+      "name": "Mono Blue Faeries",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d23_w45",
+      "deck": 23,
+      "name": "Mono Blue Faeries",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d23_plus_36",
+      "deck": 23,
+      "name": "Mono Blue Faeries",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d23_plus_30",
+      "deck": 23,
+      "name": "Mono Blue Faeries",
+      "days": 30,
+      "n": 25000,
+      "target": 30,
+      "target_name": "Other Tron",
+      "delta": 0.05
+    },
+    {
+      "id": "d24_w30",
+      "deck": 24,
+      "name": "Mono Blue Terror",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d24_w45",
+      "deck": 24,
+      "name": "Mono Blue Terror",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d24_plus_9",
+      "deck": 24,
+      "name": "Mono Blue Terror",
+      "days": 30,
+      "n": 25000,
+      "target": 9,
+      "target_name": "Elves",
+      "delta": 0.05
+    },
+    {
+      "id": "d24_plus_36",
+      "deck": 24,
+      "name": "Mono Blue Terror",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d24_plus_17",
+      "deck": 24,
+      "name": "Mono Blue Terror",
+      "days": 30,
+      "n": 25000,
+      "target": 17,
+      "target_name": "Grixis Affinity",
+      "delta": 0.05
+    },
+    {
+      "id": "d25_w30",
+      "deck": 25,
+      "name": "Monster Tron",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d25_w45",
+      "deck": 25,
+      "name": "Monster Tron",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d25_plus_36",
+      "deck": 25,
+      "name": "Monster Tron",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d26_w30",
+      "deck": 26,
+      "name": "Other",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d26_w45",
+      "deck": 26,
+      "name": "Other",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d26_plus_36",
+      "deck": 26,
+      "name": "Other",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d26_plus_9",
+      "deck": 26,
+      "name": "Other",
+      "days": 30,
+      "n": 25000,
+      "target": 9,
+      "target_name": "Elves",
+      "delta": 0.05
+    },
+    {
+      "id": "d26_plus_10",
+      "deck": 26,
+      "name": "Other",
+      "days": 30,
+      "n": 25000,
+      "target": 10,
+      "target_name": "Ephemerate",
+      "delta": 0.05
+    },
+    {
+      "id": "d27_w30",
+      "deck": 27,
+      "name": "Other Affinity",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d27_w45",
+      "deck": 27,
+      "name": "Other Affinity",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d27_plus_17",
+      "deck": 27,
+      "name": "Other Affinity",
+      "days": 30,
+      "n": 25000,
+      "target": 17,
+      "target_name": "Grixis Affinity",
+      "delta": 0.05
+    },
+    {
+      "id": "d28_w30",
+      "deck": 28,
+      "name": "Other Burn",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d28_w45",
+      "deck": 28,
+      "name": "Other Burn",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d28_plus_9",
+      "deck": 28,
+      "name": "Other Burn",
+      "days": 30,
+      "n": 25000,
+      "target": 9,
+      "target_name": "Elves",
+      "delta": 0.05
+    },
+    {
+      "id": "d28_plus_36",
+      "deck": 28,
+      "name": "Other Burn",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d28_plus_30",
+      "deck": 28,
+      "name": "Other Burn",
+      "days": 30,
+      "n": 25000,
+      "target": 30,
+      "target_name": "Other Tron",
+      "delta": 0.05
+    },
+    {
+      "id": "d30_w30",
+      "deck": 30,
+      "name": "Other Tron",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d30_w45",
+      "deck": 30,
+      "name": "Other Tron",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d30_plus_36",
+      "deck": 30,
+      "name": "Other Tron",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d30_plus_9",
+      "deck": 30,
+      "name": "Other Tron",
+      "days": 30,
+      "n": 25000,
+      "target": 9,
+      "target_name": "Elves",
+      "delta": 0.05
+    },
+    {
+      "id": "d30_plus_42",
+      "deck": 30,
+      "name": "Other Tron",
+      "days": 30,
+      "n": 25000,
+      "target": 42,
+      "target_name": "Spy Combo",
+      "delta": 0.05
+    },
+    {
+      "id": "d31_w30",
+      "deck": 31,
+      "name": "Pestilence",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d31_w45",
+      "deck": 31,
+      "name": "Pestilence",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d32_w30",
+      "deck": 32,
+      "name": "Petitioners",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d32_w45",
+      "deck": 32,
+      "name": "Petitioners",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d33_w30",
+      "deck": 33,
+      "name": "Poison Storm",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d33_w45",
+      "deck": 33,
+      "name": "Poison Storm",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d34_w30",
+      "deck": 34,
+      "name": "Ponza",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d34_w45",
+      "deck": 34,
+      "name": "Ponza",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d35_w30",
+      "deck": 35,
+      "name": "Rakdos Madness",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d35_w45",
+      "deck": 35,
+      "name": "Rakdos Madness",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d35_plus_36",
+      "deck": 35,
+      "name": "Rakdos Madness",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d35_plus_49",
+      "deck": 35,
+      "name": "Rakdos Madness",
+      "days": 30,
+      "n": 25000,
+      "target": 49,
+      "target_name": "White Aggro",
+      "delta": 0.05
+    },
+    {
+      "id": "d35_plus_17",
+      "deck": 35,
+      "name": "Rakdos Madness",
+      "days": 30,
+      "n": 25000,
+      "target": 17,
+      "target_name": "Grixis Affinity",
+      "delta": 0.05
+    },
+    {
+      "id": "d36_w30",
+      "deck": 36,
+      "name": "Red Madness",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d36_w45",
+      "deck": 36,
+      "name": "Red Madness",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d36_plus_24",
+      "deck": 36,
+      "name": "Red Madness",
+      "days": 30,
+      "n": 25000,
+      "target": 24,
+      "target_name": "Mono Blue Terror",
+      "delta": 0.05
+    },
+    {
+      "id": "d36_plus_10",
+      "deck": 36,
+      "name": "Red Madness",
+      "days": 30,
+      "n": 25000,
+      "target": 10,
+      "target_name": "Ephemerate",
+      "delta": 0.05
+    },
+    {
+      "id": "d36_plus_11",
+      "deck": 36,
+      "name": "Red Madness",
+      "days": 30,
+      "n": 25000,
+      "target": 11,
+      "target_name": "Esper Affinity",
+      "delta": 0.05
+    },
+    {
+      "id": "d37_w30",
+      "deck": 37,
+      "name": "Red Rally",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d37_w45",
+      "deck": 37,
+      "name": "Red Rally",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d37_plus_36",
+      "deck": 37,
+      "name": "Red Rally",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d38_w30",
+      "deck": 38,
+      "name": "Ruby Storm",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d38_w45",
+      "deck": 38,
+      "name": "Ruby Storm",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d38_plus_36",
+      "deck": 38,
+      "name": "Ruby Storm",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d39_w30",
+      "deck": 39,
+      "name": "Sacrifice",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d39_w45",
+      "deck": 39,
+      "name": "Sacrifice",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d40_w30",
+      "deck": 40,
+      "name": "Skred",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d40_w45",
+      "deck": 40,
+      "name": "Skred",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d42_w30",
+      "deck": 42,
+      "name": "Spy Combo",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d42_w45",
+      "deck": 42,
+      "name": "Spy Combo",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d42_plus_36",
+      "deck": 42,
+      "name": "Spy Combo",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d42_plus_9",
+      "deck": 42,
+      "name": "Spy Combo",
+      "days": 30,
+      "n": 25000,
+      "target": 9,
+      "target_name": "Elves",
+      "delta": 0.05
+    },
+    {
+      "id": "d42_plus_24",
+      "deck": 42,
+      "name": "Spy Combo",
+      "days": 30,
+      "n": 25000,
+      "target": 24,
+      "target_name": "Mono Blue Terror",
+      "delta": 0.05
+    },
+    {
+      "id": "d43_w30",
+      "deck": 43,
+      "name": "Stompy",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d43_w45",
+      "deck": 43,
+      "name": "Stompy",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d44_w30",
+      "deck": 44,
+      "name": "Synthesizer",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d44_w45",
+      "deck": 44,
+      "name": "Synthesizer",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d45_w30",
+      "deck": 45,
+      "name": "Tribe",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d45_w45",
+      "deck": 45,
+      "name": "Tribe",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d46_w30",
+      "deck": 46,
+      "name": "Turbo Fog",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d46_w45",
+      "deck": 46,
+      "name": "Turbo Fog",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d46_plus_36",
+      "deck": 46,
+      "name": "Turbo Fog",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d47_w30",
+      "deck": 47,
+      "name": "Unknown",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d47_w45",
+      "deck": 47,
+      "name": "Unknown",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d47_plus_10",
+      "deck": 47,
+      "name": "Unknown",
+      "days": 30,
+      "n": 25000,
+      "target": 10,
+      "target_name": "Ephemerate",
+      "delta": 0.05
+    },
+    {
+      "id": "d48_w30",
+      "deck": 48,
+      "name": "Walls",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d48_w45",
+      "deck": 48,
+      "name": "Walls",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d49_w30",
+      "deck": 49,
+      "name": "White Aggro",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d49_w45",
+      "deck": 49,
+      "name": "White Aggro",
+      "days": 45,
+      "n": 100000
+    },
+    {
+      "id": "d49_plus_36",
+      "deck": 49,
+      "name": "White Aggro",
+      "days": 30,
+      "n": 25000,
+      "target": 36,
+      "target_name": "Red Madness",
+      "delta": 0.05
+    },
+    {
+      "id": "d49_plus_9",
+      "deck": 49,
+      "name": "White Aggro",
+      "days": 30,
+      "n": 25000,
+      "target": 9,
+      "target_name": "Elves",
+      "delta": 0.05
+    },
+    {
+      "id": "d49_plus_24",
+      "deck": 49,
+      "name": "White Aggro",
+      "days": 30,
+      "n": 25000,
+      "target": 24,
+      "target_name": "Mono Blue Terror",
+      "delta": 0.05
+    },
+    {
+      "id": "d50_w30",
+      "deck": 50,
+      "name": "Zombies",
+      "days": 30,
+      "n": 100000
+    },
+    {
+      "id": "d50_w45",
+      "deck": 50,
+      "name": "Zombies",
+      "days": 45,
+      "n": 100000
+    }
+  ],
+  "hashes": {
+    "data/processed/model30.npz": "7be7e72f96f79150d0b18b5185b0e16cfa9a0c5090f3a6298615ecb53e25e8fd",
+    "data/processed/model45.npz": "8848a27de36f7906a73d9fd4d8ad2e203ece89534a5575ecf75708cd7eb16d56",
+    "src/simulate.py": "21698f123e1db9a62b1f28507efc3da0efa0a94aa822400b4b3e0981f6792e05",
+    "src/run_general.py": "63e2b7f35a88efa1ce754a0f9fa2603de950d32b793ab0a48a968950fda39b94"
+  },
+  "batch": 5000,
+  "planned": 11000000
+}

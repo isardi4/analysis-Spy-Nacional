@@ -1,0 +1,9 @@
+{
+  "tournaments": 5000000,
+  "wall_seconds": 147.99946904182434,
+  "input_hashes": {
+    "data/processed/model45.npz": "8848a27de36f7906a73d9fd4d8ad2e203ece89534a5575ecf75708cd7eb16d56",
+    "data/processed/model30.npz": "7be7e72f96f79150d0b18b5185b0e16cfa9a0c5090f3a6298615ecb53e25e8fd",
+    "src/simulate.py": "21698f123e1db9a62b1f28507efc3da0efa0a94aa822400b4b3e0981f6792e05"
+  }
+}

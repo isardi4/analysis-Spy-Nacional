@@ -1,0 +1,93 @@
+{
+  "total_planned": 5000000,
+  "scenarios": [
+    {
+      "id": "central30",
+      "n": 1500000,
+      "days": 30,
+      "focal": true
+    },
+    {
+      "id": "window45",
+      "n": 500000,
+      "days": 45,
+      "focal": true
+    },
+    {
+      "id": "parameters30",
+      "n": 500000,
+      "days": 30,
+      "focal": true,
+      "posterior": true
+    },
+    {
+      "id": "natural30",
+      "n": 1000000,
+      "days": 30,
+      "focal": false
+    },
+    {
+      "id": "improve_36_2",
+      "n": 250000,
+      "days": 30,
+      "focal": true,
+      "target": "Red Madness",
+      "target_index": 36,
+      "delta": 0.02
+    },
+    {
+      "id": "improve_36_5",
+      "n": 250000,
+      "days": 30,
+      "focal": true,
+      "target": "Red Madness",
+      "target_index": 36,
+      "delta": 0.05
+    },
+    {
+      "id": "improve_24_2",
+      "n": 250000,
+      "days": 30,
+      "focal": true,
+      "target": "Mono Blue Terror",
+      "target_index": 24,
+      "delta": 0.02
+    },
+    {
+      "id": "improve_24_5",
+      "n": 250000,
+      "days": 30,
+      "focal": true,
+      "target": "Mono Blue Terror",
+      "target_index": 24,
+      "delta": 0.05
+    },
+    {
+      "id": "improve_49_2",
+      "n": 250000,
+      "days": 30,
+      "focal": true,
+      "target": "White Aggro",
+      "target_index": 49,
+      "delta": 0.02
+    },
+    {
+      "id": "improve_49_5",
+      "n": 250000,
+      "days": 30,
+      "focal": true,
+      "target": "White Aggro",
+      "target_index": 49,
+      "delta": 0.05
+    }
+  ],
+  "inputs": {
+    "data/processed/model45.npz": "8848a27de36f7906a73d9fd4d8ad2e203ece89534a5575ecf75708cd7eb16d56",
+    "data/processed/model30.npz": "7be7e72f96f79150d0b18b5185b0e16cfa9a0c5090f3a6298615ecb53e25e8fd",
+    "src/simulate.py": "21698f123e1db9a62b1f28507efc3da0efa0a94aa822400b4b3e0981f6792e05"
+  },
+  "seed": 20261019,
+  "batch_size": 5000,
+  "engine": "Swiss approximation: no ID/drops/byes; BO3 assumed score; OMW/GW/OGW; 110 seats, 7 rounds",
+  "numpy": "2.3.5"
+}

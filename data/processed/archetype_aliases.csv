@@ -1,0 +1,210 @@
+raw,normalized
+4C Snow,Other
+Abzan Lifegates,Gates
+Abzan Persistent Petitioners,Petitioners
+Azorius,Other
+Azorius Affinity,Other Affinity
+Azorius Cawgate,Gates
+Azorius Control,Familiars
+Azorius Ephemerate,Ephemerate
+Azorius Familiars,Familiars
+Azorius Inside Out Combo,Tribe
+Bant Affinity,Other Affinity
+Bant Bogles,Aura Bogles
+Bant Elves,Elves
+Bant Familiars,Familiars
+Bogles,Aura Bogles
+Boros,Tribe
+Boros Affinity,Other Burn
+Boros Bully,White Aggro
+Boros Inside Out Combo,Tribe
+Boros Metalcraft,White Aggro
+Boros Midrange,Synthesizer
+Boros Monarch,Other
+Boros Moxite,Synthesizer
+Boros Synthesizer,Synthesizer
+Boros Tribe,Tribe
+Cycle Storm,Cycling Storm
+Decklist,Other
+Dimir,Dimir Control
+Dimir Affinity,Other Affinity
+Dimir Arcane Tide,Dimir Control
+Dimir Control,Dimir Control
+Dimir Faeries,Dimir Faeries
+Dimir Tempo,Dimir Terror
+Dimir Terror,Dimir Terror
+Elves,Elves
+Esper,Other
+Esper Affinity,Esper Affinity
+Esper Affinity Aggro,Esper Affinity
+Esper Aggro,Other
+Esper Cawgate,Cawgate
+Esper Control,Ephemerate
+Esper Ephemerate,Ephemerate
+Esper Gates Soup,Gates
+Esper Glintblade,Glintblade
+Esper Monarch,Other
+Flicker Tron,Flicker Tron
+Golgari,Other
+Golgari Altar Tron,Altar Tron
+Golgari Control,Other
+Golgari Drain,Altar Tron
+Golgari Ephemerate Tron,Flicker Tron
+Golgari Gardens,Gardens
+Golgari Infect,Infect
+Golgari Midrange,Pestilence
+Golgari Monster Tron,Other Tron
+Golgari Pestilence,Pestilence
+Golgari Poison Storm,Poison Storm
+Golgari Rogue,Other
+Golgari Spy Combo,Spy Combo
+Golgari Tron,Altar Tron
+Golgari Walls Combo,Spy Combo
+Grixis,Other
+Grixis Affinity,Grixis Affinity
+Grixis Aggro,Other
+Grixis Altar Tron,Unknown
+Grixis Control,Other
+Grixis Skred,Skred
+Gruul,Other
+Gruul Aggro,Gruul Ramp
+Gruul Divinity,Ruby Storm
+Gruul Midrange,Other
+Gruul Monster Tron,Monster Tron
+Gruul Monsters,Gruul Ramp
+Gruul Poison Storm,Poison Storm
+Gruul Ponza,Ponza
+Gruul Ramp,Gruul Ramp
+Gruul Ruby Storm,Ruby Storm
+Izzet,Other
+Izzet Control,Other
+Izzet Faeries,Other Faeries
+Izzet Skred,Skred
+Jeskai,Other
+Jeskai Affinity,Other Affinity
+Jeskai Cawgate,Cawgate
+Jeskai Control,Other
+Jeskai Ephemerate,Ephemerate
+Jeskai Wildfire,Ephemerate
+Jund,Other
+Jund Midrange,Other
+Jund Spy Combo,Spy Combo
+Jund Wildfire,Jund Wildfire
+Mardu,Other
+Mardu Affinity,Synthesizer
+Mardu Aggro,Other
+Mardu Bogles,Aura Bogles
+Mardu Bully,Bully
+Mardu Control,Other
+Mardu Cycling Storm,Cycling Storm
+Mardu Glitters,Other Affinity
+Mardu Metalcraft,White Aggro
+Mardu Midrange,Other
+Mardu Moxite,Synthesizer
+Mardu Synth,Synthesizer
+Mardu Synthesizer,Synthesizer
+Mono-Black,Other
+Mono-Black Aggro,Other
+Mono-Black Aristocrats,Sacrifice
+Mono-Black Bully,Bully
+Mono-Black Control,Other
+Mono-Black Red Deck Wins,Other
+Mono-Black Rogue,Other
+Mono-Black Sacrifice,Other Affinity
+Mono-Black Zombies,Zombies
+Mono-Blu Tempo,Other
+Mono-Blue,Mono Blue Terror
+Mono-Blue Aggro,Petitioners
+Mono-Blue Delver,Mono Blue Terror
+Mono-Blue Faeries,Mono Blue Faeries
+Mono-Blue Tempo,Other
+Mono-Blue Terror,Mono Blue Terror
+Mono-Blue Tron,Other Tron
+Mono-Green,Elves
+Mono-Green Aggro,Elves
+Mono-Green Elves,Elves
+Mono-Green Infect,Infect
+Mono-Green Monster Tron,Other Tron
+Mono-Green Stompy,Stompy
+Mono-Green Tron,Other Tron
+Mono-Red,Red Rally
+Mono-Red Aggro,Other
+Mono-Red Artifact Aggro,Other Burn
+Mono-Red Burn,Red Madness
+Mono-Red Elves,Red Madness
+Mono-Red Kiln Fiend,Hot Dogs
+Mono-Red Madness,Red Madness
+Mono-Red Madness Burn,Red Madness
+Mono-Red Pinger Burn,Other Burn
+Mono-Red Rally,Red Rally
+Mono-Red Ramp,Gruul Ramp
+Mono-Red Red Deck Wins,Other
+Mono-Red Sticker Kuldotha,Red Rally
+Mono-Red Terror,Mono Blue Terror
+Mono-Red Walls Combo,Walls
+Mono-White,Other
+Mono-White Aggro,White Aggro
+Mono-White Heroic,Heroic
+Mono-White Metalcraft,Unknown
+Mono-White White Weenie,White Aggro
+Monster Tron,Monster Tron
+Naya Gates,Gates
+Naya Stompy,Gruul Ramp
+Orzhov,Unknown
+Orzhov Familiars,Familiars
+Orzhov Glintblade,Glintblade
+Pinger Tron,Other Tron
+Pizza Combo,Other
+Rakdos,Other
+Rakdos Aggro,Other
+Rakdos Gardens,Gardens
+Rakdos Madness,Rakdos Madness
+Rakdos Madness Burn,Rakdos Madness
+Rally Red,Red Rally
+Selesnya,Other
+Selesnya Aggro,Unknown
+Selesnya Bogles,Aura Bogles
+Selesnya Wizards,Other
+Simic,Other
+Simic Monster Tron,Other Tron
+Simic Persistent Petitioners,Petitioners
+Simic Turbofog,Turbo Fog
+Spy Combo,Spy Combo
+Sultai,Turbo Fog
+Sultai Persistent Petitioners,Petitioners
+Sultai Poison Storm,Poison Storm
+Sultai Turbofog,Turbo Fog
+Temur,Other Tron
+Temur Aggro,Other
+Temur Elves,Elves
+Temur Flicker Tron,Flicker Tron
+Temur Midrange,Other
+Temur Monster Tron,Monster Tron
+Temur Ponza,Ponza
+Temur Rogue,Other
+Temur Skred,Mono Blue Terror
+Temur Tron,Flicker Tron
+U-B-R-G,Flicker Tron
+U-B-R-G Flicker Tron,Flicker Tron
+U-B-R-G Tron,Other Tron
+U-B-R-G Walls Combo,Walls
+Unknown,Unknown
+W-B-R-G Dredge,Dredge
+W-U-B-R Affinity,Other Affinity
+W-U-B-R Cawgate,Cawgate
+W-U-B-R Dredge,Dredge
+W-U-B-R Ephemerate,Ephemerate
+W-U-B-R-G,Gates
+W-U-B-R-G Affinity,Other Affinity
+W-U-B-R-G Ephemerate Tron,Flicker Tron
+W-U-B-R-G Flicker Tron,Flicker Tron
+W-U-B-R-G Gates Soup,Gates
+W-U-B-R-G Slivers,Slivers
+W-U-B-R-G Walls Combo,Walls
+W-U-B-R-G Wildfire,Jund Wildfire
+W-U-R-G Control,Other
+W-U-R-G Ephemerate,Ephemerate
+W-U-R-G Ephemerate Tron,Flicker Tron
+W-U-R-G Flicker Tron,Flicker Tron
+Walls Combo,Walls
+White Weenie,White Aggro

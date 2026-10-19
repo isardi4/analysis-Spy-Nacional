@@ -1,0 +1,26 @@
+{
+  "central_n": 1500000,
+  "central_hits": 155552,
+  "central_rate": 0.10370133333333334,
+  "central_mc95": [
+    0.10321444990406356,
+    0.1041902466520149
+  ],
+  "natural_at_least_one": 0.40911600000000004,
+  "natural_conversion": 0.1035533261175223,
+  "charts": [
+    "Presencia observada \u00b7 denominador: field completo de eventos aceptados",
+    "Matriz modelada del field \u00b7 pasar el cursor para ver la muestra",
+    "P(enfrentar un rival en cada ronda) \u00b7 tu plaza de Spy",
+    "Distribuci\u00f3n de victorias finales \u00b7 clasificados vs no clasificados",
+    "D\u00f3nde se acumulan las derrotas \u00b7 frecuencia y dificultad combinadas",
+    "Valor de mejorar un cruce \u00b7 diferencias con lotes centrales emparejados",
+    "Incertidumbre del modelo \u00b7 100 sorteos de par\u00e1metros, 5.000 torneos cada uno",
+    "N\u00famero de Spy en top 8 \u00b7 field natural"
+  ],
+  "sources": 21,
+  "parameter_batch_percentiles": [
+    0.06768500000000001,
+    0.15707999999999997
+  ]
+}

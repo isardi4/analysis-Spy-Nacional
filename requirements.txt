@@ -1,0 +1,5 @@
+numpy==2.3.5
+numba==0.62.1
+pandas==3.0.6
+beautifulsoup4==4.15.0
+plotly==7.1.0

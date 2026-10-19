@@ -1,0 +1,716 @@
+[
+  {
+    "id": "16b942e4-c93b-4ba7-8b5a-1bf772ed9804",
+    "url": "https://metamages.com/meta/pauper/tournaments/16b942e4-c93b-4ba7-8b5a-1bf772ed9804?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "bdb10098cad422d44aa6bc1e4f5fc4f08c2c78642a3da02d3e5f4c6f35a99557"
+  },
+  {
+    "id": "c6d314ab-8f1d-4be5-8cb1-1a960f8777bc",
+    "url": "https://metamages.com/meta/pauper/tournaments/c6d314ab-8f1d-4be5-8cb1-1a960f8777bc?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "1d1c257a3d1af85ced82fd77fccb5e585ba0c274e3885a548cdd3817ae8beb08"
+  },
+  {
+    "id": "494c104d-81d1-44ff-8b96-8758c4b98766",
+    "url": "https://metamages.com/meta/pauper/tournaments/494c104d-81d1-44ff-8b96-8758c4b98766?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "115d68ac2fdf09a63a6f45048117f9a8c27f66ad57669593ff36d7f764c48997"
+  },
+  {
+    "id": "2aee46f9-420c-4ff4-aeae-6ea970f895be",
+    "url": "https://metamages.com/meta/pauper/tournaments/2aee46f9-420c-4ff4-aeae-6ea970f895be?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "242e6764b8e6dbf2cd43ba3d00a025feb711196978a62218e084f0a9fc25dae4"
+  },
+  {
+    "id": "7d56abe1-edbc-4da4-b0da-a388b667547c",
+    "url": "https://metamages.com/meta/pauper/tournaments/7d56abe1-edbc-4da4-b0da-a388b667547c?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "1ac06b8c5bbd4e38ac9d224e2761cf3c576ea776c9b0691cfde5f46994529f3e"
+  },
+  {
+    "id": "abf17dec-5892-46e3-aaa6-f6fae2f66232",
+    "url": "https://metamages.com/meta/pauper/tournaments/abf17dec-5892-46e3-aaa6-f6fae2f66232?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "86ac4fbb35131e5495224e440caf9b0c69d08a5e875154abd55001f6d6fd4284"
+  },
+  {
+    "id": "8e9acee1-0919-4968-90bb-043051b470d0",
+    "url": "https://metamages.com/meta/pauper/tournaments/8e9acee1-0919-4968-90bb-043051b470d0?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "de2dd249f3a0c804034be991bbfbe0d9263d55c35296a2d0b75e1e94d0384798"
+  },
+  {
+    "id": "975bcf2c-4598-4274-ac10-b47ad7f4475b",
+    "url": "https://metamages.com/meta/pauper/tournaments/975bcf2c-4598-4274-ac10-b47ad7f4475b?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "b62cd025cb6dfcf8159e6b8b05ddbb6dbb6cc8de026f1394cb74bc2e3fa9f2aa"
+  },
+  {
+    "id": "efa0a07a-f7f1-4b5d-b72a-4f38253e2601",
+    "url": "https://metamages.com/meta/pauper/tournaments/efa0a07a-f7f1-4b5d-b72a-4f38253e2601?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "ec371c5c7d1b907fadbeede0257c6496e1dd7c1228f2214abb3d1b4035765302"
+  },
+  {
+    "id": "a8fd0bf8-6001-416f-b06c-570ff34057aa",
+    "url": "https://metamages.com/meta/pauper/tournaments/a8fd0bf8-6001-416f-b06c-570ff34057aa?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "876a8725796c8595851c9c917d2db7c78333bc2584913c349114f17401018f34"
+  },
+  {
+    "id": "e43130c8-c70f-40c2-b17d-031e7be5e0bb",
+    "url": "https://metamages.com/meta/pauper/tournaments/e43130c8-c70f-40c2-b17d-031e7be5e0bb?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "f177f633d15d5af09d5f1b74cf77510f2cd314c81676c5a4a5dd3ffee6074e7a"
+  },
+  {
+    "id": "96ff68f7-01dc-47a4-a3bb-ca41b0a626d1",
+    "url": "https://metamages.com/meta/pauper/tournaments/96ff68f7-01dc-47a4-a3bb-ca41b0a626d1?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "e2d7fa5630b904e6dc71e5426e65396233f984d41c795adeeaeabb886b2c44a9"
+  },
+  {
+    "id": "748ef885-1919-4e93-b906-7f8ead67a2e9",
+    "url": "https://metamages.com/meta/pauper/tournaments/748ef885-1919-4e93-b906-7f8ead67a2e9?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "dafa9c2fcdf7a1f42d5dd8c8dd18d95d86451f4ebd033c3534e1ff0fc9fb0736"
+  },
+  {
+    "id": "ce5397f8-d25b-49d7-833a-5f89632c6bc6",
+    "url": "https://metamages.com/meta/pauper/tournaments/ce5397f8-d25b-49d7-833a-5f89632c6bc6?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "b53411c420365f5ad8de0c9e09711d6a8035140918914c20e801247d8999e840"
+  },
+  {
+    "id": "7f3c9bdb-8bb4-492c-9373-f0dfde0510a8",
+    "url": "https://metamages.com/meta/pauper/tournaments/7f3c9bdb-8bb4-492c-9373-f0dfde0510a8?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "be07646fe77425c5221065ababfd81e1e4cebdd5168ea441dd29876d3acaae79"
+  },
+  {
+    "id": "0aa10ce1-1b20-4709-a5d9-f7ddc6054a9b",
+    "url": "https://metamages.com/meta/pauper/tournaments/0aa10ce1-1b20-4709-a5d9-f7ddc6054a9b?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "b707fd5dc19ba5651e83051131f5731c6fc32690a00e54644b5c1d40b16dc057"
+  },
+  {
+    "id": "9b13c4f1-1332-4548-9414-1e7131ee2abe",
+    "url": "https://metamages.com/meta/pauper/tournaments/9b13c4f1-1332-4548-9414-1e7131ee2abe?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "7760f2fcf8ba5e22c519ffb1158aea9a8af01eebd5a2b6e05613792c06fc260f"
+  },
+  {
+    "id": "9ef475b9-e15f-4738-afaf-2553ac95faa5",
+    "url": "https://metamages.com/meta/pauper/tournaments/9ef475b9-e15f-4738-afaf-2553ac95faa5?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "ca81656bc475604991fb43ae909748fc27bfeb529b5202528fc0441d8dc9cfda"
+  },
+  {
+    "id": "da94c2e7-8e0a-49de-93a1-8625e4dd555a",
+    "url": "https://metamages.com/meta/pauper/tournaments/da94c2e7-8e0a-49de-93a1-8625e4dd555a?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "65bbcf3c32b241185f4112c8c7f52670212e75b0e6d201714be6434d4e7c9f45"
+  },
+  {
+    "id": "91d67507-8bae-4e16-b708-751980d23d16",
+    "url": "https://metamages.com/meta/pauper/tournaments/91d67507-8bae-4e16-b708-751980d23d16?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "d227bdb05b2be0d428f658554ee45bc44dbc483e29ab4ffac3a3c973904a9209"
+  },
+  {
+    "id": "92f96b32-5e03-4179-9308-9ee2a824c8c8",
+    "url": "https://metamages.com/meta/pauper/tournaments/92f96b32-5e03-4179-9308-9ee2a824c8c8?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "2157e9e678975d4cee9e591486bcd1da5216c29c8a6ac6aa0b51360f460a5f97"
+  },
+  {
+    "id": "a7b68ed2-2aea-46f0-b50c-5f472bf9ea21",
+    "url": "https://metamages.com/meta/pauper/tournaments/a7b68ed2-2aea-46f0-b50c-5f472bf9ea21?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "984ec07dee61355e7bb00d6fa53d7c63b9ec80d04b817b3376580f8ca32f4e03"
+  },
+  {
+    "id": "a7b4c23a-91ed-42fd-ad59-bee829ea97fc",
+    "url": "https://metamages.com/meta/pauper/tournaments/a7b4c23a-91ed-42fd-ad59-bee829ea97fc?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "6e1f8a204a1751c07e96d20f1d2b2a6d9885f3d98ca08a4bd6c3aee80185498a"
+  },
+  {
+    "id": "f6a1fd8d-d1e9-4e68-bc69-200fcdee1210",
+    "url": "https://metamages.com/meta/pauper/tournaments/f6a1fd8d-d1e9-4e68-bc69-200fcdee1210?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "e73a0dca921d8a998d13a5d0125e3437f1ba41750ee346bb61023c81ecd35bb9"
+  },
+  {
+    "id": "5e0da99d-c784-48e8-a836-96fa8f9d279c",
+    "url": "https://metamages.com/meta/pauper/tournaments/5e0da99d-c784-48e8-a836-96fa8f9d279c?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "60cccfcd515efe1775a61916b9a1931546f36839c56ae8dccba65a4a9cac0d2b"
+  },
+  {
+    "id": "69656db0-26cb-44cb-b179-e1f420008c54",
+    "url": "https://metamages.com/meta/pauper/tournaments/69656db0-26cb-44cb-b179-e1f420008c54?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "bc986759c19f6625572088cdc716d4a7a0529f50d3dd8e986f98814090b2700b"
+  },
+  {
+    "id": "7e83e460-6fbd-43f8-9d2a-3c874e4b6e5a",
+    "url": "https://metamages.com/meta/pauper/tournaments/7e83e460-6fbd-43f8-9d2a-3c874e4b6e5a?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "bb22b28ad36ed2a5706041a96fe1d15d67237d688b6a9ef78ba0aa35e13a105b"
+  },
+  {
+    "id": "c2407589-18c8-4a89-8af4-3284dac2f1ac",
+    "url": "https://metamages.com/meta/pauper/tournaments/c2407589-18c8-4a89-8af4-3284dac2f1ac?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "c120f8a2f38d7050edc51cba589d2ec51453ccf2a6cf915c6777de11f38fa562"
+  },
+  {
+    "id": "d1d12ed7-ab09-4cb6-be66-1dfc41d9daa7",
+    "url": "https://metamages.com/meta/pauper/tournaments/d1d12ed7-ab09-4cb6-be66-1dfc41d9daa7?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "e542bd9ea8268ce0d7665ada7983b91cc3af1a5f398bc3dc5265ba5bea1aabeb"
+  },
+  {
+    "id": "cbf56c71-716d-404a-bfa3-76ccd3ee7a0f",
+    "url": "https://metamages.com/meta/pauper/tournaments/cbf56c71-716d-404a-bfa3-76ccd3ee7a0f?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "742746682dc52b7bcdc71f22f8d67b791437bf60f0bc8cd56da510fd4d537820"
+  },
+  {
+    "id": "51eea41e-5b5c-41d1-806c-f9cc88d8d53a",
+    "url": "https://metamages.com/meta/pauper/tournaments/51eea41e-5b5c-41d1-806c-f9cc88d8d53a?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "edd069e9cc0882829ca98d0057f15f383deb329dece547690675534e9060fcdf"
+  },
+  {
+    "id": "abc0839b-d6d6-4467-a4e4-c3c3849124e2",
+    "url": "https://metamages.com/meta/pauper/tournaments/abc0839b-d6d6-4467-a4e4-c3c3849124e2?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "41cb7d84f6883aeb91467aa4482d7aa6602beb3f68af57c1cf6d82e1bdfa2fe0"
+  },
+  {
+    "id": "02eacf87-fcb9-457d-9a87-3af9d29c1164",
+    "url": "https://metamages.com/meta/pauper/tournaments/02eacf87-fcb9-457d-9a87-3af9d29c1164?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "7267369b15745779a913cf8f2b49e78b9a3a2cf31b643d92511af400dded4895"
+  },
+  {
+    "id": "766952ff-eb9a-44ed-bdb6-9cefa64c4c94",
+    "url": "https://metamages.com/meta/pauper/tournaments/766952ff-eb9a-44ed-bdb6-9cefa64c4c94?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "9886bc8dff972474531709c6bc1be7d74be7a9c5185913b8506125b86feb410a"
+  },
+  {
+    "id": "e490e54e-6671-44f8-ae0e-be2b56457114",
+    "url": "https://metamages.com/meta/pauper/tournaments/e490e54e-6671-44f8-ae0e-be2b56457114?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "7602466bab7f59543cb8bd66792c4a53d2cc15d0fb2abad124df978b9cccafd9"
+  },
+  {
+    "id": "76d89422-0e46-45cd-ae77-0239af77f59f",
+    "url": "https://metamages.com/meta/pauper/tournaments/76d89422-0e46-45cd-ae77-0239af77f59f?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "1a2724ad1636a7f9ff96709d934309749bcde7a1bfc86aef42bc8a07398d4e8a"
+  },
+  {
+    "id": "e19cface-2b0a-4b2b-8ca8-7e5aa3ad5687",
+    "url": "https://metamages.com/meta/pauper/tournaments/e19cface-2b0a-4b2b-8ca8-7e5aa3ad5687?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "dea726390de81950a3a634cd8dfcf9434c4660798f108223b0ffc16bb3377596"
+  },
+  {
+    "id": "80618a34-f1ca-4be0-90b1-608e73227f9d",
+    "url": "https://metamages.com/meta/pauper/tournaments/80618a34-f1ca-4be0-90b1-608e73227f9d?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "7673b4bf8a56e8dec143a01fa293bcea62ecdf12741a5f5f7e6abdc6e7b29d1b"
+  },
+  {
+    "id": "52324726-e72c-4412-8cee-2f486065ee48",
+    "url": "https://metamages.com/meta/pauper/tournaments/52324726-e72c-4412-8cee-2f486065ee48?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "dec65f23e847675166d863af1a690a0b88aee2fe36e9b5dace1f2a6de072cb10"
+  },
+  {
+    "id": "96c4647e-67ee-481f-a2bf-0eadea117ba1",
+    "url": "https://metamages.com/meta/pauper/tournaments/96c4647e-67ee-481f-a2bf-0eadea117ba1?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "1777e8c7864a9ef2ce86553348d90a9a6ac88940a19ca1ea4c617cf40898af48"
+  },
+  {
+    "id": "8bb71990-9151-41c8-ae80-afe186cd5c9f",
+    "url": "https://metamages.com/meta/pauper/tournaments/8bb71990-9151-41c8-ae80-afe186cd5c9f?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "3ae9aa6c48be368441f5b6d4dcd9f22b8cdcb7d61d094c15acc3a65ca6e02b6d"
+  },
+  {
+    "id": "a88cc87f-aa62-42a0-a6ac-3747762e56f0",
+    "url": "https://metamages.com/meta/pauper/tournaments/a88cc87f-aa62-42a0-a6ac-3747762e56f0?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "9d261ebdfb50fc0cc996ff0082f448971023b24082a6c72c1266fc5fd5412abc"
+  },
+  {
+    "id": "0eff9a26-3d77-4e53-abc2-4c27147d8bf4",
+    "url": "https://metamages.com/meta/pauper/tournaments/0eff9a26-3d77-4e53-abc2-4c27147d8bf4?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "4169b128d14e30681f76ad52f8460e1ce71eed18e60a49e5057dd6fb193c5198"
+  },
+  {
+    "id": "1835883b-9d71-4cf1-aff3-e65720622e97",
+    "url": "https://metamages.com/meta/pauper/tournaments/1835883b-9d71-4cf1-aff3-e65720622e97?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "b6c630784a5ba5fe5e625024ea29d8ae2aed40ed5d2d8a5407f4b4bbde14d6fa"
+  },
+  {
+    "id": "5b90c666-949a-49fd-a5b0-898237c0b708",
+    "url": "https://metamages.com/meta/pauper/tournaments/5b90c666-949a-49fd-a5b0-898237c0b708?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "9cc119c88fd616dcb9ecfee3d0953b89c694b2d250143e24453ed45ebbaa77ea"
+  },
+  {
+    "id": "5e93db54-7add-437d-aa45-534d4571130e",
+    "url": "https://metamages.com/meta/pauper/tournaments/5e93db54-7add-437d-aa45-534d4571130e?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "3f3ef489c926f4b886b50af370a887277740aa64072372b8b163cb70e584883c"
+  },
+  {
+    "id": "bfd8116d-e426-4d10-ba13-22c1074aef07",
+    "url": "https://metamages.com/meta/pauper/tournaments/bfd8116d-e426-4d10-ba13-22c1074aef07?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "6fde27a53bc534f6cfceb63482d7d7b69f44e6e3e87b9c9e2b0cca9553519366"
+  },
+  {
+    "id": "af9e9d3b-402b-404b-a044-38a934bbc32c",
+    "url": "https://metamages.com/meta/pauper/tournaments/af9e9d3b-402b-404b-a044-38a934bbc32c?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "92cd5f15f420893ec058c756dd7b7bc8eb2514111dd39b4b9b5922575e61ce96"
+  },
+  {
+    "id": "b93f9234-c221-4a0a-985c-0cf210934897",
+    "url": "https://metamages.com/meta/pauper/tournaments/b93f9234-c221-4a0a-985c-0cf210934897?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "2a0f431b42626333295459a9ebb8b272883966f92df5148754389830fa44a972"
+  },
+  {
+    "id": "31138526-ddc9-4c16-b0a2-21c49f899b8d",
+    "url": "https://metamages.com/meta/pauper/tournaments/31138526-ddc9-4c16-b0a2-21c49f899b8d?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "172d7e3842c9fc2347e041a099551a558e8c2ea5f773ad619e55ef9cf7b11389"
+  },
+  {
+    "id": "7ceecae7-b80f-4b12-914a-87d727a7102d",
+    "url": "https://metamages.com/meta/pauper/tournaments/7ceecae7-b80f-4b12-914a-87d727a7102d?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "2ad1fad4d26a4575552f1c9ae81d5a02c533ca6795110a30e75b152e401cd842"
+  },
+  {
+    "id": "aac2e311-11f7-4703-ac76-d5af5e96c9c1",
+    "url": "https://metamages.com/meta/pauper/tournaments/aac2e311-11f7-4703-ac76-d5af5e96c9c1?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "910e00b3e01f0334c5668dfb60565fa583f8c93e754ba7874ef3a22f334e8957"
+  },
+  {
+    "id": "84740ed9-3254-404d-9c30-d273b113e7f1",
+    "url": "https://metamages.com/meta/pauper/tournaments/84740ed9-3254-404d-9c30-d273b113e7f1?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "e99f682ce8d6f75b51c2cdc61606e68872a98f5c3c42d9123a1a0e502b5ae824"
+  },
+  {
+    "id": "c54860ec-5cef-4e65-bcf5-18bf1b6fc232",
+    "url": "https://metamages.com/meta/pauper/tournaments/c54860ec-5cef-4e65-bcf5-18bf1b6fc232?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "f7995c4a179aa331e544ef81ea647ca6dd922e4dc8eccfa8b49170a5b3d6c109"
+  },
+  {
+    "id": "058121af-f80d-465f-9bd6-c6ab27032996",
+    "url": "https://metamages.com/meta/pauper/tournaments/058121af-f80d-465f-9bd6-c6ab27032996?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "3af1a5c936a3aa34ed369e06d352ea19156307fe150e63a1bedfe699cf768d5a"
+  },
+  {
+    "id": "c713b957-6c22-43cb-aabc-0ead8402d286",
+    "url": "https://metamages.com/meta/pauper/tournaments/c713b957-6c22-43cb-aabc-0ead8402d286?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "f95183c6815d2b9f0fd04a6058b9e2872fc77e374b8caf32385d953582044f5a"
+  },
+  {
+    "id": "7adf5ec6-cacd-4c88-b391-7dce6dc9768f",
+    "url": "https://metamages.com/meta/pauper/tournaments/7adf5ec6-cacd-4c88-b391-7dce6dc9768f?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "bc2eebd6037bb986b47b5a5090e973c1a8dfa6f84758b78d22a06d36805f4370"
+  },
+  {
+    "id": "2f6a482f-724d-47c8-826a-94bdb21cf392",
+    "url": "https://metamages.com/meta/pauper/tournaments/2f6a482f-724d-47c8-826a-94bdb21cf392?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "2dcd6d80eff6f7f3c513ee0afea1c021ae9eb093197287eea1145cc2feef2c1b"
+  },
+  {
+    "id": "333a38b7-d8c9-4d2c-82fa-9fc839fbfc65",
+    "url": "https://metamages.com/meta/pauper/tournaments/333a38b7-d8c9-4d2c-82fa-9fc839fbfc65?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "530d6ec92b3a651f34cfc202b1c5be01dde6d53ac3eca8b79d65f2d7f0c0e9ab"
+  },
+  {
+    "id": "5cd86b4a-d414-4b4e-8004-2a654683f38b",
+    "url": "https://metamages.com/meta/pauper/tournaments/5cd86b4a-d414-4b4e-8004-2a654683f38b?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "897ced1fced4a6ad936cac459f4588d3cf6f43c72b6240c6b9a1a9f00fc186b1"
+  },
+  {
+    "id": "1385b8fe-362b-4cf5-9607-d84a8f7d6792",
+    "url": "https://metamages.com/meta/pauper/tournaments/1385b8fe-362b-4cf5-9607-d84a8f7d6792?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "2dfa13410398e4657a2d298dd88d72aa5e5511426a281ae6c5fe65c10ed453f0"
+  },
+  {
+    "id": "b472b62f-7dd3-4b2a-84ba-0cba2cb909d0",
+    "url": "https://metamages.com/meta/pauper/tournaments/b472b62f-7dd3-4b2a-84ba-0cba2cb909d0?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "b94a56717bfdf8396bf445968b2d8ba12fa77720b6574b4f29fe175e0439d2bc"
+  },
+  {
+    "id": "a20c7562-2fe8-4c15-942c-191b419b0bcd",
+    "url": "https://metamages.com/meta/pauper/tournaments/a20c7562-2fe8-4c15-942c-191b419b0bcd?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "fa64462f12bd0b91a08d71ee410549ca3f5514154ad18c027c1dd9d4dacbffba"
+  },
+  {
+    "id": "ce40035d-5218-4812-a90e-f82bad8da4f4",
+    "url": "https://metamages.com/meta/pauper/tournaments/ce40035d-5218-4812-a90e-f82bad8da4f4?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "ec293d7898f5abbf551c74150d3f2da5d0c1ae74a9c789e7a33220bebebec7d4"
+  },
+  {
+    "id": "72a67b5b-5af5-450b-94fe-8e6686be3931",
+    "url": "https://metamages.com/meta/pauper/tournaments/72a67b5b-5af5-450b-94fe-8e6686be3931?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "d3a97547bce57ed1d9932e1df681b68587b3091ebf1cc61022c4e4d05e342cf1"
+  },
+  {
+    "id": "b095e548-da37-4494-bb00-105e5ce994c0",
+    "url": "https://metamages.com/meta/pauper/tournaments/b095e548-da37-4494-bb00-105e5ce994c0?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "73de5a766e1936a78bb9f522407d6f3e10ac64fe5879884a20649c502d10cfe3"
+  },
+  {
+    "id": "06730637-423a-47a2-ad80-41d2d717be83",
+    "url": "https://metamages.com/meta/pauper/tournaments/06730637-423a-47a2-ad80-41d2d717be83?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "689689f91b840508ac02cdeb882a20ad3d1bbd6b946c4acc133d404141a57f92"
+  },
+  {
+    "id": "af9be3d2-2757-4b12-b755-e5c4ac6213b6",
+    "url": "https://metamages.com/meta/pauper/tournaments/af9be3d2-2757-4b12-b755-e5c4ac6213b6?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "7029e6671080970674a55cd9bde39b1f6e6c019a39e0d4bfbaef415b7c445bc0"
+  },
+  {
+    "id": "50a29e25-f735-416f-ab00-8f0577698a26",
+    "url": "https://metamages.com/meta/pauper/tournaments/50a29e25-f735-416f-ab00-8f0577698a26?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "e52bf6ec0067d73b3ec9b66e1ebc3e2905ece3e693c9da96ed07e123a9fa495d"
+  },
+  {
+    "id": "9293f372-2b32-4a1f-92cb-83d559018096",
+    "url": "https://metamages.com/meta/pauper/tournaments/9293f372-2b32-4a1f-92cb-83d559018096?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "0db8c065c76d835d5a5858555d02b8a3672e788ecdece03835a3aa504a50123f"
+  },
+  {
+    "id": "8704ebb2-56ea-4408-9ab7-9085c34b0161",
+    "url": "https://metamages.com/meta/pauper/tournaments/8704ebb2-56ea-4408-9ab7-9085c34b0161?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "11c28504f89d10223d128fcbae238e2e1557b1dfc3182af5fa445ade01918846"
+  },
+  {
+    "id": "f743f5b5-e9bf-49fd-a9cd-a270576cde15",
+    "url": "https://metamages.com/meta/pauper/tournaments/f743f5b5-e9bf-49fd-a9cd-a270576cde15?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "4f5d6489d2dc4f61459d7d93938275c1361457fe84ea7c6256d5db79a165aa65"
+  },
+  {
+    "id": "723d36b8-4dc0-4945-a88a-62277acba06c",
+    "url": "https://metamages.com/meta/pauper/tournaments/723d36b8-4dc0-4945-a88a-62277acba06c?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "8955f5107920a59087c3ef68dd307b655ff011bd6cfed9233cd694b1647ef7c7"
+  },
+  {
+    "id": "9860bbdf-fbfd-4939-9b7e-abff3fb2d0e8",
+    "url": "https://metamages.com/meta/pauper/tournaments/9860bbdf-fbfd-4939-9b7e-abff3fb2d0e8?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "0cd3435bf5a10744df16b719d3670e7c269aa4283433d2c9b8e7ac23e97cabb5"
+  },
+  {
+    "id": "9221940c-2c50-48f0-8d7a-0bd382a21155",
+    "url": "https://metamages.com/meta/pauper/tournaments/9221940c-2c50-48f0-8d7a-0bd382a21155?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "03b20beb1a49894eead3653617222def7c18a2902eb774dec67ea9e75269590d"
+  },
+  {
+    "id": "86f95c86-0fdf-4038-a88d-8287c8f2fa6b",
+    "url": "https://metamages.com/meta/pauper/tournaments/86f95c86-0fdf-4038-a88d-8287c8f2fa6b?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "ff5944345fede37c67eb68d17c11567b378b3c814346647bafc7889d3ba74cc3"
+  },
+  {
+    "id": "36b31bf2-b1c8-4087-b759-6311e5feb5dc",
+    "url": "https://metamages.com/meta/pauper/tournaments/36b31bf2-b1c8-4087-b759-6311e5feb5dc?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "52e57cde7880f0ccbcba60846f1d5d54d77ed26876750ded0d70cd11da411258"
+  },
+  {
+    "id": "26916c81-9fbf-4673-9081-3d2cad6627ed",
+    "url": "https://metamages.com/meta/pauper/tournaments/26916c81-9fbf-4673-9081-3d2cad6627ed?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "bc829b5e92f1e78f8b147dfcca4dc37c2b68b6a30663a12904047f388d87c752"
+  },
+  {
+    "id": "887b09c6-dea5-4c2f-8b77-a973951ee1bf",
+    "url": "https://metamages.com/meta/pauper/tournaments/887b09c6-dea5-4c2f-8b77-a973951ee1bf?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "f80a4e5b8b8d229f9eacffc04a4b5ab369853b3e2ccaf32495b56bd89aeced9e"
+  },
+  {
+    "id": "c2a81bb9-df49-41c8-a88a-034671dce618",
+    "url": "https://metamages.com/meta/pauper/tournaments/c2a81bb9-df49-41c8-a88a-034671dce618?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "5ae1d3704d924f28d413c09d7386394dd3a6c851fcc66287ee14e9dcba7b9b55"
+  },
+  {
+    "id": "5d32aa1c-b24d-44f1-a4e4-8ba44491baf9",
+    "url": "https://metamages.com/meta/pauper/tournaments/5d32aa1c-b24d-44f1-a4e4-8ba44491baf9?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "fd0d81cbf5bb84669319b9ff7907f11129bbd8c892b72c915b245d6ca7b9c44f"
+  },
+  {
+    "id": "454a5eaa-680d-40e4-be90-23479673b2f2",
+    "url": "https://metamages.com/meta/pauper/tournaments/454a5eaa-680d-40e4-be90-23479673b2f2?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "fdb16c9b0463c5602fdfb2bbb888d677d9527d8b59c423e8087ab1d0eeb33e41"
+  },
+  {
+    "id": "fd0b1a18-78d3-40e1-bad1-1ed676ab53a2",
+    "url": "https://metamages.com/meta/pauper/tournaments/fd0b1a18-78d3-40e1-bad1-1ed676ab53a2?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "aca8d503e40f510c22ee40ee34e445d8f623fa304ccdc536c46b5c3005938988"
+  },
+  {
+    "id": "642269a4-c6e5-4cdd-ac47-ccaff5e9adb8",
+    "url": "https://metamages.com/meta/pauper/tournaments/642269a4-c6e5-4cdd-ac47-ccaff5e9adb8?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "f89fbe6fb0c968455a2597103fb7721be3d436a14a3d40675564176edcb5455a"
+  },
+  {
+    "id": "5bd549c9-3d61-402c-be22-82ed2f4a20e0",
+    "url": "https://metamages.com/meta/pauper/tournaments/5bd549c9-3d61-402c-be22-82ed2f4a20e0?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "c1f801510b7543ff55e20c0eb25d57c9d970f206e190937b5b8ef6e850a6365e"
+  },
+  {
+    "id": "d7551de3-bb62-4a52-adf4-f6f808591c22",
+    "url": "https://metamages.com/meta/pauper/tournaments/d7551de3-bb62-4a52-adf4-f6f808591c22?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "37bb149859ac1fc1934c3925a50386fe8af89d315c8d02e975b67d669584aba1"
+  },
+  {
+    "id": "7fb32471-40c7-4664-963f-d403e945179c",
+    "url": "https://metamages.com/meta/pauper/tournaments/7fb32471-40c7-4664-963f-d403e945179c?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "7a9638ee6fa3fe92d56f22124ec0ad781e56ba4c4ede21f80a0a13fce7575681"
+  },
+  {
+    "id": "5b9b91c7-1d98-41b6-a14c-79afd76b95ed",
+    "url": "https://metamages.com/meta/pauper/tournaments/5b9b91c7-1d98-41b6-a14c-79afd76b95ed?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "f56feb8df1c1ce081dcefb05a9cdac499636d4a364d6be5a1caa64f40f038a0a"
+  },
+  {
+    "id": "53af7eda-246e-4820-82fe-0fc0d7c74b67",
+    "url": "https://metamages.com/meta/pauper/tournaments/53af7eda-246e-4820-82fe-0fc0d7c74b67?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "79c93a2c3695abb16a9080970037b57ee872a6efdc5ef62c10fadf0fde1e791c"
+  },
+  {
+    "id": "95126150-a4e3-4f7a-8739-aeabe8f37911",
+    "url": "https://metamages.com/meta/pauper/tournaments/95126150-a4e3-4f7a-8739-aeabe8f37911?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "accbcd044c087510bc04bc22c54efd7edaee49420267084b8c2418a74d11050d"
+  },
+  {
+    "id": "87592794-c147-446e-8c86-e2e8c8de8fd0",
+    "url": "https://metamages.com/meta/pauper/tournaments/87592794-c147-446e-8c86-e2e8c8de8fd0?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "c54b5025365fb510ec75d684033c68b0261c17948e121cb51c14ba735c66b2ca"
+  },
+  {
+    "id": "d40d977e-1375-4df6-b434-4147a9764179",
+    "url": "https://metamages.com/meta/pauper/tournaments/d40d977e-1375-4df6-b434-4147a9764179?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "5d41db982d6f7e964a550c5bb620c18c3ceaaa1322a63eeb260ca0f24055cc5f"
+  },
+  {
+    "id": "f1e09a64-5bbf-444b-9c81-4e7e4f2c61d6",
+    "url": "https://metamages.com/meta/pauper/tournaments/f1e09a64-5bbf-444b-9c81-4e7e4f2c61d6?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "32222c9490f9b28910d025326e06693e4ad7763ca21cf3fa032b126a5c35cdfa"
+  },
+  {
+    "id": "f7472232-4a20-42ac-892e-149ee8f65280",
+    "url": "https://metamages.com/meta/pauper/tournaments/f7472232-4a20-42ac-892e-149ee8f65280?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "5cb125f5707777c876dffa67d3aa1b04578273ce34535ee6f258c3c3e7d4b3d9"
+  },
+  {
+    "id": "48309a93-eb5c-4fbf-8066-fe61632645e5",
+    "url": "https://metamages.com/meta/pauper/tournaments/48309a93-eb5c-4fbf-8066-fe61632645e5?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "e3d573f781a1acb5fe8e091aa812bad3a6e3dd628bd100192f13476ed76ddf71"
+  },
+  {
+    "id": "d62a5dbf-f081-471b-b553-bf081c61b4d5",
+    "url": "https://metamages.com/meta/pauper/tournaments/d62a5dbf-f081-471b-b553-bf081c61b4d5?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "d294fd4de8bd573a82b599654f1925c78c37877671b9ce1f6c9c3cb84621bc48"
+  },
+  {
+    "id": "3c42f34a-adeb-4f57-8bfe-10ddf320b25c",
+    "url": "https://metamages.com/meta/pauper/tournaments/3c42f34a-adeb-4f57-8bfe-10ddf320b25c?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "f0cca8889064d8eb331710885945bf5ede57707e8bb2e499649d7ae993f0c545"
+  },
+  {
+    "id": "32bc3f3e-a3ec-4416-ba2c-c43c9090f349",
+    "url": "https://metamages.com/meta/pauper/tournaments/32bc3f3e-a3ec-4416-ba2c-c43c9090f349?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "9cc3f91c858177bf9f8f97f7ebf7caede4b315fad1c49fdc1baff212a107f2be"
+  },
+  {
+    "id": "2797978d-8160-4bc7-988a-5fe9ece8aee0",
+    "url": "https://metamages.com/meta/pauper/tournaments/2797978d-8160-4bc7-988a-5fe9ece8aee0?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "87c9dbc51ec3b06b552ad9aa3264b69a0d9c594df5725ddbd7e5a2b23ef4c860"
+  },
+  {
+    "id": "65890c60-6aae-4527-a015-d9a4ae87e009",
+    "url": "https://metamages.com/meta/pauper/tournaments/65890c60-6aae-4527-a015-d9a4ae87e009?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "dd09393b18d8e76220e72031dbb027eea7f839b3723b70e6c912352591933fd5"
+  },
+  {
+    "id": "737fb6fc-387f-43ac-8300-348777437044",
+    "url": "https://metamages.com/meta/pauper/tournaments/737fb6fc-387f-43ac-8300-348777437044?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "1fdbfb000c576fb1dc25d7b5b7dac2fff3ae50f1b2159a9089c03b74650fdf9c"
+  },
+  {
+    "id": "888a4250-577b-4721-89f8-1ab4a6a21a03",
+    "url": "https://metamages.com/meta/pauper/tournaments/888a4250-577b-4721-89f8-1ab4a6a21a03?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "b805b4fa7c9e8ca69f1ba1965eec5d84f8545bd995f3a76d55c0616c319d683c"
+  },
+  {
+    "id": "ef8369ba-8eec-4dc7-a97e-4b1d8846b9f5",
+    "url": "https://metamages.com/meta/pauper/tournaments/ef8369ba-8eec-4dc7-a97e-4b1d8846b9f5?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "e9940746586ca46bcffdacd063a0ba695b466aaa7941966b1c907fc48bd8d92e"
+  },
+  {
+    "id": "a98f5b8c-f1ca-4347-ae3e-ce47f9e8bd2e",
+    "url": "https://metamages.com/meta/pauper/tournaments/a98f5b8c-f1ca-4347-ae3e-ce47f9e8bd2e?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "512ec3782732177522ac22c914c60a7f680c57e857e54eea8dd18b5416715ed8"
+  },
+  {
+    "id": "3866f8b9-b9f2-42c0-ae65-01d0b83a2fb0",
+    "url": "https://metamages.com/meta/pauper/tournaments/3866f8b9-b9f2-42c0-ae65-01d0b83a2fb0?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "33e246d64a9d0453aac7f65a8a5a9e37ee5c271aee45e203df4bc97c3215e6b4"
+  },
+  {
+    "id": "026a3b78-c0ef-4ac7-ba49-5f9c4093322a",
+    "url": "https://metamages.com/meta/pauper/tournaments/026a3b78-c0ef-4ac7-ba49-5f9c4093322a?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "5c062f80d441884121755382481efb8ebb90a0ddc3c92065a888f37f6eb9859f"
+  },
+  {
+    "id": "8414e2da-884a-4111-bdd0-82fe52797c92",
+    "url": "https://metamages.com/meta/pauper/tournaments/8414e2da-884a-4111-bdd0-82fe52797c92?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "bdec8110fdf5dfc787b04cd3906a4512cfc81698c38226845198f63ae0bac58a"
+  },
+  {
+    "id": "db65b1d5-928c-4f10-ab54-68c0acfbaa30",
+    "url": "https://metamages.com/meta/pauper/tournaments/db65b1d5-928c-4f10-ab54-68c0acfbaa30?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "4d75d98c4804fb0bf6b917aba6febd25c72fc8da99942d45131264ebfb67025c"
+  },
+  {
+    "id": "f80e3970-c1e1-4bab-b5b1-75edee187fd7",
+    "url": "https://metamages.com/meta/pauper/tournaments/f80e3970-c1e1-4bab-b5b1-75edee187fd7?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "3f6f214c74efb30856636564ec5a2c5d6e9ded6ced460a0452631bbc9967ed03"
+  },
+  {
+    "id": "2ec49006-e3e4-4599-891d-e571e9e7afe5",
+    "url": "https://metamages.com/meta/pauper/tournaments/2ec49006-e3e4-4599-891d-e571e9e7afe5?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "0f86f53c48c0e071fa6aa684b244f05672355472405420ee428ae6755e236d10"
+  },
+  {
+    "id": "90c66e08-25cb-4269-b0bb-35db7657dd3e",
+    "url": "https://metamages.com/meta/pauper/tournaments/90c66e08-25cb-4269-b0bb-35db7657dd3e?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "257fa232200218886c6011ac890e8154b80e793c49842c230c97251f86cd177f"
+  },
+  {
+    "id": "b35c328b-b881-4e95-889a-564ab74c0efb",
+    "url": "https://metamages.com/meta/pauper/tournaments/b35c328b-b881-4e95-889a-564ab74c0efb?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "aa954b4b3335a7029974afa433cca60263d60f32a8136a5d3b8b892ed4860533"
+  },
+  {
+    "id": "65fd7385-bc2f-4d65-9a79-001f8b35f7c1",
+    "url": "https://metamages.com/meta/pauper/tournaments/65fd7385-bc2f-4d65-9a79-001f8b35f7c1?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "1a79469c3e31df4780d2cb7922d6d778c0b24bb570811c3d79da8a01d4c0ebb8"
+  },
+  {
+    "id": "1f261f96-232a-483a-bdec-61db969555cc",
+    "url": "https://metamages.com/meta/pauper/tournaments/1f261f96-232a-483a-bdec-61db969555cc?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "e4bed1e5e4cd157264df84ba4b502d541288b3de885340fae275514383bf559d"
+  },
+  {
+    "id": "a344baa2-d5cf-4184-8884-5e32564dd447",
+    "url": "https://metamages.com/meta/pauper/tournaments/a344baa2-d5cf-4184-8884-5e32564dd447?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "74fba8701ae21bae008d050df6e7088e5f66dfa7bb99354bd50bbbb21b0f68e5"
+  },
+  {
+    "id": "fd5ebbc0-255a-4c3f-a7ec-752f0fc335ea",
+    "url": "https://metamages.com/meta/pauper/tournaments/fd5ebbc0-255a-4c3f-a7ec-752f0fc335ea?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "eda27e53535cec3b2e4976b6da7abc300d756286dad6f5e55e733a7e6e809970"
+  },
+  {
+    "id": "85373038-86e5-4730-a85e-33cd1a7fd9a7",
+    "url": "https://metamages.com/meta/pauper/tournaments/85373038-86e5-4730-a85e-33cd1a7fd9a7?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "554422735c49bf7b078fed1b5980f1d8d614094f2b4260ef537e9d66ba9a55d3"
+  },
+  {
+    "id": "cfa9a44a-d09f-482e-82a9-91e405bb4589",
+    "url": "https://metamages.com/meta/pauper/tournaments/cfa9a44a-d09f-482e-82a9-91e405bb4589?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "5a5ca15b4dc2c99b6600e6370137d651c0b57928b8189d61bbae6d3fbfac2536"
+  },
+  {
+    "id": "289c23ea-c8be-42c5-b7f2-7c619b95ed83",
+    "url": "https://metamages.com/meta/pauper/tournaments/289c23ea-c8be-42c5-b7f2-7c619b95ed83?start=2026-09-05&end=2026-10-19&platform=paper",
+    "ok": true,
+    "sha256": "425d6269d889218363e11999aba4b758ebb37769eda4675285271d9790c43d44"
+  }
+]
