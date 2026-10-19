@@ -4,7 +4,7 @@
 
 Una corrida final de **5.000.000 de torneos**, con 110 jugadores, siete rondas suizas y eliminatorias de top8 hasta un campeón. Todos los arquetipos se registran dentro de esos mismos torneos, sin forzar un asiento.
 
-La página se organiza en once pestañas independientes: resumen, rivales por ronda, detalle de ronda, secuencias, recorridos completos, eliminatorias, mesas por récord, presencia, win rates, comparador con incertidumbre y fuentes. Cada vista tiene un enlace propio y conserva el mazo y los filtros al navegar.
+La página se organiza en diez pestañas independientes: resumen, rivales por ronda, detalle de ronda, secuencias, recorridos completos, eliminatorias, mesas por récord, presencia, win rates con comparador e incertidumbre y fuentes. Cada vista tiene un enlace propio y conserva el mazo y los filtros al navegar.
 
 El explorador muestra:
 

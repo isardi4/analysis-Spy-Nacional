@@ -20,6 +20,7 @@ const {chromium}=require('/private/tmp/spy-browser/node_modules/playwright-core'
  if(!rankings)throw Error('Incorrect global top20 rankings or denominators');
  const globalRankingSnapshot=await page.locator('#globalRankings').textContent();
  if(process.argv.includes('--matchups-only')){
+  if(await page.locator('#tab-winrates,#panel-winrates,#wrMatrix').count())throw Error('Duplicate winrate view remains');
   await page.click('#tab-comparador');
   const matrix=await page.evaluate(()=>{
    const rows=[...document.querySelectorAll('#matchupMatrix tbody tr')];let empty=0;
@@ -28,13 +29,15 @@ const {chromium}=require('/private/tmp/spy-browser/node_modules/playwright-core'
     const a=+button.dataset.matchupA,b=+button.dataset.matchupB,w=DATA.W[0][a][b]+DATA.W[1][a][b],l=DATA.W[0][b][a]+DATA.W[1][b][a],n=a===b?w:w+l;
     const value=a===b?'50%':!n?'—':(100*w/n).toLocaleString('es-AR',{maximumFractionDigits:1,minimumFractionDigits:1})+'%';
     if(!n&&a!==b)empty++;
-    if(button.querySelector('.matchup-percent').textContent!==value||button.querySelector('.matchup-record').textContent!==(a===b?'Espejo':num(w)+'–'+num(l)+' W–L'))return {ok:false,a,b};
+    if(button.querySelector('.matchup-percent').textContent!==value||button.querySelector('.matchup-record').textContent!==(a===b?'Espejo · '+num(n):num(w)+'–'+num(l)+' W–L'))return {ok:false,a,b};
    }
    return {ok:true,empty};
   });
   if(!matrix.ok)throw Error('Invalid 20x20 matrix '+JSON.stringify(matrix));
   await page.click('[data-matchup-expand]');
   if(!await page.locator('#matchupMatrix').evaluate(el=>el.classList.contains('matchup-wide')&&el.getBoundingClientRect().width>innerWidth-80))throw Error('Matrix did not expand');
+  await page.locator('[data-matchup-a]').nth(24).hover();
+  if(await page.locator('.matchup-axis-active').count()!==2)throw Error('Missing row/column highlighting');
   await page.screenshot({path:'reports/matchup_matrix_large.png',fullPage:false});
   await page.keyboard.press('Escape');
   if(await page.evaluate(()=>document.body.classList.contains('matchup-matrix-open')))throw Error('Matrix did not close');
@@ -71,10 +74,13 @@ const {chromium}=require('/private/tmp/spy-browser/node_modules/playwright-core'
   if(mobile.overflow||!mobile.scrollable||!mobile.scrolled||!mobile.sticky)throw Error('Mobile matchup table '+JSON.stringify(mobile));
   await page.locator('#matchupHeading').scrollIntoViewIfNeeded();await page.screenshot({path:'reports/matchup_comparator_mobile.png',fullPage:false});
   if(errors.length||remote)throw Error(errors.join('\n')+' requests '+remote);
+  await page.goto(link.replace('view=comparador','view=winrates'));
+  await page.waitForFunction(()=>typeof currentView!=='undefined'&&currentView==='comparador');
+  if(new URL(page.url()).searchParams.get('view')!=='comparador'||await page.locator('#tab-winrates,#panel-winrates').count())throw Error('Legacy winrates link did not resolve to the single view');
   console.log(JSON.stringify({matrixCells:400,allArchetypes:options,observedAndModel:true,sourceCounts:true,reciprocity:true,mirror:true,noData:true,deepLinks:true,mobile,errors,remote},null,2));return;
  }
  if(process.argv.includes('--tabs-only')){
-  const views=['resumen','recorridos','ronda','secuencias','ejemplos','eliminatorias','record','presencia','winrates','comparador','fuentes'];let checked=0;
+  const views=['resumen','recorridos','ronda','secuencias','ejemplos','eliminatorias','record','presencia','comparador','fuentes'];let checked=0;
   const assertVisible=async view=>{
    await page.waitForFunction(v=>document.querySelector('[data-panel="'+v+'"]').hidden===false,view);
    await page.waitForFunction(()=>[...document.querySelector('[data-panel="'+currentView+'"]').querySelectorAll('.chart')].filter(el=>chartSpecs.has(el.id)).every(el=>el._fullLayout&&Math.abs(el._fullLayout.width-el.getBoundingClientRect().width)<4));

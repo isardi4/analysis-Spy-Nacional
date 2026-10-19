@@ -38,39 +38,49 @@
 
 .nav-mobile-hint{display:none}@media(max-width:760px){.nav-mobile-hint{display:block;font-size:12px;color:#60727a;margin:0 0 18px}}
 
-/* Compact 20x20 matchup table with persistent row/column labels. */
+/* One matchup workspace: readable values, restrained color, fixed axes. */
 .matchup-controls{display:flex;align-items:flex-end;flex-wrap:wrap;gap:14px;margin:20px 0}
 .matchup-controls label{flex:1;min-width:min(220px,100%)}
-.matchup-scroll{overflow:auto;max-height:740px;background:#fffdf8;border:1px solid #d5dfd9;margin:20px 0}
-.matchup-scroll table{border-collapse:separate;border-spacing:0;min-width:1700px;table-layout:fixed}
-.matchup-scroll th,.matchup-scroll td{text-align:center;border-right:1px solid #fffdf8;border-bottom:1px solid #fffdf8;padding:0;min-width:75px;width:75px}
-.matchup-scroll thead th{height:160px;top:0;z-index:2;background:#dfe9e6}
-.matchup-scroll thead th span{display:inline-block;writing-mode:vertical-rl;transform:rotate(180deg);padding:10px 2px;white-space:nowrap}
-.matchup-scroll tr>:first-child{position:sticky;left:0;width:170px;min-width:170px;background:#fffdf8;text-align:left;padding:8px 12px;z-index:1}
-.matchup-scroll thead tr>:first-child{z-index:3;background:#dfe9e6;white-space:normal}
-.matchup-scroll button{display:block;border:0;background:transparent;border-radius:0;width:100%;padding:10px 3px;font-size:12px;font-weight:700;color:#172d37}
-.matchup-scroll button:hover,.matchup-scroll button:focus-visible{outline:3px solid #146b80;outline-offset:-3px;background:#ffffff65}
-.matchup-scroll small{display:block;font-size:10px;font-weight:400;margin-top:4px}
-.matchup-scroll caption{caption-side:bottom;text-align:left;padding:14px;white-space:normal;color:#61717b}
+.matchup-section-heading{margin:30px 0 16px}.matchup-section-heading h3{margin:8px 0;font-size:22px;letter-spacing:-.4px}
+#matchupMatrix{background:#fff;border:1px solid #dce4e8;border-radius:12px;padding:0 16px 16px;box-shadow:0 4px 18px #20374406}
+.matchup-matrix-toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:16px 0}
+.matchup-matrix-toolbar>button{font-size:13px;font-weight:600;border-radius:7px;background:#f7f9fa;border-color:#d4dfe5}
+.matchup-legend{display:flex;gap:16px;align-items:center;flex-wrap:wrap;font-size:12px;font-weight:600}
+.matchup-legend span{display:inline-flex;gap:6px;align-items:center}.matchup-legend span::before{content:'';width:8px;height:8px;border-radius:50%;background:#c0cad1}
+.matchup-legend .legend-positive{color:#216d57}.matchup-legend .legend-positive::before{background:#54a78c}
+.matchup-legend .legend-negative{color:#99504b}.matchup-legend .legend-negative::before{background:#cc8983}
+.matchup-legend .legend-empty{font-weight:400;color:#778591}
+.matchup-scroll{overflow:auto;max-height:690px;background:#fff;border:1px solid #e2e8ed;border-radius:8px;scrollbar-color:#a9b9c3 #f2f5f7;scrollbar-width:thin}
+.matchup-scroll table{border-collapse:separate;border-spacing:0;min-width:2420px;table-layout:fixed;font-variant-numeric:tabular-nums}
+.matchup-scroll th,.matchup-scroll td{text-align:center;padding:0;width:112px;min-width:112px;border-right:1px solid #e8edf0;border-bottom:1px solid #e8edf0}
+.matchup-scroll thead th{position:sticky;top:0;z-index:2;height:78px;background:#f4f7f9;vertical-align:middle;font-size:12px;line-height:1.45;white-space:normal;color:#3d5260}
+.matchup-scroll thead th>span{display:block;padding:12px 8px;white-space:normal}
+.matchup-scroll tr>:first-child{position:sticky;left:0;width:180px;min-width:180px;padding:12px 14px;text-align:left;background:#fff;z-index:1;font-size:13px;line-height:1.4;box-shadow:2px 0 4px #20374405}
+.matchup-scroll thead tr>:first-child{z-index:3;background:#f4f7f9}
+.matchup-scroll .matchup-corner span{padding:2px 0;color:#718392;font-size:10px;letter-spacing:1px}
+.matchup-scroll button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:0;background:transparent;border-radius:0;width:100%;height:78px;min-height:78px;padding:10px 5px;color:#334c5c;cursor:pointer;transition:box-shadow .1s,background .1s}
+.matchup-percent{display:block;font-size:22px;font-weight:700;line-height:1.15;letter-spacing:-.6px}
+.matchup-record{display:block;font-size:12px;font-weight:500;line-height:1.4;white-space:nowrap;color:#536776}
+.matchup-positive .matchup-percent{color:#236e58}.matchup-negative .matchup-percent{color:#9a4f49}
+.matchup-mirror{background:#f7f9fb!important}.matchup-mirror .matchup-percent{color:#83929d;font-size:20px;font-weight:500}.matchup-mirror .matchup-record{color:#83929d;font-size:11px}
+.matchup-empty .matchup-percent{color:#9aa9b4}.matchup-empty .matchup-record{color:#93a0a9}
+.matchup-scroll .matchup-axis-active{background:#e4edf6!important;color:#1a4c74!important;box-shadow:inset 0 -3px #326a96}
+.matchup-scroll tbody th.matchup-axis-active{box-shadow:inset 3px 0 #326a96}
+.matchup-scroll button:hover,.matchup-scroll button:focus-visible{background:#ffffff55;box-shadow:inset 0 0 0 2px #326a96;outline:0}
 .matchup-scroll tr:hover td{background:inherit}
-.matchup-interval{min-height:285px}
-@media(max-width:760px){.matchup-controls{display:grid;grid-template-columns:minmax(0,1fr)}.matchup-scroll tr>:first-child{min-width:130px;width:130px}.matchup-scroll{max-height:600px}}
-
-/* Larger matchup cells and horizontal names; optional full-screen workspace. */
-.matchup-scroll table{min-width:2840px}
-.matchup-scroll th,.matchup-scroll td{min-width:130px;width:130px;border-right:3px solid #fffdf8;border-bottom:3px solid #fffdf8}
-.matchup-scroll thead th{height:95px;font-size:14px;white-space:normal;vertical-align:middle}
-.matchup-scroll thead th span{writing-mode:horizontal-tb;transform:none;padding:12px 8px;white-space:normal;line-height:1.4}
-.matchup-scroll tr>:first-child{min-width:200px;width:200px;font-size:15px;padding:12px 14px}
-.matchup-scroll button{padding:16px 8px;min-height:110px}
-.matchup-percent{display:block;font-size:24px;line-height:1.2}
-.matchup-record{display:block;font-size:16px;font-weight:600;margin-top:9px;white-space:nowrap}
-.matchup-scroll small{font-size:12px;margin-top:6px;color:#42545b}
-.matchup-matrix-toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:12px 0;font-size:14px}
-.matchup-wide{position:fixed;inset:14px;z-index:100;background:#f2f0ea;padding:18px;box-shadow:0 0 0 30px #172d37a8;display:flex;flex-direction:column}
-.matchup-wide .matchup-scroll{flex:1;min-height:0;max-height:none;margin:8px 0 0}
-.matchup-matrix-open{overflow:hidden}
-@media(max-width:760px){.matchup-scroll tr>:first-child{min-width:145px;width:145px;font-size:14px}.matchup-wide{inset:6px;padding:10px}.matchup-matrix-toolbar strong{font-size:13px}}
+.matchup-scroll caption{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.matchup-wide{position:fixed;inset:16px;z-index:100;padding:0 20px 20px!important;background:#fff;box-shadow:0 0 0 40px #172d3780!important;display:flex;flex-direction:column}
+.matchup-wide .matchup-scroll{flex:1;min-height:0;max-height:none}
+.matchup-matrix-open{overflow:hidden}.matchup-interval{min-height:285px}
+@media(max-width:760px){
+ .matchup-controls{display:grid;grid-template-columns:minmax(0,1fr)}
+ #matchupMatrix{padding:0 9px 9px;border-radius:9px}
+ .matchup-scroll{max-height:570px}
+ .matchup-scroll tr>:first-child{min-width:130px;width:130px;padding:10px;font-size:12px}
+ .matchup-legend{gap:10px;font-size:11px}
+ .matchup-matrix-toolbar{padding:12px 0;gap:10px}
+ .matchup-wide{inset:6px;padding:0 10px 10px!important}
+}
 </style><script>/**
 * plotly.js v4.1.1
 * Copyright 2012-2026, Plotly, Inc.
@@ -3706,8 +3716,7 @@ return Plotly;
     <a id="tab-record" role="tab" href="?view=record" data-view-target="record" aria-controls="panel-record" aria-selected="false" tabindex="-1">Mesas por récord</a>
     <span class="nav-heading">Datos del modelo</span>
     <a id="tab-presencia" role="tab" href="?view=presencia" data-view-target="presencia" aria-controls="panel-presencia" aria-selected="false" tabindex="-1">Presencia de mazos</a>
-    <a id="tab-winrates" role="tab" href="?view=winrates" data-view-target="winrates" aria-controls="panel-winrates" aria-selected="false" tabindex="-1">Matriz de win rates</a>
-    <a id="tab-comparador" role="tab" href="?view=comparador" data-view-target="comparador" aria-controls="panel-comparador" aria-selected="false" tabindex="-1">Win rates y confianza</a>
+    <a id="tab-comparador" role="tab" href="?view=comparador" data-view-target="comparador" aria-controls="panel-comparador" aria-selected="false" tabindex="-1">Win rates</a>
     <a id="tab-fuentes" role="tab" href="?view=fuentes" data-view-target="fuentes" aria-controls="panel-fuentes" aria-selected="false" tabindex="-1">Fuentes y método</a>
   </nav>
   <div class="analysis-content">
@@ -3775,16 +3784,12 @@ return Plotly;
       <p class="subtle">650 de 671 plazas identificadas (96.9%). Presencia renormalizada sobre las plazas identificadas. Muestra de 13 eventos presenciales del 20/09 al 19/10/2026. Los datos online no intervienen en estos porcentajes. Las participaciones no son personas únicas.</p>
     </section>
 
-    <section id="panel-winrates" data-panel="winrates" role="tabpanel" aria-labelledby="tab-winrates" hidden>
-      <h2>Matriz de win rates</h2><div id="matrixInfo"></div><div id="wrMatrix" class="chart"></div><div id="matchups"></div>
-    </section>
-
     <section id="panel-comparador" data-panel="comparador" role="tabpanel" aria-labelledby="tab-comparador" hidden>
-      <h2>Win rates y confianza</h2>
+      <h2>Win rates</h2>
       <p>Matches observados del 20/09 al 19/10/2026: papel + eliminatorias publicadas online. La presencia se calcula exclusivamente con papel. Los 5 millones de torneos simulados no agregan observaciones a estos intervalos.</p>
-      <h3>Matriz de los 20 mazos con mayor presencia en papel</h3>
+      <div class="matchup-section-heading"><div class="eyebrow">MATRIZ DE MATCHUPS</div><h3>Los 20 mazos más presentes en papel</h3></div>
       <label>Valor de las celdas<select id="matchupMode"><option value="observed">Win rate observado</option><option value="model">Win rate ajustado usado en la simulación</option></select></label>
-      <p class="subtle">Leé filas contra columnas. Deslizá para ver las 20 columnas. Cada celda muestra el porcentaje y el récord W–L del mazo de la fila. Usá «Ampliar matriz» para ocupar la pantalla; tocá una celda para abrir ese cruce en el comparador. «—» indica falta de matches decisivos. Los espejos tienen 50% nominal.</p>
+      <p class="subtle">Cada fila es un mazo; cada columna, su rival. El porcentaje y el W–L se leen desde la fila. Seleccioná un cruce para ver su muestra e intervalo de confianza.</p>
       <div id="matchupMatrix"></div>
       <h3 id="matchupHeading">Comparar dos mazos</h3>
       <p>Elegí cualquier par de arquetipos identificados, incluidos los que no están en el Top20. Esta selección es independiente del mazo del encabezado.</p>
@@ -3825,15 +3830,17 @@ if(typeof module!=='undefined')module.exports={wilson95,matchupStats};
 function intervalLabel(ci){return ci?`${pct(ci[0])} – ${pct(ci[1])}`:'Sin estimación';}
 function renderMatchupMatrix(){
  const mode=$('matchupMode').value,matchupOrder=[...active].sort((a,b)=>DATA.counts[b]-DATA.counts[a]||names[a].localeCompare(names[b])).slice(0,20);
- const head='<thead><tr><th scope="col">Fila vs. columna</th>'+matchupOrder.map(j=>`<th scope="col"><span>${esc(names[j])}</span></th>`).join('')+'</tr></thead>';
- const body=matchupOrder.map(a=>'<tr><th scope="row">'+esc(names[a])+'</th>'+matchupOrder.map(b=>{
+ const head='<thead><tr><th scope="col" class="matchup-corner"><span>MAZO ↓</span><span>RIVAL →</span></th>'+matchupOrder.map(j=>`<th scope="col" data-matchup-col="${j}"><span>${esc(names[j])}</span></th>`).join('')+'</tr></thead>';
+ const body=matchupOrder.map(a=>'<tr data-matchup-row="'+a+'"><th scope="row">'+esc(names[a])+'</th>'+matchupOrder.map(b=>{
   const s=matchupStats(DATA.W,DATA.D,a,b),p=s.mirror?.5:mode==='model'?s.adjusted:s.observed;
   const label=s.mirror?'50%':p===null?'—':(100*p).toLocaleString('es-AR',{maximumFractionDigits:1,minimumFractionDigits:1})+'%';
   const detail=`${names[a]} contra ${names[b]}. ${s.mirror?'Espejo: 50% por simetría':`WR observado: ${s.observed===null?'sin muestra':pct(s.observed)}. IC 95% Wilson: ${intervalLabel(s.ci)}. Ajustado: ${pct(s.adjusted)}`}. ${s.mirror?'Espejo':s.w+' victorias, '+s.l+' derrotas'}. ${s.n} matches decisivos, ${s.d} empates. Abrir comparador.`;
-  const bg=s.mirror||p===.5?'#e8ece8':p===null?'#f0f0ed':p>.5?`rgba(23,107,128,${(.08+.5*Math.abs(p-.5)*2).toFixed(3)})`:`rgba(189,112,90,${(.08+.5*Math.abs(p-.5)*2).toFixed(3)})`;
-  return `<td style="background:${bg}"><button type="button" data-matchup-a="${a}" data-matchup-b="${b}" title="${esc(detail)}" aria-label="${esc(detail)}"><span class="matchup-percent">${label}</span><span class="matchup-record">${s.mirror?'Espejo':num(s.w)+'–'+num(s.l)+' W–L'}</span><small>${s.mirror?num(s.n)+' matches decisivos':'n='+num(s.n)}</small></button></td>`;
+  const tone=s.mirror?'mirror':p===null?'empty':p===.5?'even':p>.5?'positive':'negative';
+  const strength=p===null||s.mirror?0:Math.abs(p-.5)*2;
+  const bg=tone==='positive'?`rgba(34,134,105,${(.04+.15*strength).toFixed(3)})`:tone==='negative'?`rgba(191,83,77,${(.04+.12*strength).toFixed(3)})`:'#ffffff';
+  return `<td class="matchup-${tone}" style="background:${bg}"><button type="button" data-matchup-a="${a}" data-matchup-b="${b}" title="${esc(detail)}" aria-label="${esc(detail)}"><span class="matchup-percent">${label}</span><span class="matchup-record">${s.mirror?'Espejo · '+num(s.n):num(s.w)+'–'+num(s.l)+' W–L'}</span></button></td>`;
  }).join('')+'</tr>').join('');
- $('matchupMatrix').innerHTML='<div class="matchup-matrix-toolbar"><strong>% y W–L · fila contra columna</strong><button type="button" data-matchup-expand aria-pressed="'+$('matchupMatrix').classList.contains('matchup-wide')+'">'+($('matchupMatrix').classList.contains('matchup-wide')?'Reducir matriz':'Ampliar matriz')+'</button></div><div class="matchup-scroll" role="region" aria-label="Matriz 20 por 20 de win rates" tabindex="0"><table><caption>20 arquetipos con mayor presencia presencial. Cada celda es el WR del mazo de la fila contra el de la columna. Debajo del % aparece el récord W–L desde la perspectiva de la fila; los empates quedan en el detalle. n cuenta matches decisivos observados. Los espejos muestran el total de matches decisivos, contado una sola vez. El color representa el WR, no su confianza. Seleccioná una celda para ver sus datos.</caption>'+head+'<tbody>'+body+'</tbody></table></div>';
+ $('matchupMatrix').innerHTML='<div class="matchup-matrix-toolbar"><div class="matchup-legend"><span class="legend-negative">&lt; 50%</span><span class="legend-neutral">50%</span><span class="legend-positive">&gt; 50%</span><span class="legend-empty">— sin muestra</span></div><button type="button" data-matchup-expand aria-pressed="'+$('matchupMatrix').classList.contains('matchup-wide')+'">'+($('matchupMatrix').classList.contains('matchup-wide')?'Reducir matriz':'Ampliar matriz')+'</button></div><div class="matchup-scroll" role="region" aria-label="Matriz 20 por 20 de win rates" tabindex="0"><table><caption>W–L = victorias–derrotas de la fila contra la columna. Los empates y el IC 95% están en el comparador. Color = win rate, no confianza estadística. Espejo: 50% nominal y cantidad de matches decisivos.</caption>'+head+'<tbody>'+body+'</tbody></table></div>';
 }
 function renderMatchupPair(){
  const a=+$('matchupA').value,b=+$('matchupB').value,s=matchupStats(DATA.W,DATA.D,a,b);
@@ -3856,6 +3863,8 @@ function initMatchupExplorer(){
  $('matchupA').addEventListener('change',renderMatchupPair);$('matchupB').addEventListener('change',renderMatchupPair);
  $('matchupSwap').addEventListener('click',()=>{const a=$('matchupA').value;$('matchupA').value=$('matchupB').value;$('matchupB').value=a;renderMatchupPair();});
  $('matchupMode').addEventListener('change',()=>{renderMatchupMatrix();updateURL();});
+ $('matchupMatrix').addEventListener('pointerover',highlightMatchupAxes);$('matchupMatrix').addEventListener('focusin',highlightMatchupAxes);
+ $('matchupMatrix').addEventListener('pointerleave',()=>{document.querySelectorAll('.matchup-axis-active').forEach(el=>el.classList.remove('matchup-axis-active'));});
  $('matchupMatrix').addEventListener('click',e=>{if(e.target.closest('[data-matchup-expand]')){const open=$('matchupMatrix').classList.toggle('matchup-wide');document.body.classList.toggle('matchup-matrix-open',open);const button=$('matchupMatrix').querySelector('[data-matchup-expand]');button.textContent=open?'Reducir matriz':'Ampliar matriz';button.setAttribute('aria-pressed',String(open));return;}const cell=e.target.closest('[data-matchup-a]');if(!cell)return;closeMatchupMatrix();$('matchupA').value=cell.dataset.matchupA;$('matchupB').value=cell.dataset.matchupB;renderMatchupPair();$('matchupHeading').scrollIntoView({block:'start',behavior:'auto'});});
 }
 
@@ -3864,6 +3873,13 @@ function closeMatchupMatrix(){
  const button=$('matchupMatrix').querySelector('[data-matchup-expand]');if(button){button.textContent='Ampliar matriz';button.setAttribute('aria-pressed','false');}
 }
 document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMatchupMatrix();});
+
+function highlightMatchupAxes(event){
+ const cell=event.target.closest('[data-matchup-a]');if(!cell)return;
+ document.querySelectorAll('.matchup-axis-active').forEach(el=>el.classList.remove('matchup-axis-active'));
+ const row=$('matchupMatrix').querySelector(`[data-matchup-row="${cell.dataset.matchupA}"]>th`),col=$('matchupMatrix').querySelector(`[data-matchup-col="${cell.dataset.matchupB}"]`);
+ if(row)row.classList.add('matchup-axis-active');if(col)col.classList.add('matchup-axis-active');
+}
 
 'use strict';
 const $=id=>document.getElementById(id),sum=a=>a.reduce((x,y)=>x+y,0),pct=x=>Number.isFinite(x)?(100*x).toLocaleString('es-AR',{minimumFractionDigits:2,maximumFractionDigits:2})+'%':'—',num=x=>Number(x).toLocaleString('es-AR'),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -3881,7 +3897,7 @@ function stateId(r,w,d){return states.findIndex(s=>s[0]===r&&s[1]===w&&s[3]===d)
 let current=null;
 let currentView='resumen';
 let activeChartFrame=0;
-const VIEW_LABELS={resumen:'Resumen',recorridos:'Rivales por ronda',ronda:'Detalle de una ronda',secuencias:'Secuencias W/L/D',ejemplos:'Recorridos completos',eliminatorias:'Eliminatorias',record:'Mesas por récord',presencia:'Presencia de mazos',winrates:'Matriz de win rates',comparador:'Win rates y confianza',fuentes:'Fuentes y método'};
+const VIEW_LABELS={resumen:'Resumen',recorridos:'Rivales por ronda',ronda:'Detalle de una ronda',secuencias:'Secuencias W/L/D',ejemplos:'Recorridos completos',eliminatorias:'Eliminatorias',record:'Mesas por récord',presencia:'Presencia de mazos',comparador:'Win rates',fuentes:'Fuentes y método'};
 function syncViewLinks(){
  document.querySelectorAll('[data-view-target]').forEach(link=>{const q=new URLSearchParams(location.search);q.set('view',link.dataset.viewTarget);link.setAttribute('href','?'+q.toString());});
 }
@@ -3898,6 +3914,7 @@ function resizeActiveCharts(){
 }
 
 function activateView(view,{push=true,scroll=true}={}){
+ if(view==='winrates')view='comparador';
  currentView=Object.hasOwn(VIEW_LABELS,view)?view:'resumen';
  if(currentView!=='comparador')closeMatchupMatrix();
  document.querySelectorAll('[data-panel]').forEach(panel=>{panel.hidden=panel.dataset.panel!==currentView;});
@@ -4000,12 +4017,8 @@ function renderState(){
  updateURL();resizeActiveCharts();
 }
 function renderSources(){
- const d=current.deck,s=DATA.sources,den=sum(DATA.counts),order=sortIndices(DATA.counts).filter(j=>DATA.counts[j]>0),w=DATA.W,dd=DATA.D;
+ const den=sum(DATA.counts),order=sortIndices(DATA.counts).filter(j=>DATA.counts[j]>0);
  table('meta',['Arquetipo','Plazas presenciales','Presencia','Esperados en 110'],order.map(j=>[esc(names[j]),num(DATA.counts[j]),pct(DATA.counts[j]/den),(110*DATA.counts[j]/den).toFixed(2)]));
- $('matrixInfo').innerHTML=`<p>Presencia: <b>${s.paper_entries} de ${s.paper_entries_total} plazas de ${s.paper_events} eventos presenciales</b> (${(s.coverage*100).toFixed(1)}% de cobertura). Se recuperaron ${s.recovered_entries} participaciones mediante las cartas de sus listas. Se excluyeron ${s.excluded_entries} plazas sin clasificación suficiente y sus encuentros. La presencia se renormaliza al 100% sobre las plazas identificadas. Matriz: ${num(s.paper_matches)} matches presenciales + ${s.online_matches} matches de eliminatorias publicadas de ${s.online_events} eventos MTGO. Ventana inclusiva: 20/09–19/10/2026. El online tiene peso 1 por match y nunca entra al porcentaje de presencia.</p><p>La muestra online está seleccionada por top 8; aumentar el número de matches no garantiza eliminar sesgos. Cada celda se regulariza con 10 matches decisivos equivalentes al 50%: (W+5)/(W+L+10). Los empates se modelan por separado. Un cruce sin observaciones es un supuesto, no evidencia de 50%.</p>`;
- const focus=order.slice(0,16);if(!focus.includes(d))focus[focus.length-1]=d;
- plot('wrMatrix',[{type:'heatmap',x:focus.map(j=>names[j]),y:focus.map(j=>names[j]),z:focus.map(i=>focus.map(j=>100*DATA.win[i][j])),customdata:focus.map(i=>focus.map(j=>matchupStats(w,dd,i,j).total)),zmid:50,zmin:20,zmax:80,colorscale:'RdBu',hovertemplate:'%{y} vs %{x}: %{z:.1f}%<br>Matches observados: %{customdata}<extra></extra>'}],'WR decisivo modelado · filas contra columnas',{height:550,margin:{l:150,r:25,t:70,b:140}});
- table('matchups',['Rival','Papel W–L–D','Online W–L–D','WR decisivo modelado','P(empate)','P(ganar match)'],order.map(j=>[esc(names[j]),...[0,1].map(q=>j===d?'Espejo: '+num(w[q][d][d])+' matches decisivos':`${w[q][d][j]}–${w[q][j][d]}–${dd[q][d][j]}`),pct(DATA.win[d][j]),pct(DATA.draw[d][j]),pct((1-DATA.draw[d][j])*DATA.win[d][j])]));
  $('method').innerHTML=`<p><b>Una única corrida final:</b> ${num(DATA.completion.tournaments)} torneos, ${num(DATA.completion.player_paths)} participaciones, ${num(DATA.completion.swiss_matches)} matches suizos y ${num(DATA.completion.playoff_matches)} matches de eliminatorias. No se reserva una plaza para ningún arquetipo: se sortean las 110 por multinomial usando presencia presencial.</p><p>Todos los jugadores se registran antes de cada ronda por W/L/D exacto, rival, resultado y resultado final del torneo. Se distinguen cinco desenlaces: fuera del top8, eliminado en cuartos, eliminado en semifinales, subcampeón y campeón. Top8/top4/top2 agrupan los desenlaces correspondientes. No son corridas independientes por mazo ni por filtro.</p><p>Suizo aproximado: orden por puntos y azar dentro del grupo, flotantes y prevención de revancha. No hay drops, ID, byes ni diferencias de habilidad. Corte por puntos, OMW%, GW%, OGW% y azar residual. Se suponen marcadores 50% 2-0 / 50% 2-1 y empate 1-1 para desempates. Top8 a eliminación directa por seeds y WR decisivo; no se ajusta la elección de play/draw. Los empates suizos usan el modelo de cada cruce.</p><p>Se verificaron sedes físicas, fecha primaria, tablas completas de primera ronda y rondas suizas en Melee. Los IDs/0-0, byes, concesiones marcadas y victorias por tiempo sin dos juegos ganados se excluyen del ajuste. Algunos empates pactados después de jugar no son distinguibles. Para MTGO solo se usan resultados individuales de brackets públicos y etiquetas del índice MetaMage, nunca récords globales para inferir parejas. Se excluyeron cinco páginas sin payload primario de partidas.</p><p>Incertidumbre: los porcentajes son condicionales al field y a la matriz modelados, no predicciones regionales calibradas. El IC de próximos rivales usa 100 lotes independientes de 50.000 torneos y contempla agrupación dentro de un torneo; no incluye error de datos ni sesgos de selección. Las etiquetas pueden reunir variantes. Se excluyen las participaciones sin arquetipo identificable y sus matches; el field simulado se limita a las plazas identificadas, renormalizadas al 100%. Las asociaciones entre rivales y clasificación no establecen causalidad.</p><p>Fuentes normalizadas: <code>data/processed/classified/</code>. Manifiesto, hashes, conteos finales y agregados: <code>results/classified/</code>. Reproducir: <code>python src/classify_decks.py --fetch</code>, <code>python src/classify_online.py</code>, <code>python src/build_model_classified.py</code>, <code>python src/run_classified.py</code>, <code>python src/replay_classified.py</code>, <code>python src/report_tournament.py</code>. Tiempo de corrida: ${(DATA.completion.wall_seconds/60).toFixed(1)} minutos.</p>`;
 }
 function downloadCSV(all){
@@ -4027,7 +4040,8 @@ function restoreControlsFromURL(){
  const pa=names.indexOf(q.get('a')||'Spy Combo'),pb=names.indexOf(q.get('b')||'Red Madness');
  $('matchupA').value=String(pa>=0?pa:names.indexOf('Spy Combo'));$('matchupB').value=String(pb>=0?pb:names.indexOf('Red Madness'));
  $('matchupMode').value=q.get('wrmode')==='model'?'model':'observed';renderMatchupMatrix();
- currentView=Object.hasOwn(VIEW_LABELS,q.get('view'))?q.get('view'):'resumen';
+ const requestedView=q.get('view')==='winrates'?'comparador':q.get('view');
+ currentView=Object.hasOwn(VIEW_LABELS,requestedView)?requestedView:'resumen';
 }
 initMatchupExplorer();
 restoreControlsFromURL();

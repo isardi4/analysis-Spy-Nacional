@@ -38,36 +38,46 @@
 
 .nav-mobile-hint{display:none}@media(max-width:760px){.nav-mobile-hint{display:block;font-size:12px;color:#60727a;margin:0 0 18px}}
 
-/* Compact 20x20 matchup table with persistent row/column labels. */
+/* One matchup workspace: readable values, restrained color, fixed axes. */
 .matchup-controls{display:flex;align-items:flex-end;flex-wrap:wrap;gap:14px;margin:20px 0}
 .matchup-controls label{flex:1;min-width:min(220px,100%)}
-.matchup-scroll{overflow:auto;max-height:740px;background:#fffdf8;border:1px solid #d5dfd9;margin:20px 0}
-.matchup-scroll table{border-collapse:separate;border-spacing:0;min-width:1700px;table-layout:fixed}
-.matchup-scroll th,.matchup-scroll td{text-align:center;border-right:1px solid #fffdf8;border-bottom:1px solid #fffdf8;padding:0;min-width:75px;width:75px}
-.matchup-scroll thead th{height:160px;top:0;z-index:2;background:#dfe9e6}
-.matchup-scroll thead th span{display:inline-block;writing-mode:vertical-rl;transform:rotate(180deg);padding:10px 2px;white-space:nowrap}
-.matchup-scroll tr>:first-child{position:sticky;left:0;width:170px;min-width:170px;background:#fffdf8;text-align:left;padding:8px 12px;z-index:1}
-.matchup-scroll thead tr>:first-child{z-index:3;background:#dfe9e6;white-space:normal}
-.matchup-scroll button{display:block;border:0;background:transparent;border-radius:0;width:100%;padding:10px 3px;font-size:12px;font-weight:700;color:#172d37}
-.matchup-scroll button:hover,.matchup-scroll button:focus-visible{outline:3px solid #146b80;outline-offset:-3px;background:#ffffff65}
-.matchup-scroll small{display:block;font-size:10px;font-weight:400;margin-top:4px}
-.matchup-scroll caption{caption-side:bottom;text-align:left;padding:14px;white-space:normal;color:#61717b}
+.matchup-section-heading{margin:30px 0 16px}.matchup-section-heading h3{margin:8px 0;font-size:22px;letter-spacing:-.4px}
+#matchupMatrix{background:#fff;border:1px solid #dce4e8;border-radius:12px;padding:0 16px 16px;box-shadow:0 4px 18px #20374406}
+.matchup-matrix-toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:16px 0}
+.matchup-matrix-toolbar>button{font-size:13px;font-weight:600;border-radius:7px;background:#f7f9fa;border-color:#d4dfe5}
+.matchup-legend{display:flex;gap:16px;align-items:center;flex-wrap:wrap;font-size:12px;font-weight:600}
+.matchup-legend span{display:inline-flex;gap:6px;align-items:center}.matchup-legend span::before{content:'';width:8px;height:8px;border-radius:50%;background:#c0cad1}
+.matchup-legend .legend-positive{color:#216d57}.matchup-legend .legend-positive::before{background:#54a78c}
+.matchup-legend .legend-negative{color:#99504b}.matchup-legend .legend-negative::before{background:#cc8983}
+.matchup-legend .legend-empty{font-weight:400;color:#778591}
+.matchup-scroll{overflow:auto;max-height:690px;background:#fff;border:1px solid #e2e8ed;border-radius:8px;scrollbar-color:#a9b9c3 #f2f5f7;scrollbar-width:thin}
+.matchup-scroll table{border-collapse:separate;border-spacing:0;min-width:2420px;table-layout:fixed;font-variant-numeric:tabular-nums}
+.matchup-scroll th,.matchup-scroll td{text-align:center;padding:0;width:112px;min-width:112px;border-right:1px solid #e8edf0;border-bottom:1px solid #e8edf0}
+.matchup-scroll thead th{position:sticky;top:0;z-index:2;height:78px;background:#f4f7f9;vertical-align:middle;font-size:12px;line-height:1.45;white-space:normal;color:#3d5260}
+.matchup-scroll thead th>span{display:block;padding:12px 8px;white-space:normal}
+.matchup-scroll tr>:first-child{position:sticky;left:0;width:180px;min-width:180px;padding:12px 14px;text-align:left;background:#fff;z-index:1;font-size:13px;line-height:1.4;box-shadow:2px 0 4px #20374405}
+.matchup-scroll thead tr>:first-child{z-index:3;background:#f4f7f9}
+.matchup-scroll .matchup-corner span{padding:2px 0;color:#718392;font-size:10px;letter-spacing:1px}
+.matchup-scroll button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:0;background:transparent;border-radius:0;width:100%;height:78px;min-height:78px;padding:10px 5px;color:#334c5c;cursor:pointer;transition:box-shadow .1s,background .1s}
+.matchup-percent{display:block;font-size:22px;font-weight:700;line-height:1.15;letter-spacing:-.6px}
+.matchup-record{display:block;font-size:12px;font-weight:500;line-height:1.4;white-space:nowrap;color:#536776}
+.matchup-positive .matchup-percent{color:#236e58}.matchup-negative .matchup-percent{color:#9a4f49}
+.matchup-mirror{background:#f7f9fb!important}.matchup-mirror .matchup-percent{color:#83929d;font-size:20px;font-weight:500}.matchup-mirror .matchup-record{color:#83929d;font-size:11px}
+.matchup-empty .matchup-percent{color:#9aa9b4}.matchup-empty .matchup-record{color:#93a0a9}
+.matchup-scroll .matchup-axis-active{background:#e4edf6!important;color:#1a4c74!important;box-shadow:inset 0 -3px #326a96}
+.matchup-scroll tbody th.matchup-axis-active{box-shadow:inset 3px 0 #326a96}
+.matchup-scroll button:hover,.matchup-scroll button:focus-visible{background:#ffffff55;box-shadow:inset 0 0 0 2px #326a96;outline:0}
 .matchup-scroll tr:hover td{background:inherit}
-.matchup-interval{min-height:285px}
-@media(max-width:760px){.matchup-controls{display:grid;grid-template-columns:minmax(0,1fr)}.matchup-scroll tr>:first-child{min-width:130px;width:130px}.matchup-scroll{max-height:600px}}
-
-/* Larger matchup cells and horizontal names; optional full-screen workspace. */
-.matchup-scroll table{min-width:2840px}
-.matchup-scroll th,.matchup-scroll td{min-width:130px;width:130px;border-right:3px solid #fffdf8;border-bottom:3px solid #fffdf8}
-.matchup-scroll thead th{height:95px;font-size:14px;white-space:normal;vertical-align:middle}
-.matchup-scroll thead th span{writing-mode:horizontal-tb;transform:none;padding:12px 8px;white-space:normal;line-height:1.4}
-.matchup-scroll tr>:first-child{min-width:200px;width:200px;font-size:15px;padding:12px 14px}
-.matchup-scroll button{padding:16px 8px;min-height:110px}
-.matchup-percent{display:block;font-size:24px;line-height:1.2}
-.matchup-record{display:block;font-size:16px;font-weight:600;margin-top:9px;white-space:nowrap}
-.matchup-scroll small{font-size:12px;margin-top:6px;color:#42545b}
-.matchup-matrix-toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:12px 0;font-size:14px}
-.matchup-wide{position:fixed;inset:14px;z-index:100;background:#f2f0ea;padding:18px;box-shadow:0 0 0 30px #172d37a8;display:flex;flex-direction:column}
-.matchup-wide .matchup-scroll{flex:1;min-height:0;max-height:none;margin:8px 0 0}
-.matchup-matrix-open{overflow:hidden}
-@media(max-width:760px){.matchup-scroll tr>:first-child{min-width:145px;width:145px;font-size:14px}.matchup-wide{inset:6px;padding:10px}.matchup-matrix-toolbar strong{font-size:13px}}
+.matchup-scroll caption{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.matchup-wide{position:fixed;inset:16px;z-index:100;padding:0 20px 20px!important;background:#fff;box-shadow:0 0 0 40px #172d3780!important;display:flex;flex-direction:column}
+.matchup-wide .matchup-scroll{flex:1;min-height:0;max-height:none}
+.matchup-matrix-open{overflow:hidden}.matchup-interval{min-height:285px}
+@media(max-width:760px){
+ .matchup-controls{display:grid;grid-template-columns:minmax(0,1fr)}
+ #matchupMatrix{padding:0 9px 9px;border-radius:9px}
+ .matchup-scroll{max-height:570px}
+ .matchup-scroll tr>:first-child{min-width:130px;width:130px;padding:10px;font-size:12px}
+ .matchup-legend{gap:10px;font-size:11px}
+ .matchup-matrix-toolbar{padding:12px 0;gap:10px}
+ .matchup-wide{inset:6px;padding:0 10px 10px!important}
+}

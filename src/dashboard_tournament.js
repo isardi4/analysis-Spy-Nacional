@@ -14,7 +14,7 @@ function stateId(r,w,d){return states.findIndex(s=>s[0]===r&&s[1]===w&&s[3]===d)
 let current=null;
 let currentView='resumen';
 let activeChartFrame=0;
-const VIEW_LABELS={resumen:'Resumen',recorridos:'Rivales por ronda',ronda:'Detalle de una ronda',secuencias:'Secuencias W/L/D',ejemplos:'Recorridos completos',eliminatorias:'Eliminatorias',record:'Mesas por récord',presencia:'Presencia de mazos',winrates:'Matriz de win rates',comparador:'Win rates y confianza',fuentes:'Fuentes y método'};
+const VIEW_LABELS={resumen:'Resumen',recorridos:'Rivales por ronda',ronda:'Detalle de una ronda',secuencias:'Secuencias W/L/D',ejemplos:'Recorridos completos',eliminatorias:'Eliminatorias',record:'Mesas por récord',presencia:'Presencia de mazos',comparador:'Win rates',fuentes:'Fuentes y método'};
 function syncViewLinks(){
  document.querySelectorAll('[data-view-target]').forEach(link=>{const q=new URLSearchParams(location.search);q.set('view',link.dataset.viewTarget);link.setAttribute('href','?'+q.toString());});
 }
@@ -31,6 +31,7 @@ function resizeActiveCharts(){
 }
 
 function activateView(view,{push=true,scroll=true}={}){
+ if(view==='winrates')view='comparador';
  currentView=Object.hasOwn(VIEW_LABELS,view)?view:'resumen';
  if(currentView!=='comparador')closeMatchupMatrix();
  document.querySelectorAll('[data-panel]').forEach(panel=>{panel.hidden=panel.dataset.panel!==currentView;});
@@ -133,12 +134,8 @@ function renderState(){
  updateURL();resizeActiveCharts();
 }
 function renderSources(){
- const d=current.deck,s=DATA.sources,den=sum(DATA.counts),order=sortIndices(DATA.counts).filter(j=>DATA.counts[j]>0),w=DATA.W,dd=DATA.D;
+ const den=sum(DATA.counts),order=sortIndices(DATA.counts).filter(j=>DATA.counts[j]>0);
  table('meta',['Arquetipo','Plazas presenciales','Presencia','Esperados en 110'],order.map(j=>[esc(names[j]),num(DATA.counts[j]),pct(DATA.counts[j]/den),(110*DATA.counts[j]/den).toFixed(2)]));
- $('matrixInfo').innerHTML=`<p>Presencia: <b>${s.paper_entries} de ${s.paper_entries_total} plazas de ${s.paper_events} eventos presenciales</b> (${(s.coverage*100).toFixed(1)}% de cobertura). Se recuperaron ${s.recovered_entries} participaciones mediante las cartas de sus listas. Se excluyeron ${s.excluded_entries} plazas sin clasificación suficiente y sus encuentros. La presencia se renormaliza al 100% sobre las plazas identificadas. Matriz: ${num(s.paper_matches)} matches presenciales + ${s.online_matches} matches de eliminatorias publicadas de ${s.online_events} eventos MTGO. Ventana inclusiva: 20/09–19/10/2026. El online tiene peso 1 por match y nunca entra al porcentaje de presencia.</p><p>La muestra online está seleccionada por top 8; aumentar el número de matches no garantiza eliminar sesgos. Cada celda se regulariza con 10 matches decisivos equivalentes al 50%: (W+5)/(W+L+10). Los empates se modelan por separado. Un cruce sin observaciones es un supuesto, no evidencia de 50%.</p>`;
- const focus=order.slice(0,16);if(!focus.includes(d))focus[focus.length-1]=d;
- plot('wrMatrix',[{type:'heatmap',x:focus.map(j=>names[j]),y:focus.map(j=>names[j]),z:focus.map(i=>focus.map(j=>100*DATA.win[i][j])),customdata:focus.map(i=>focus.map(j=>matchupStats(w,dd,i,j).total)),zmid:50,zmin:20,zmax:80,colorscale:'RdBu',hovertemplate:'%{y} vs %{x}: %{z:.1f}%<br>Matches observados: %{customdata}<extra></extra>'}],'WR decisivo modelado · filas contra columnas',{height:550,margin:{l:150,r:25,t:70,b:140}});
- table('matchups',['Rival','Papel W–L–D','Online W–L–D','WR decisivo modelado','P(empate)','P(ganar match)'],order.map(j=>[esc(names[j]),...[0,1].map(q=>j===d?'Espejo: '+num(w[q][d][d])+' matches decisivos':`${w[q][d][j]}–${w[q][j][d]}–${dd[q][d][j]}`),pct(DATA.win[d][j]),pct(DATA.draw[d][j]),pct((1-DATA.draw[d][j])*DATA.win[d][j])]));
  $('method').innerHTML=`<p><b>Una única corrida final:</b> ${num(DATA.completion.tournaments)} torneos, ${num(DATA.completion.player_paths)} participaciones, ${num(DATA.completion.swiss_matches)} matches suizos y ${num(DATA.completion.playoff_matches)} matches de eliminatorias. No se reserva una plaza para ningún arquetipo: se sortean las 110 por multinomial usando presencia presencial.</p><p>Todos los jugadores se registran antes de cada ronda por W/L/D exacto, rival, resultado y resultado final del torneo. Se distinguen cinco desenlaces: fuera del top8, eliminado en cuartos, eliminado en semifinales, subcampeón y campeón. Top8/top4/top2 agrupan los desenlaces correspondientes. No son corridas independientes por mazo ni por filtro.</p><p>Suizo aproximado: orden por puntos y azar dentro del grupo, flotantes y prevención de revancha. No hay drops, ID, byes ni diferencias de habilidad. Corte por puntos, OMW%, GW%, OGW% y azar residual. Se suponen marcadores 50% 2-0 / 50% 2-1 y empate 1-1 para desempates. Top8 a eliminación directa por seeds y WR decisivo; no se ajusta la elección de play/draw. Los empates suizos usan el modelo de cada cruce.</p><p>Se verificaron sedes físicas, fecha primaria, tablas completas de primera ronda y rondas suizas en Melee. Los IDs/0-0, byes, concesiones marcadas y victorias por tiempo sin dos juegos ganados se excluyen del ajuste. Algunos empates pactados después de jugar no son distinguibles. Para MTGO solo se usan resultados individuales de brackets públicos y etiquetas del índice MetaMage, nunca récords globales para inferir parejas. Se excluyeron cinco páginas sin payload primario de partidas.</p><p>Incertidumbre: los porcentajes son condicionales al field y a la matriz modelados, no predicciones regionales calibradas. El IC de próximos rivales usa 100 lotes independientes de 50.000 torneos y contempla agrupación dentro de un torneo; no incluye error de datos ni sesgos de selección. Las etiquetas pueden reunir variantes. Se excluyen las participaciones sin arquetipo identificable y sus matches; el field simulado se limita a las plazas identificadas, renormalizadas al 100%. Las asociaciones entre rivales y clasificación no establecen causalidad.</p><p>Fuentes normalizadas: <code>data/processed/classified/</code>. Manifiesto, hashes, conteos finales y agregados: <code>results/classified/</code>. Reproducir: <code>python src/classify_decks.py --fetch</code>, <code>python src/classify_online.py</code>, <code>python src/build_model_classified.py</code>, <code>python src/run_classified.py</code>, <code>python src/replay_classified.py</code>, <code>python src/report_tournament.py</code>. Tiempo de corrida: ${(DATA.completion.wall_seconds/60).toFixed(1)} minutos.</p>`;
 }
 function downloadCSV(all){
@@ -160,7 +157,8 @@ function restoreControlsFromURL(){
  const pa=names.indexOf(q.get('a')||'Spy Combo'),pb=names.indexOf(q.get('b')||'Red Madness');
  $('matchupA').value=String(pa>=0?pa:names.indexOf('Spy Combo'));$('matchupB').value=String(pb>=0?pb:names.indexOf('Red Madness'));
  $('matchupMode').value=q.get('wrmode')==='model'?'model':'observed';renderMatchupMatrix();
- currentView=Object.hasOwn(VIEW_LABELS,q.get('view'))?q.get('view'):'resumen';
+ const requestedView=q.get('view')==='winrates'?'comparador':q.get('view');
+ currentView=Object.hasOwn(VIEW_LABELS,requestedView)?requestedView:'resumen';
 }
 initMatchupExplorer();
 restoreControlsFromURL();

@@ -2,15 +2,17 @@
 function intervalLabel(ci){return ci?`${pct(ci[0])} – ${pct(ci[1])}`:'Sin estimación';}
 function renderMatchupMatrix(){
  const mode=$('matchupMode').value,matchupOrder=[...active].sort((a,b)=>DATA.counts[b]-DATA.counts[a]||names[a].localeCompare(names[b])).slice(0,20);
- const head='<thead><tr><th scope="col">Fila vs. columna</th>'+matchupOrder.map(j=>`<th scope="col"><span>${esc(names[j])}</span></th>`).join('')+'</tr></thead>';
- const body=matchupOrder.map(a=>'<tr><th scope="row">'+esc(names[a])+'</th>'+matchupOrder.map(b=>{
+ const head='<thead><tr><th scope="col" class="matchup-corner"><span>MAZO ↓</span><span>RIVAL →</span></th>'+matchupOrder.map(j=>`<th scope="col" data-matchup-col="${j}"><span>${esc(names[j])}</span></th>`).join('')+'</tr></thead>';
+ const body=matchupOrder.map(a=>'<tr data-matchup-row="'+a+'"><th scope="row">'+esc(names[a])+'</th>'+matchupOrder.map(b=>{
   const s=matchupStats(DATA.W,DATA.D,a,b),p=s.mirror?.5:mode==='model'?s.adjusted:s.observed;
   const label=s.mirror?'50%':p===null?'—':(100*p).toLocaleString('es-AR',{maximumFractionDigits:1,minimumFractionDigits:1})+'%';
   const detail=`${names[a]} contra ${names[b]}. ${s.mirror?'Espejo: 50% por simetría':`WR observado: ${s.observed===null?'sin muestra':pct(s.observed)}. IC 95% Wilson: ${intervalLabel(s.ci)}. Ajustado: ${pct(s.adjusted)}`}. ${s.mirror?'Espejo':s.w+' victorias, '+s.l+' derrotas'}. ${s.n} matches decisivos, ${s.d} empates. Abrir comparador.`;
-  const bg=s.mirror||p===.5?'#e8ece8':p===null?'#f0f0ed':p>.5?`rgba(23,107,128,${(.08+.5*Math.abs(p-.5)*2).toFixed(3)})`:`rgba(189,112,90,${(.08+.5*Math.abs(p-.5)*2).toFixed(3)})`;
-  return `<td style="background:${bg}"><button type="button" data-matchup-a="${a}" data-matchup-b="${b}" title="${esc(detail)}" aria-label="${esc(detail)}"><span class="matchup-percent">${label}</span><span class="matchup-record">${s.mirror?'Espejo':num(s.w)+'–'+num(s.l)+' W–L'}</span><small>${s.mirror?num(s.n)+' matches decisivos':'n='+num(s.n)}</small></button></td>`;
+  const tone=s.mirror?'mirror':p===null?'empty':p===.5?'even':p>.5?'positive':'negative';
+  const strength=p===null||s.mirror?0:Math.abs(p-.5)*2;
+  const bg=tone==='positive'?`rgba(34,134,105,${(.04+.15*strength).toFixed(3)})`:tone==='negative'?`rgba(191,83,77,${(.04+.12*strength).toFixed(3)})`:'#ffffff';
+  return `<td class="matchup-${tone}" style="background:${bg}"><button type="button" data-matchup-a="${a}" data-matchup-b="${b}" title="${esc(detail)}" aria-label="${esc(detail)}"><span class="matchup-percent">${label}</span><span class="matchup-record">${s.mirror?'Espejo · '+num(s.n):num(s.w)+'–'+num(s.l)+' W–L'}</span></button></td>`;
  }).join('')+'</tr>').join('');
- $('matchupMatrix').innerHTML='<div class="matchup-matrix-toolbar"><strong>% y W–L · fila contra columna</strong><button type="button" data-matchup-expand aria-pressed="'+$('matchupMatrix').classList.contains('matchup-wide')+'">'+($('matchupMatrix').classList.contains('matchup-wide')?'Reducir matriz':'Ampliar matriz')+'</button></div><div class="matchup-scroll" role="region" aria-label="Matriz 20 por 20 de win rates" tabindex="0"><table><caption>20 arquetipos con mayor presencia presencial. Cada celda es el WR del mazo de la fila contra el de la columna. Debajo del % aparece el récord W–L desde la perspectiva de la fila; los empates quedan en el detalle. n cuenta matches decisivos observados. Los espejos muestran el total de matches decisivos, contado una sola vez. El color representa el WR, no su confianza. Seleccioná una celda para ver sus datos.</caption>'+head+'<tbody>'+body+'</tbody></table></div>';
+ $('matchupMatrix').innerHTML='<div class="matchup-matrix-toolbar"><div class="matchup-legend"><span class="legend-negative">&lt; 50%</span><span class="legend-neutral">50%</span><span class="legend-positive">&gt; 50%</span><span class="legend-empty">— sin muestra</span></div><button type="button" data-matchup-expand aria-pressed="'+$('matchupMatrix').classList.contains('matchup-wide')+'">'+($('matchupMatrix').classList.contains('matchup-wide')?'Reducir matriz':'Ampliar matriz')+'</button></div><div class="matchup-scroll" role="region" aria-label="Matriz 20 por 20 de win rates" tabindex="0"><table><caption>W–L = victorias–derrotas de la fila contra la columna. Los empates y el IC 95% están en el comparador. Color = win rate, no confianza estadística. Espejo: 50% nominal y cantidad de matches decisivos.</caption>'+head+'<tbody>'+body+'</tbody></table></div>';
 }
 function renderMatchupPair(){
  const a=+$('matchupA').value,b=+$('matchupB').value,s=matchupStats(DATA.W,DATA.D,a,b);
@@ -33,6 +35,8 @@ function initMatchupExplorer(){
  $('matchupA').addEventListener('change',renderMatchupPair);$('matchupB').addEventListener('change',renderMatchupPair);
  $('matchupSwap').addEventListener('click',()=>{const a=$('matchupA').value;$('matchupA').value=$('matchupB').value;$('matchupB').value=a;renderMatchupPair();});
  $('matchupMode').addEventListener('change',()=>{renderMatchupMatrix();updateURL();});
+ $('matchupMatrix').addEventListener('pointerover',highlightMatchupAxes);$('matchupMatrix').addEventListener('focusin',highlightMatchupAxes);
+ $('matchupMatrix').addEventListener('pointerleave',()=>{document.querySelectorAll('.matchup-axis-active').forEach(el=>el.classList.remove('matchup-axis-active'));});
  $('matchupMatrix').addEventListener('click',e=>{if(e.target.closest('[data-matchup-expand]')){const open=$('matchupMatrix').classList.toggle('matchup-wide');document.body.classList.toggle('matchup-matrix-open',open);const button=$('matchupMatrix').querySelector('[data-matchup-expand]');button.textContent=open?'Reducir matriz':'Ampliar matriz';button.setAttribute('aria-pressed',String(open));return;}const cell=e.target.closest('[data-matchup-a]');if(!cell)return;closeMatchupMatrix();$('matchupA').value=cell.dataset.matchupA;$('matchupB').value=cell.dataset.matchupB;renderMatchupPair();$('matchupHeading').scrollIntoView({block:'start',behavior:'auto'});});
 }
 
@@ -41,3 +45,10 @@ function closeMatchupMatrix(){
  const button=$('matchupMatrix').querySelector('[data-matchup-expand]');if(button){button.textContent='Ampliar matriz';button.setAttribute('aria-pressed','false');}
 }
 document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMatchupMatrix();});
+
+function highlightMatchupAxes(event){
+ const cell=event.target.closest('[data-matchup-a]');if(!cell)return;
+ document.querySelectorAll('.matchup-axis-active').forEach(el=>el.classList.remove('matchup-axis-active'));
+ const row=$('matchupMatrix').querySelector(`[data-matchup-row="${cell.dataset.matchupA}"]>th`),col=$('matchupMatrix').querySelector(`[data-matchup-col="${cell.dataset.matchupB}"]`);
+ if(row)row.classList.add('matchup-axis-active');if(col)col.classList.add('matchup-axis-active');
+}

@@ -36,8 +36,7 @@ El color codifica WR, sin representar significación o calidad de la muestra.
 El modelo almacena un ganador por match decisivo espejo y dos apariciones
 por empate. La vista cuenta W[i,i] decisivos y D[i,i]/2 empates. Se presenta
 50% nominal por simetría, sin fabricar W y L duplicados, IC o desvío posterior.
-El conteo del tooltip de la matriz modelada anterior también usa matches
-únicos en los espejos.
+La única matriz usa este mismo conteo para los espejos.
 
 Wilson presupone observaciones binomiales independientes. No contempla
 agrupación por piloto, selección de playoffs online, diferencias de región,
@@ -56,4 +55,8 @@ todos los cálculos internos de MetaMage ni se utiliza como fuente de matches.
 de datos, reciprocidad, desvío posterior, fuentes y espejos. El recorrido de
 navegador `node tests/test_tournament_dashboard.cjs --matchups-only` verifica
 las 400 celdas, ambos modos, fuente, intercambio, enlaces, casos sin evidencia
-y desplazamiento móvil. `--tabs-only` verifica las once vistas y su navegación.
+y desplazamiento móvil. `--tabs-only` verifica las diez vistas y su navegación.
+
+La pestaña única es «Win rates». Los enlaces anteriores `?view=winrates` se
+redirigen a `comparador`, conservando sus filtros. Se eliminó la matriz modelada
+duplicada; se conserva el selector de observado/ajustado en la única matriz.

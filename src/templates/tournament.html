@@ -14,8 +14,7 @@
     <a id="tab-record" role="tab" href="?view=record" data-view-target="record" aria-controls="panel-record" aria-selected="false" tabindex="-1">Mesas por récord</a>
     <span class="nav-heading">Datos del modelo</span>
     <a id="tab-presencia" role="tab" href="?view=presencia" data-view-target="presencia" aria-controls="panel-presencia" aria-selected="false" tabindex="-1">Presencia de mazos</a>
-    <a id="tab-winrates" role="tab" href="?view=winrates" data-view-target="winrates" aria-controls="panel-winrates" aria-selected="false" tabindex="-1">Matriz de win rates</a>
-    <a id="tab-comparador" role="tab" href="?view=comparador" data-view-target="comparador" aria-controls="panel-comparador" aria-selected="false" tabindex="-1">Win rates y confianza</a>
+    <a id="tab-comparador" role="tab" href="?view=comparador" data-view-target="comparador" aria-controls="panel-comparador" aria-selected="false" tabindex="-1">Win rates</a>
     <a id="tab-fuentes" role="tab" href="?view=fuentes" data-view-target="fuentes" aria-controls="panel-fuentes" aria-selected="false" tabindex="-1">Fuentes y método</a>
   </nav>
   <div class="analysis-content">
@@ -83,16 +82,12 @@
       <p class="subtle">COVERAGE Muestra de 13 eventos presenciales del 20/09 al 19/10/2026. Los datos online no intervienen en estos porcentajes. Las participaciones no son personas únicas.</p>
     </section>
 
-    <section id="panel-winrates" data-panel="winrates" role="tabpanel" aria-labelledby="tab-winrates" hidden>
-      <h2>Matriz de win rates</h2><div id="matrixInfo"></div><div id="wrMatrix" class="chart"></div><div id="matchups"></div>
-    </section>
-
     <section id="panel-comparador" data-panel="comparador" role="tabpanel" aria-labelledby="tab-comparador" hidden>
-      <h2>Win rates y confianza</h2>
+      <h2>Win rates</h2>
       <p>Matches observados del 20/09 al 19/10/2026: papel + eliminatorias publicadas online. La presencia se calcula exclusivamente con papel. Los 5 millones de torneos simulados no agregan observaciones a estos intervalos.</p>
-      <h3>Matriz de los 20 mazos con mayor presencia en papel</h3>
+      <div class="matchup-section-heading"><div class="eyebrow">MATRIZ DE MATCHUPS</div><h3>Los 20 mazos más presentes en papel</h3></div>
       <label>Valor de las celdas<select id="matchupMode"><option value="observed">Win rate observado</option><option value="model">Win rate ajustado usado en la simulación</option></select></label>
-      <p class="subtle">Leé filas contra columnas. Deslizá para ver las 20 columnas. Cada celda muestra el porcentaje y el récord W–L del mazo de la fila. Usá «Ampliar matriz» para ocupar la pantalla; tocá una celda para abrir ese cruce en el comparador. «—» indica falta de matches decisivos. Los espejos tienen 50% nominal.</p>
+      <p class="subtle">Cada fila es un mazo; cada columna, su rival. El porcentaje y el W–L se leen desde la fila. Seleccioná un cruce para ver su muestra e intervalo de confianza.</p>
       <div id="matchupMatrix"></div>
       <h3 id="matchupHeading">Comparar dos mazos</h3>
       <p>Elegí cualquier par de arquetipos identificados, incluidos los que no están en el Top20. Esta selección es independiente del mazo del encabezado.</p>
