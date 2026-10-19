@@ -3,8 +3,8 @@
 La pestaña `?view=comparador` agrega una tabla de 20×20 con los 20 arquetipos
 con mayor presencia presencial, estable al cambiar el mazo del encabezado.
 Cada celda enfrenta la fila contra la columna y abre ese par en un comparador.
-Muestra el porcentaje grande y el récord W–L observado desde la perspectiva de
-la fila, con nombres horizontales. «Ampliar matriz» ocupa casi toda la pantalla;
+Muestra solo el porcentaje desde la perspectiva de la fila, con nombres
+horizontales. W/L/D quedan en el tooltip y en el comparador. «Ampliar matriz» ocupa casi toda la pantalla;
 se puede reducir con el botón o Escape. Los encabezados permanecen fijos.
 El comparador admite todos los arquetipos identificados del modelo, incluso
 los que solo tienen observaciones online. El par y el modo de la matriz se
@@ -66,3 +66,8 @@ ni récord. Los conteos de mirrors siguen disponibles en el comparador.
 
 La escala del fondo es rojo–blanco–verde: 50% blanco; la intensidad aumenta
 continuamente con la distancia a 50%. Los mirrors conservan el gris neutro.
+
+Se retira el W–L de las celdas para simplificar la lectura de la matriz.
+
+Los porcentajes usan negro. La intensidad del fondo rojo/verde llega al 50% de
+opacidad en los extremos y se reduce continuamente hasta blanco en 50% de WR.

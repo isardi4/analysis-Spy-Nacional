@@ -29,8 +29,9 @@ const {chromium}=require('/private/tmp/spy-browser/node_modules/playwright-core'
     const a=+button.dataset.matchupA,b=+button.dataset.matchupB,w=DATA.W[0][a][b]+DATA.W[1][a][b],l=DATA.W[0][b][a]+DATA.W[1][b][a],n=a===b?w:w+l;
     const value=a===b?'—':!n?'—':(100*w/n).toLocaleString('es-AR',{maximumFractionDigits:1,minimumFractionDigits:1})+'%';
     if(!n&&a!==b)empty++;
-    if(button.querySelector('.matchup-percent').textContent!==value||(a===b?button.querySelector('.matchup-record')!==null:button.querySelector('.matchup-record').textContent!==num(w)+'–'+num(l)+' W–L'))return {ok:false,a,b};
+    if(button.querySelector('.matchup-percent').textContent!==value||button.querySelector('.matchup-record')!==null)return {ok:false,a,b};
    }
+   if([...document.querySelectorAll('.matchup-positive .matchup-percent,.matchup-negative .matchup-percent,.matchup-even .matchup-percent')].some(el=>getComputedStyle(el).color!=='rgb(0, 0, 0)'))return {ok:false,reason:'Percentages must be black'};
    return {ok:true,empty};
   });
   if(!matrix.ok)throw Error('Invalid 20x20 matrix '+JSON.stringify(matrix));
