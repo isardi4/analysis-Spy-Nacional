@@ -26,7 +26,7 @@ def main():
  sources='<h3>Presencia y matches presenciales</h3><p>Las plazas totales documentan los eventos originales; solo las identificadas alimentan la presencia del modelo.</p>'+table(['Evento','Fecha','Sede','Plazas totales','Identificadas','Fuente'],[[html.escape(e['name']),e['date'],html.escape(e['venue']),e['players'],str(sum(p['event_id']==e['event_id'] for p in identified)),f'<a href="{e["url"]}" target="_blank" rel="noreferrer">Melee ↗</a>'] for e in events if e['date']>='2026-09-20'])
  sources+='<h3>Matches online: eliminatorias publicadas</h3>'+table(['Evento','Fecha','Matches incluidos','Estado / fuente'],[[html.escape(e['event_id']),e['date'],e['matches'],f'<a href="{e["source"]}" target="_blank" rel="noreferrer">'+('MTGO ↗' if int(e['matches'])>0 else 'Excluido: sin datos primarios de partidas')+'</a>'] for e in online])
  body=body.replace('SOURCES',sources)
- js=(ROOT/'src/dashboard_tournament.js').read_text()
+ js='\n'.join((ROOT/'src'/name).read_text() for name in ['matchup_stats.js','dashboard_matchups.js','dashboard_tournament.js'])
  text='<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Explorador del torneo · Pauper</title><style>'+css+'</style><script>'+get_plotlyjs()+'</script></head><body><main>'+body+'</main><script>const DATA='+json.dumps(payload,separators=(',',':')).replace('</','<\\/')+';</script><script>'+js+'</script></body></html>'
  target=ROOT/'reports/metagame_explorer.html';legacy=ROOT/'reports/legacy_explorer.html'
  if not legacy.exists() and target.exists():legacy.write_bytes(target.read_bytes())

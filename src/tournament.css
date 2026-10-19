@@ -37,3 +37,21 @@
 }
 
 .nav-mobile-hint{display:none}@media(max-width:760px){.nav-mobile-hint{display:block;font-size:12px;color:#60727a;margin:0 0 18px}}
+
+/* Compact 20x20 matchup table with persistent row/column labels. */
+.matchup-controls{display:flex;align-items:flex-end;flex-wrap:wrap;gap:14px;margin:20px 0}
+.matchup-controls label{flex:1;min-width:min(220px,100%)}
+.matchup-scroll{overflow:auto;max-height:740px;background:#fffdf8;border:1px solid #d5dfd9;margin:20px 0}
+.matchup-scroll table{border-collapse:separate;border-spacing:0;min-width:1700px;table-layout:fixed}
+.matchup-scroll th,.matchup-scroll td{text-align:center;border-right:1px solid #fffdf8;border-bottom:1px solid #fffdf8;padding:0;min-width:75px;width:75px}
+.matchup-scroll thead th{height:160px;top:0;z-index:2;background:#dfe9e6}
+.matchup-scroll thead th span{display:inline-block;writing-mode:vertical-rl;transform:rotate(180deg);padding:10px 2px;white-space:nowrap}
+.matchup-scroll tr>:first-child{position:sticky;left:0;width:170px;min-width:170px;background:#fffdf8;text-align:left;padding:8px 12px;z-index:1}
+.matchup-scroll thead tr>:first-child{z-index:3;background:#dfe9e6;white-space:normal}
+.matchup-scroll button{display:block;border:0;background:transparent;border-radius:0;width:100%;padding:10px 3px;font-size:12px;font-weight:700;color:#172d37}
+.matchup-scroll button:hover,.matchup-scroll button:focus-visible{outline:3px solid #146b80;outline-offset:-3px;background:#ffffff65}
+.matchup-scroll small{display:block;font-size:10px;font-weight:400;margin-top:4px}
+.matchup-scroll caption{caption-side:bottom;text-align:left;padding:14px;white-space:normal;color:#61717b}
+.matchup-scroll tr:hover td{background:inherit}
+.matchup-interval{min-height:285px}
+@media(max-width:760px){.matchup-controls{display:grid;grid-template-columns:minmax(0,1fr)}.matchup-scroll tr>:first-child{min-width:130px;width:130px}.matchup-scroll{max-height:600px}}

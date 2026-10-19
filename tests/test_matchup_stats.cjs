@@ -1,0 +1,16 @@
+const assert=require('node:assert/strict');
+const {wilson95,matchupStats}=require('../src/matchup_stats.js');
+const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-10,`${a} != ${b}`);
+assert.equal(wilson95(0,0),null);
+let ci=wilson95(5,5);near(ci[0],.236593090512564);near(ci[1],.763406909487436);
+ci=wilson95(0,10);near(ci[0],0);near(ci[1],.2775327998628892);
+const reverse=wilson95(10,0);near(reverse[0],1-ci[1]);near(reverse[1],1);
+assert.ok(wilson95(50,50)[1]-wilson95(50,50)[0]<wilson95(5,5)[1]-wilson95(5,5)[0]);
+const W=[[[3,8],[2,4]],[[1,1],[3,2]]],D=[[[4,2],[2,2]],[[2,1],[1,0]]];
+const s=matchupStats(W,D,0,1),r=matchupStats(W,D,1,0);
+assert.equal(s.w,9);assert.equal(s.l,5);assert.equal(s.d,3);assert.equal(s.n,14);assert.equal(s.total,17);near(s.observed,9/14);near(s.adjusted,14/24);near(s.posteriorSD,Math.sqrt(140/(24*24*25)));
+near(s.observed+r.observed,1);near(s.adjusted+r.adjusted,1);near(s.ci[0],1-r.ci[1]);near(s.ci[1],1-r.ci[0]);near(s.posteriorSD,r.posteriorSD);
+const mirror=matchupStats(W,D,0,0);assert.equal(mirror.n,4);assert.equal(mirror.d,3);assert.equal(mirror.total,7);assert.equal(mirror.observed,null);assert.equal(mirror.ci,null);assert.equal(mirror.adjusted,.5);assert.equal(mirror.posteriorSD,null);
+const paper=matchupStats(W,D,0,1,[0]);assert.equal(paper.w,8);assert.equal(paper.l,2);assert.equal(paper.total,12);
+const zero=matchupStats([[[0,0],[0,0]]],[[[0,0],[0,0]]],0,1,[0]);assert.equal(zero.observed,null);assert.equal(zero.ci,null);assert.equal(zero.adjusted,.5);near(zero.posteriorSD,Math.sqrt(1/44));
+console.log('Matchup statistics verified: Wilson, boundary cases, reciprocity, posterior SD, source split, mirrors, no evidence.');

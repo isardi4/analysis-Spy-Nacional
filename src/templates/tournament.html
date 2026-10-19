@@ -15,6 +15,7 @@
     <span class="nav-heading">Datos del modelo</span>
     <a id="tab-presencia" role="tab" href="?view=presencia" data-view-target="presencia" aria-controls="panel-presencia" aria-selected="false" tabindex="-1">Presencia de mazos</a>
     <a id="tab-winrates" role="tab" href="?view=winrates" data-view-target="winrates" aria-controls="panel-winrates" aria-selected="false" tabindex="-1">Matriz de win rates</a>
+    <a id="tab-comparador" role="tab" href="?view=comparador" data-view-target="comparador" aria-controls="panel-comparador" aria-selected="false" tabindex="-1">Win rates y confianza</a>
     <a id="tab-fuentes" role="tab" href="?view=fuentes" data-view-target="fuentes" aria-controls="panel-fuentes" aria-selected="false" tabindex="-1">Fuentes y método</a>
   </nav>
   <div class="analysis-content">
@@ -84,6 +85,29 @@
 
     <section id="panel-winrates" data-panel="winrates" role="tabpanel" aria-labelledby="tab-winrates" hidden>
       <h2>Matriz de win rates</h2><div id="matrixInfo"></div><div id="wrMatrix" class="chart"></div><div id="matchups"></div>
+    </section>
+
+    <section id="panel-comparador" data-panel="comparador" role="tabpanel" aria-labelledby="tab-comparador" hidden>
+      <h2>Win rates y confianza</h2>
+      <p>Matches observados del 20/09 al 19/10/2026: papel + eliminatorias publicadas online. La presencia se calcula exclusivamente con papel. Los 5 millones de torneos simulados no agregan observaciones a estos intervalos.</p>
+      <h3>Matriz de los 20 mazos con mayor presencia en papel</h3>
+      <label>Valor de las celdas<select id="matchupMode"><option value="observed">Win rate observado</option><option value="model">Win rate ajustado usado en la simulación</option></select></label>
+      <p class="subtle">Leé filas contra columnas. Deslizá para ver las 20 columnas. Cada celda muestra el porcentaje y la cantidad de matches decisivos; tocala para abrir ese cruce en el comparador. «—» indica falta de matches decisivos. Los espejos tienen 50% nominal.</p>
+      <div id="matchupMatrix"></div>
+      <h3 id="matchupHeading">Comparar dos mazos</h3>
+      <p>Elegí cualquier par de arquetipos identificados, incluidos los que no están en el Top20. Esta selección es independiente del mazo del encabezado.</p>
+      <div class="matchup-controls"><label>Mazo A · perspectiva del win rate<select id="matchupA"></select></label><button id="matchupSwap" type="button" aria-label="Intercambiar mazos A y B">Intercambiar A ↔ B</button><label>Mazo B · rival<select id="matchupB"></select></label></div>
+      <div id="matchupCards" class="cards" aria-live="polite"></div>
+      <div id="matchupEvidence" class="notice" aria-live="polite"></div>
+      <div id="matchupInterval" class="chart matchup-interval"></div>
+      <h3>Muestra por fuente</h3><div id="matchupSourceTable"></div>
+      <h3>Victoria, empate y derrota en el modelo</h3><div id="matchupMatchProbabilities"></div>
+      <details><summary>Cómo calculamos el intervalo y el desvío</summary>
+        <p>El WR observado es W/(W+L). Los empates se muestran por separado. El intervalo de confianza al 95% usa Wilson sobre los matches decisivos observados: no se calcula con los millones de encuentros simulados. Un intervalo amplio indica poca precisión. Si incluye 50%, la muestra no permite distinguir claramente el cruce de un 50/50 bajo estos supuestos.</p>
+        <p>El WR ajustado es (W+5)/(W+L+10), la media de una distribución Beta(W+5,L+5). El desvío posterior es su desviación estándar: √[αβ/((α+β)²(α+β+1))], expresada en puntos porcentuales (pp). Mide incertidumbre en la estimación ajustada; no es la desviación de resultados individuales ni un intervalo de confianza. Con cero observaciones, el 50% ajustado y su desvío provienen completamente del prior.</p>
+        <p>Los intervalos suponen matches binomiales independientes. No corrigen la repetición de pilotos, la selección de Top8 online, diferencias regionales, el error de clasificación ni comparaciones múltiples entre los 400 cruces. Un intervalo que no incluya 50% no prueba por sí solo una ventaja estable. Los espejos cuentan cada match una vez y fijan 50% por simetría; no se les asigna un IC con observaciones duplicadas.</p>
+        <p>Referencias: <a href="https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm" target="_blank" rel="noreferrer">intervalo de Wilson · NIST</a>; <a href="https://www.metamages.com/sessions/c4cbfe6a-4dcc-43ff-98c7-74ca5a1c9c63" target="_blank" rel="noreferrer">ejemplo de WR e intervalo en MetaMage</a>. Esta vista calcula sus estadísticas con la muestra auditada del proyecto.</p>
+      </details>
     </section>
 
     <section id="panel-fuentes" data-panel="fuentes" role="tabpanel" aria-labelledby="tab-fuentes" hidden>

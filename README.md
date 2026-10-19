@@ -4,7 +4,7 @@
 
 Una corrida final de **5.000.000 de torneos**, con 110 jugadores, siete rondas suizas y eliminatorias de top8 hasta un campeón. Todos los arquetipos se registran dentro de esos mismos torneos, sin forzar un asiento.
 
-La página se organiza en diez pestañas independientes: resumen, rivales por ronda, detalle de ronda, secuencias, recorridos completos, eliminatorias, mesas por récord, presencia, win rates y fuentes. Cada vista tiene un enlace propio y conserva el mazo y los filtros al navegar.
+La página se organiza en once pestañas independientes: resumen, rivales por ronda, detalle de ronda, secuencias, recorridos completos, eliminatorias, mesas por récord, presencia, win rates, comparador con incertidumbre y fuentes. Cada vista tiene un enlace propio y conserva el mazo y los filtros al navegar.
 
 El explorador muestra:
 
@@ -15,6 +15,7 @@ El explorador muestra:
 - Ejemplos completos con cada rival y resultado del jugador, incluidos playoffs.
 - Consulta de próximo rival por ronda y récord W/L/D exacto.
 - Presencia, matriz de win rate, conteos por fuente y CSV descargables.
+- Matriz 20×20 y comparador de cualquier par: WR observado, IC 95% Wilson, WR ajustado y desviación posterior, con muestra de papel y online separada.
 
 La presencia usa **650 de 671 plazas identificadas de 13 eventos presenciales**
 (96,9% de cobertura), con corte 19/10/2026. Se recuperaron 103 participaciones

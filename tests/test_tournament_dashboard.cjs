@@ -19,8 +19,57 @@ const {chromium}=require('/private/tmp/spy-browser/node_modules/playwright-core'
  });
  if(!rankings)throw Error('Incorrect global top20 rankings or denominators');
  const globalRankingSnapshot=await page.locator('#globalRankings').textContent();
+ if(process.argv.includes('--matchups-only')){
+  await page.click('#tab-comparador');
+  const matrix=await page.evaluate(()=>{
+   const rows=[...document.querySelectorAll('#matchupMatrix tbody tr')];let empty=0;
+   if(rows.length!==20||rows.some(r=>r.querySelectorAll('td').length!==20))return {ok:false};
+   for(const button of document.querySelectorAll('[data-matchup-a]')){
+    const a=+button.dataset.matchupA,b=+button.dataset.matchupB,w=DATA.W[0][a][b]+DATA.W[1][a][b],l=DATA.W[0][b][a]+DATA.W[1][b][a],n=a===b?w:w+l;
+    const value=a===b?'50%':!n?'—':(100*w/n).toLocaleString('es-AR',{maximumFractionDigits:1,minimumFractionDigits:1})+'%';
+    if(!n&&a!==b)empty++;
+    if(button.childNodes[0].textContent!==value||button.querySelector('small').textContent!=='n='+num(n))return {ok:false,a,b};
+   }
+   return {ok:true,empty};
+  });
+  if(!matrix.ok)throw Error('Invalid 20x20 matrix '+JSON.stringify(matrix));
+  const options=await page.locator('#matchupA option').count();if(options!==await page.evaluate(()=>K))throw Error('Missing comparator archetypes');
+  await page.selectOption('#matchupA',String(await page.evaluate(()=>names.indexOf('Spy Combo'))));
+  await page.selectOption('#matchupB',String(await page.evaluate(()=>names.indexOf('Red Madness'))));
+  const pairBefore=await page.evaluate(()=>({a:$('matchupA').value,b:$('matchupB').value,model:DATA.win[+$('matchupA').value][+$('matchupB').value]}));
+  const sources=await page.evaluate(()=>{
+   const a=+$('matchupA').value,b=+$('matchupB').value,rows=[...document.querySelectorAll('#matchupSourceTable tbody tr')];
+   return rows.every((row,k)=>{const qs=k===2?[0,1]:[k],w=sum(qs.map(q=>DATA.W[q][a][b])),l=sum(qs.map(q=>DATA.W[q][b][a])),d=sum(qs.map(q=>DATA.D[q][a][b])),cs=[...row.querySelectorAll('td')].map(c=>c.textContent);return cs[1]===num(w)&&cs[2]===num(l)&&cs[3]===num(d)&&cs[4]===num(w+l)&&cs[5]===num(w+l+d);});
+  });if(!sources)throw Error('Wrong source split');
+  await page.click('#matchupSwap');
+  const reversed=await page.evaluate(()=>({a:$('matchupA').value,b:$('matchupB').value,model:DATA.win[+$('matchupA').value][+$('matchupB').value],sum:[...document.querySelectorAll('#matchupMatchProbabilities tbody td:nth-child(2)')].map(c=>Number(c.textContent.replace('%','').replace(',','.'))).reduce((x,y)=>x+y,0)}));
+  if(reversed.a!==pairBefore.b||reversed.b!==pairBefore.a||Math.abs(reversed.model+pairBefore.model-1)>1e-12||Math.abs(reversed.sum-100)>.02)throw Error('Invalid reversed matchup');
+  await page.selectOption('#matchupMode','model');
+  if(await page.locator('[data-matchup-a]').count()!==400)throw Error('Mode lost cells');
+  const chosen=await page.locator('[data-matchup-a]').evaluateAll(bs=>bs.find(b=>b.dataset.matchupA!==b.dataset.matchupB).dataset);
+  await page.locator(`[data-matchup-a="${chosen.matchupA}"][data-matchup-b="${chosen.matchupB}"]`).click();
+  if(await page.locator('#matchupA').inputValue()!==chosen.matchupA||await page.locator('#matchupB').inputValue()!==chosen.matchupB)throw Error('Matrix selection failed');
+  await page.click('#tab-resumen');await page.goBack();
+  await page.waitForFunction(()=>currentView==='comparador');
+  const link=page.url();await page.reload();await page.waitForFunction(()=>typeof currentView!=='undefined'&&currentView==='comparador');
+  if(await page.locator('#matchupA').inputValue()!==chosen.matchupA||await page.locator('#matchupB').inputValue()!==chosen.matchupB||await page.locator('#matchupMode').inputValue()!=='model'||page.url()!==link)throw Error('Pair deep link lost');
+  await page.selectOption('#matchupB',chosen.matchupA);
+  const mirror=await page.evaluate(()=>({info:$('matchupEvidence').textContent,cards:$('matchupCards').textContent,a:!$('matchupHeading').textContent.includes('undefined')}));
+  if(!mirror.info.includes('Espejo')||!mirror.info.includes('una vez')||!mirror.cards.includes('No aplica')||!mirror.a)throw Error('Wrong mirror presentation');
+  const zero=await page.evaluate(()=>{for(let a=0;a<K;a++)for(let b=a+1;b<K;b++)if(DATA.W[0][a][b]+DATA.W[1][a][b]+DATA.W[0][b][a]+DATA.W[1][b][a]===0)return [a,b];});
+  await page.selectOption('#matchupA',String(zero[0]));await page.selectOption('#matchupB',String(zero[1]));
+  if(!(await page.locator('#matchupCards').innerText()).includes('Sin muestra')||!(await page.locator('#matchupEvidence').innerText()).includes('prior'))throw Error('No-data matchup presented as evidence');
+  await page.selectOption('#matchupA',String(await page.evaluate(()=>names.indexOf('Spy Combo'))));await page.selectOption('#matchupB',String(await page.evaluate(()=>names.indexOf('Red Madness'))));
+  await page.locator('#matchupHeading').scrollIntoViewIfNeeded();await page.screenshot({path:'reports/matchup_comparator_desktop.png',fullPage:false});
+  await page.setViewportSize({width:390,height:844});await page.waitForTimeout(400);
+  const mobile=await page.evaluate(()=>{const el=document.querySelector('.matchup-scroll');el.scrollLeft=300;return {overflow:document.documentElement.scrollWidth>innerWidth+2,scrollable:el.scrollWidth>el.clientWidth,scrolled:el.scrollLeft>0,sticky:getComputedStyle(el.querySelector('tbody th')).position==='sticky'};});
+  if(mobile.overflow||!mobile.scrollable||!mobile.scrolled||!mobile.sticky)throw Error('Mobile matchup table '+JSON.stringify(mobile));
+  await page.locator('#matchupHeading').scrollIntoViewIfNeeded();await page.screenshot({path:'reports/matchup_comparator_mobile.png',fullPage:false});
+  if(errors.length||remote)throw Error(errors.join('\n')+' requests '+remote);
+  console.log(JSON.stringify({matrixCells:400,allArchetypes:options,observedAndModel:true,sourceCounts:true,reciprocity:true,mirror:true,noData:true,deepLinks:true,mobile,errors,remote},null,2));return;
+ }
  if(process.argv.includes('--tabs-only')){
-  const views=['resumen','recorridos','ronda','secuencias','ejemplos','eliminatorias','record','presencia','winrates','fuentes'];let checked=0;
+  const views=['resumen','recorridos','ronda','secuencias','ejemplos','eliminatorias','record','presencia','winrates','comparador','fuentes'];let checked=0;
   const assertVisible=async view=>{
    await page.waitForFunction(v=>document.querySelector('[data-panel="'+v+'"]').hidden===false,view);
    await page.waitForFunction(()=>[...document.querySelector('[data-panel="'+currentView+'"]').querySelectorAll('.chart')].filter(el=>chartSpecs.has(el.id)).every(el=>el._fullLayout&&Math.abs(el._fullLayout.width-el.getBoundingClientRect().width)<4));
