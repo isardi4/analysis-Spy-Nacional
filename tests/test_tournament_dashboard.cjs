@@ -6,6 +6,19 @@ const {chromium}=require('/private/tmp/spy-browser/node_modules/playwright-core'
  page.on('pageerror',e=>errors.push(String(e)));await page.route('http://**/*',r=>{remote++;return r.abort()});await page.route('https://**/*',r=>{remote++;return r.abort()});
  await page.goto('file://'+path.resolve('reports/metagame_explorer.html'));await page.waitForFunction(()=>!!document.querySelector('#odds strong'));
  if(await page.evaluate(()=>DATA.names.some(n=>n==='Unknown'||n.includes('Other'))||sum(DATA.counts)!==650))throw Error('Unclassified categories or invalid coverage');
+ const rankings=await page.evaluate(()=>{
+  for(const [id,col,mult] of [['champions',6,1],['top2',5,2],['top4',4,4],['top8',1,8]]){
+   const rows=[...document.querySelectorAll('#ranking-'+id+' tbody tr')],order=[...active].sort((a,b)=>DATA.totals[b][col]-DATA.totals[a][col]||names[a].localeCompare(names[b])).slice(0,20),den=sum(DATA.totals.map(t=>t[col]));
+   if(rows.length!==20||den!==DATA.completion.tournaments*mult)return false;
+   for(let i=0;i<20;i++){
+    const cells=[...rows[i].querySelectorAll('td')].map(c=>c.textContent),d=order[i],n=DATA.totals[d][col];
+    if(cells.join('|')!==[String(i+1),names[d],num(n),pct(n/den),pct(n/DATA.totals[d][0])].join('|'))return false;
+   }
+  }
+  return true;
+ });
+ if(!rankings)throw Error('Incorrect global top20 rankings or denominators');
+ const globalRankingSnapshot=await page.locator('#globalRankings').textContent();
  if(process.argv.includes('--tabs-only')){
   const views=['resumen','recorridos','ronda','secuencias','ejemplos','eliminatorias','record','presencia','winrates','fuentes'];let checked=0;
   const assertVisible=async view=>{
@@ -19,8 +32,9 @@ const {chromium}=require('/private/tmp/spy-browser/node_modules/playwright-core'
   };
   await assertVisible('resumen');
   const d=String(await page.evaluate(()=>DATA.names.indexOf('Mono Blue Terror')));await page.selectOption('#deck',d);
-  for(const view of views){await page.click('#tab-'+view);const s=await assertVisible(view);if(s.deck!==d)throw Error('Deck selection lost');}
+  for(const view of views){await page.click('#tab-'+view);const s=await assertVisible(view);if(s.deck!==d)throw Error('Deck selection lost');if(await page.locator('#globalRankings').textContent()!==globalRankingSnapshot)throw Error('Global ranking changed with selected deck');}
   await page.click('#tab-recorridos');await page.selectOption('#group','miss');await page.selectOption('#outcome','0');
+  if(!await page.locator('#journeyResultsInfo').innerText().then(t=>t.includes('siempre incluye los tres resultados')&&t.includes('quedaron fuera')))throw Error('Missing result chart explanation');
   await page.click('#tab-ronda');await page.selectOption('#historyRound','4');
   await page.click('#tab-record');await page.selectOption('#round','6');await page.selectOption('#record',String(await page.evaluate(()=>stateId(5,3,0))));
   await page.click('#tab-ejemplos');await page.goBack();await assertVisible('record');

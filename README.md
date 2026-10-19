@@ -11,6 +11,7 @@ El explorador muestra:
 - Recorridos de los que hicieron top8, top4, final, campeones y quienes quedaron afuera.
 - Rivales por ronda y qué cruces ganaron, perdieron o empataron.
 - Probabilidades por participación de top8, top4, top2 y campeón.
+- Cuatro Top20 globales por cantidad de campeones, Top2, Top4 y Top8, con participación en los resultados y tasa por jugador del arquetipo.
 - Ejemplos completos con cada rival y resultado del jugador, incluidos playoffs.
 - Consulta de próximo rival por ronda y récord W/L/D exacto.
 - Presencia, matriz de win rate, conteos por fuente y CSV descargables.

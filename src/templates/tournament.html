@@ -27,6 +27,10 @@
     <section id="panel-resumen" data-panel="resumen" role="tabpanel" aria-labelledby="tab-resumen">
       <h2>Probabilidades del mazo</h2><p>¿Con qué frecuencia clasifica y hasta dónde llega?</p><div id="odds" class="cards"></div>
       <p class="subtle">Probabilidades por participación del arquetipo sobre todos sus jugadores en la misma corrida. Los filtros de las otras vistas no cambian estos porcentajes.</p>
+      <h2>Top 20 del torneo completo</h2>
+      <p>Cuatro rankings independientes de todos los arquetipos, ordenados por cantidad de resultados en los mismos 5 millones de torneos. Incluyen todas sus participaciones y se mantienen al cambiar el mazo seleccionado. Top 8 incluye Top 4, Top 2 y campeones; Top 2 incluye campeones.</p>
+      <p class="subtle">El volumen depende de la presencia y del rendimiento. «% por participación» muestra qué proporción de jugadores de ese arquetipo logró el resultado; «% de los resultados» indica cuánto aportó al total de esa instancia.</p>
+      <div id="globalRankings"></div>
       <div class="analysis-links">
         <a href="?view=recorridos" data-view-target="recorridos"><strong>Seguir sus rivales</strong><span>Ver qué enfrentaron los clasificados y los eliminados en cada ronda.</span></a>
         <a href="?view=record" data-view-target="record"><strong>Explorar una mesa</strong><span>Consultar los posibles rivales según ronda y récord exacto.</span></a>
@@ -39,6 +43,7 @@
       <h2>Rivales por ronda</h2><p>¿Qué arquetipos encontraron durante el suizo los jugadores del grupo elegido?</p>
       <section id="journeyHeat" class="journey-matrix" aria-label="Rivales por ronda"></section>
       <div class="grid"><div id="journeyResults" class="chart"></div><div id="journeyComparison" class="chart"></div></div>
+      <p id="journeyResultsInfo" class="notice"></p>
       <p class="subtle">La matriz y la comparación respetan el filtro de encuentros. El gráfico de resultados muestra todas las victorias, derrotas y empates del grupo. Estos recorridos se agrupan por cómo terminó cada jugador; no equivalen a una mesa con un récord específico.</p>
     </section>
 

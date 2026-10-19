@@ -61,6 +61,14 @@ function renderJourneyMatrix(jd,top,rden,group){
  const total='<tfoot><tr><th scope="row">Total de la ronda</th>'+rden.map(n=>`<td>${n?'100%':'—'}</td>`).join('')+'</tr></tfoot>';
  $('journeyHeat').innerHTML=`<div class="matrix-heading"><h3>Rivales por ronda · ${esc(groupLabels[group])}</h3><p>Leé una columna para ver a quiénes enfrentaron en esa ronda. Leé una fila para seguir cómo cambia un rival durante el torneo.</p></div><div class="matrix-legend"><span>Menor frecuencia</span><span class="matrix-gradient" aria-hidden="true"></span><span>Mayor frecuencia</span><span class="matrix-percent">Cada celda muestra el % de encuentros de su columna.</span></div><p class="matrix-mobile-hint">Deslizá la matriz hacia los costados para ver las siete rondas.</p><div class="matrix-scroll" tabindex="0" role="region" aria-label="Matriz de arquetipos rivales por ronda"><table aria-label="Porcentaje de rivales en cada ronda"><caption>Los ${top.length} rivales más frecuentes del recorrido; los demás se agrupan al final. Cada columna suma 100%, salvo redondeo. El denominador respeta los filtros de jugadores y de resultado.</caption>${headers}<tbody>${body}</tbody>${total}</table></div>`;
 }
+function renderGlobalRankings(){
+ const specs=[['champions',6,'Más campeones'],['top2',5,'Más Top 2'],['top4',4,'Más Top 4'],['top8',1,'Más Top 8']];
+ $('globalRankings').innerHTML=specs.map(([id,,label])=>`<details open data-ranking="${id}"><summary>Top 20 · ${label}</summary><div id="ranking-${id}"></div></details>`).join('');
+ for(const [id,col] of specs){
+  const total=sum(DATA.totals.map(t=>t[col])),order=[...active].sort((a,b)=>DATA.totals[b][col]-DATA.totals[a][col]||names[a].localeCompare(names[b])).slice(0,20);
+  table('ranking-'+id,['Puesto','Arquetipo','Cantidad','% de los resultados','% por participación'],order.map((d,i)=>[i+1,esc(names[d]),num(DATA.totals[d][col]),pct(rate(DATA.totals[d][col],total)),pct(rate(DATA.totals[d][col],DATA.totals[d][0]))]));
+ }
+}
 function renderJourney(){
  const deck=+$('deck').value,group=$('group').value,gs=groups[group],outcome=$('outcome').value,os=outcome==='all'?[0,1,2]:[+outcome],t=DATA.totals[deck];
  const gp=group==='all'?t[0]:group==='miss'?t[0]-t[1]:t[{top8:1,top4:4,top2:5,champ:6}[group]];
@@ -73,7 +81,8 @@ function renderJourney(){
  const frequencies=names.map((_,j)=>sum(jd.map(a=>a[j]))),top=sortIndices(frequencies).filter(j=>frequencies[j]>0).slice(0,16),rden=jd.map(sum);
  renderJourneyMatrix(jd,top,rden,group);
  const outcomeCounts=[0,1,2].map(o=>Array.from({length:7},(_,r)=>sum(names.map((_,j)=>sum(gs.map(g=>DATA.journey[deck][r][j][o][g]))))));
- plot('journeyResults',[2,0,1].map(o=>({type:'bar',name:['Derrotas','Empates','Victorias'][o],x:[1,2,3,4,5,6,7],y:outcomeCounts[o].map(n=>gp?100*n/gp:0),customdata:outcomeCounts[o],marker:{color:['#bd705a','#d4ad61','#176b80'][o]},hovertemplate:'R%{x}: %{y:.2f}% · %{customdata}<extra>%{fullData.name}</extra>'})), 'Qué ganaron y perdieron · por ronda',{barmode:'stack',yaxis:{title:{text:'% del grupo'}},xaxis:{title:{text:'Ronda suiza'}}});
+ plot('journeyResults',[2,0,1].map(o=>({type:'bar',name:['Derrotas','Empates','Victorias'][o],x:[1,2,3,4,5,6,7],y:outcomeCounts[o].map(n=>gp?100*n/gp:0),customdata:outcomeCounts[o],marker:{color:['#bd705a','#d4ad61','#176b80'][o]},hovertemplate:'R%{x}: %{y:.2f}% · %{customdata}<extra>%{fullData.name}</extra>'})), 'Victorias, derrotas y empates por ronda',{barmode:'stack',yaxis:{range:[0,100],title:{text:'% de participaciones del grupo'}},xaxis:{title:{text:'Ronda suiza'}}});
+ $('journeyResultsInfo').innerHTML=`<b>Cómo leer los resultados por ronda:</b> cada barra distribuye las ${num(gp)} participaciones de ${esc(names[deck])} del grupo «${esc(groupLabels[group])}» entre victorias, derrotas y empates en esa ronda. Por ejemplo, 70% de victorias en R2 significa que el 70% de ese grupo ganó su segunda ronda. Cada barra con datos suma 100%. El grupo se define por cómo terminó el torneo; al elegir «hicieron top 8», seguimos retrospectivamente a quienes clasificaron. Este gráfico siempre incluye los tres resultados, aunque filtres encuentros ganados o perdidos. El detalle de qué arquetipos enfrentaron está en la matriz y en «Detalle de una ronda».`;
  const restFreq=names.map((_,j)=>sum(rest.map(row=>row[j]))),dn=sum(frequencies),dr=sum(restFreq),compare=top.slice(0,10);
  plot('journeyComparison',[{type:'bar',name:'Grupo elegido',x:compare.map(j=>names[j]),y:compare.map(j=>dn?100*frequencies[j]/dn:0),marker:{color:'#176b80'}},{type:'bar',name:'Resto de jugadores del mazo',x:compare.map(j=>names[j]),y:compare.map(j=>dr?100*restFreq[j]/dr:0),marker:{color:'#d4ad61'}}],'Rivales del grupo y del resto · % de encuentros');
  renderHistory();
@@ -150,6 +159,7 @@ function restoreControlsFromURL(){
  currentView=Object.hasOwn(VIEW_LABELS,q.get('view'))?q.get('view'):'resumen';
 }
 restoreControlsFromURL();
+renderGlobalRankings();
 
 $('deck').addEventListener('change',renderJourney);$('group').addEventListener('change',renderJourney);$('outcome').addEventListener('change',renderJourney);$('historyRound').addEventListener('change',()=>{renderHistory();updateURL();});$('round').addEventListener('change',()=>{fillRecords(-1);renderState();});$('record').addEventListener('change',renderState);$('download').addEventListener('click',()=>downloadCSV(false));$('downloadAll').addEventListener('click',()=>downloadCSV(true));$('share').addEventListener('click',async()=>{updateURL();try{await navigator.clipboard.writeText(location.href);$('shareStatus').textContent='Link copiado';}catch{$('shareStatus').textContent=location.href;}});document.querySelectorAll('details').forEach(el=>el.addEventListener('toggle',()=>{if(el.open)window.dispatchEvent(new Event('resize'));}));renderJourney();activateView(currentView,{push:false,scroll:false});
 
