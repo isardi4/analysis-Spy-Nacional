@@ -59,10 +59,10 @@
 .matchup-scroll thead tr>:first-child{z-index:3;background:#f4f7f9}
 .matchup-scroll .matchup-corner span{padding:2px 0;color:#718392;font-size:10px;letter-spacing:1px}
 .matchup-scroll button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:0;background:transparent;border-radius:0;width:100%;height:68px;min-height:68px;padding:14px 5px;color:#334c5c;cursor:pointer;transition:box-shadow .1s,background .1s}
-.matchup-percent{display:block;font-size:22px;font-weight:700;line-height:1.15;letter-spacing:-.6px;color:#000}
-.matchup-record{display:block;font-size:12px;font-weight:500;line-height:1.4;white-space:nowrap;color:#536776}
+.matchup-percent{display:block;font-size:16px;font-weight:600;line-height:1.2;letter-spacing:-.2px;color:#000}
+.matchup-record{display:block;font-size:12px;font-weight:500;line-height:1.4;white-space:nowrap;color:#000}
 .matchup-positive .matchup-percent,.matchup-negative .matchup-percent{color:#000}
-.matchup-mirror{background:#edf1f4!important}.matchup-mirror .matchup-percent{color:#83929d;font-size:20px;font-weight:500}.matchup-mirror .matchup-record{color:#83929d;font-size:11px}
+.matchup-mirror{background:#edf1f4!important}.matchup-mirror .matchup-percent{color:#83929d;font-size:16px;font-weight:500}.matchup-mirror .matchup-record{color:#83929d;font-size:11px}
 .matchup-empty .matchup-percent{color:#9aa9b4}.matchup-empty .matchup-record{color:#93a0a9}
 .matchup-scroll .matchup-axis-active{background:#eef3ef!important;color:#304f40!important;box-shadow:inset 0 -3px #52745f}
 .matchup-scroll tbody th.matchup-axis-active{box-shadow:inset 3px 0 #52745f}
@@ -3789,7 +3789,7 @@ return Plotly;
       <p>Matches observados del 20/09 al 19/10/2026: papel + eliminatorias publicadas online. La presencia se calcula exclusivamente con papel. Los 5 millones de torneos simulados no agregan observaciones a estos intervalos.</p>
       <div class="matchup-section-heading"><div class="eyebrow">MATRIZ DE MATCHUPS</div><h3>Los 20 mazos más presentes en papel</h3></div>
       <label>Valor de las celdas<select id="matchupMode"><option value="observed">Win rate observado</option><option value="model">Win rate ajustado usado en la simulación</option></select></label>
-      <p class="subtle">Cada fila es un mazo; cada columna, su rival. El porcentaje se lee desde la fila. Seleccioná un cruce para ver victorias, derrotas, empates e intervalo de confianza.</p>
+      <p class="subtle">Cada fila es un mazo; cada columna, su rival. El porcentaje se lee desde la fila; debajo figuran sus victorias–derrotas. Seleccioná un cruce para ver empates e intervalo de confianza.</p>
       <div id="matchupMatrix"></div>
       <h3 id="matchupHeading">Comparar dos mazos</h3>
       <p>Elegí cualquier par de arquetipos identificados, incluidos los que no están en el Top20. Esta selección es independiente del mazo del encabezado.</p>
@@ -3836,9 +3836,9 @@ function renderMatchupMatrix(){
   const label=s.mirror?'—':p===null?'—':(100*p).toLocaleString('es-AR',{maximumFractionDigits:1,minimumFractionDigits:1})+'%';
   const detail=`${names[a]} contra ${names[b]}. ${s.mirror?'Espejo: 50% por simetría':`WR observado: ${s.observed===null?'sin muestra':pct(s.observed)}. IC 95% Wilson: ${intervalLabel(s.ci)}. Ajustado: ${pct(s.adjusted)}`}. ${s.mirror?'Espejo':s.w+' victorias, '+s.l+' derrotas'}. ${s.n} matches decisivos, ${s.d} empates. Abrir comparador.`;
   const tone=s.mirror?'mirror':p===null?'empty':p===.5?'even':p>.5?'positive':'negative';
-  const strength=p===null||s.mirror?0:Math.abs(p-.5)*2;
-  const bg=tone==='positive'?`rgba(38,150,78,${(.50*strength).toFixed(3)})`:tone==='negative'?`rgba(211,66,66,${(.50*strength).toFixed(3)})`:'#ffffff';
-  return `<td class="matchup-${tone}" style="background:${bg}"><button type="button" data-matchup-a="${a}" data-matchup-b="${b}" title="${esc(detail)}" aria-label="${esc(detail)}"><span class="matchup-percent">${label}</span></button></td>`;
+  const strength=p===null||s.mirror?0:Math.pow(Math.abs(p-.5)*2,.65);
+  const bg=tone==='positive'?`rgba(38,150,78,${(.85*strength).toFixed(3)})`:tone==='negative'?`rgba(211,66,66,${(.85*strength).toFixed(3)})`:'#ffffff';
+  return `<td class="matchup-${tone}" style="background:${bg}"><button type="button" data-matchup-a="${a}" data-matchup-b="${b}" title="${esc(detail)}" aria-label="${esc(detail)}"><span class="matchup-percent">${label}</span>${s.mirror?'':'<span class="matchup-record">'+num(s.w)+'–'+num(s.l)+'</span>'}</button></td>`;
  }).join('')+'</tr>').join('');
  $('matchupMatrix').innerHTML='<div class="matchup-matrix-toolbar"><div class="matchup-legend"><span class="legend-negative">&lt; 50%</span><span class="legend-neutral">50%</span><span class="legend-positive">&gt; 50%</span><span class="legend-empty">— sin muestra</span></div><button type="button" data-matchup-expand aria-pressed="'+$('matchupMatrix').classList.contains('matchup-wide')+'">'+($('matchupMatrix').classList.contains('matchup-wide')?'Reducir matriz':'Ampliar matriz')+'</button></div><div class="matchup-scroll" role="region" aria-label="Matriz 20 por 20 de win rates" tabindex="0"><table><caption>Porcentaje de victoria de la fila contra la columna. Las victorias, derrotas, empates y el IC 95% están en el comparador. Color = win rate, no confianza estadística. La diagonal gris identifica los mirrors; los detalles están en el comparador.</caption>'+head+'<tbody>'+body+'</tbody></table></div>';
 }
